@@ -1,0 +1,49 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,booktabs,tabularx,array}
+\usepackage[margin=22mm]{geometry}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{7pt}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\title{\textbf{Fine TIME}\\Scientific Executive Summary}
+\author{}
+\date{28 September 2026}
+\begin{document}
+\maketitle
+
+\section*{Research question}
+Fine TIME asks whether task-specific fine-tuning improves pretrained
+time-series foundation models over their frozen zero-shot forecasts. Each
+task compares the same backbone before and after adaptation, using the same
+forecast windows and evaluation support.
+
+\section*{Implemented experiment}
+The first experiment covers Chronos-2, Chronos-Bolt, and TS-ICL on the
+90-task Selectime subset used by the project. Each task produces paired
+frozen and fine-tuned forecasts. Fine-tuning uses only model-eligible
+training windows with finite input and output support; it does not substitute
+an unfitted model when no such window exists. Seasonal Naive supplies the
+shared reference grid and scaling contract.
+
+\begin{table}[h]
+\centering
+\begin{tabularx}{\linewidth}{@{}lY@{}}
+\toprule
+Component & Current contract \\
+\midrule
+Models & Chronos-2, Chronos-Bolt, and TS-ICL \\
+Comparison & Frozen forecast versus task-fine-tuned forecast \\
+Task set & 90-task Selectime subset \\
+Outputs & Paired predictions, metrics, timing, manifests, and report artifacts \\
+Run identity & Meaningful scientific path plus \texttt{run\_n}; configuration and lifecycle in \texttt{manifest.json} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section*{Evidence boundary}
+The pipeline and Selena launcher are implemented, but no Fine TIME experiment
+has been executed yet. Therefore this document reports no accuracy, timing,
+or adaptation-benefit claim. The first completed run must establish whether
+fine-tuning improves each backbone and at what computational cost.
+
+\end{document}

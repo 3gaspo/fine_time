@@ -1,0 +1,60 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\title{Fine TIME: Task-Specific Foundation-Model Adaptation}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Question}
+
+Fine TIME evaluates whether task-specific adaptation of Chronos-2,
+Chronos-Bolt, and TS-ICL improves over the same frozen backbone on identical
+official TIME test windows. Each task is fitted only on its official training
+prefix. The initial protocol uses one seed, 100 full-model optimizer steps, no
+covariates, and the 90-task small profile.
+
+\section{Inherited frozen baselines}
+
+The executable surface contains a foundation benchmark of Chronos-2,
+Chronos-Bolt, TS-ICL, and Seasonal Naive; TimesFM-3 is excluded from the active
+experiment set. It also contains a Chronos-2 comparison between native
+multivariate targets, independent univariate targets, and other target
+histories supplied as past-only covariates. Seasonal Naive is deterministic
+and provides the taskwise MASE
+normalizer. It also fixes the evaluation grid to cells with finite target
+support, finite Seasonal Naive predictions on that support, and finite
+Seasonal Naive MASE. Every learned model uses this same grid; a non-finite
+forecast on expected support invalidates its task rather than changing the
+aggregation support. Inference timing excludes loading, dataset construction,
+metric computation, and artifact saving.
+
+Two further executable comparisons use the same three learned backbones and
+evaluation grid. The maximum-context study evaluates five values per backbone,
+halving the model-specific maximum four times. Its summary aggregates
+taskwise MASE divided by the matched Seasonal Naive MASE for every model,
+context-size, and horizon-size cell. The normalization study compares the
+unchanged input with a per-window, per-variate z-score computed after context
+truncation. Constant inputs use unit scale, and every output quantile is
+transformed back to the target units before evaluation.
+
+\section{Fine-tuning comparison}
+
+Each model-task pair stores an independently adapted checkpoint, then evaluates
+the frozen and adapted states on the shared Seasonal-defined finite grid. The
+report requires exact pairs within a backbone, gives every task equal weight,
+and reports mean MASE, win rates, and paired PNG/PDF figures. Artifacts live
+below \texttt{outputs/<surface>/task\_finetuning/}; reports and logs remain
+inside that experiment hierarchy.
+
+\section{Evidence boundary}
+
+Current result claims are limited to project-owned manifests and aggregates
+produced under the shared Seasonal evaluation grid. No Fine TIME run has yet
+completed, so the project makes no adaptation claim.
+
+\end{document}

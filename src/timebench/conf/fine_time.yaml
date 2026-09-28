@@ -1,0 +1,51 @@
+model: chronos2
+seed: 2021
+dataset: null
+term: null
+config_path: null
+output_root: null
+
+experiment:
+  profile: small
+  target_mode: univariate
+  expected_tasks: 90
+  excluded_datasets:
+    - Coastal_T_S/5T
+    - current_velocity/20T
+    - azure2019_D/5T
+    - azure2019_I/5T
+
+training:
+  min_context: 16
+  mode: full
+  gradient_clip_norm: 1.0
+  models:
+    chronos2:
+      weight: chronos2
+      context_length: 8192
+      batch_size: 32
+      learning_rate: 1.0e-6
+      steps: 100
+    chronos_bolt:
+      weight: chronos-bolt-base
+      context_length: 2048
+      batch_size: 32
+      learning_rate: 1.0e-5
+      steps: 100
+    ts_icl:
+      weight: tsicl/tsicl-v1.ckpt
+      context_length: 4096
+      batch_size: 8
+      learning_rate: 1.0e-6
+      steps: 100
+
+evaluation:
+  batch_size: 32
+  require_complete: true
+
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${oc.env:TIME_LOGS,logs/dgx}/task_finetuning/hydra/${oc.env:TIME_HYDRA_STAGE,run}/${model}
+  output_subdir: null
