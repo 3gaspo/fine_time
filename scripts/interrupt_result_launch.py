@@ -16,11 +16,17 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("root", type=Path)
     parser.add_argument("--launch-id", required=True)
+    parser.add_argument("--slurm-job-id")
     args = parser.parse_args()
-    changed = interrupt_launch(args.root, args.launch_id)
+    changed = interrupt_launch(
+        args.root,
+        args.launch_id,
+        slurm_job_id=args.slurm_job_id,
+    )
     print(
         "TIME interrupted-launch recovery "
-        f"launch_id={args.launch_id} tasks={len(changed)} root={args.root}"
+        f"launch_id={args.launch_id} slurm_job_id={args.slurm_job_id or 'all'} "
+        f"tasks={len(changed)} root={args.root}"
     )
     for run_dir in changed:
         print(f"  interrupted {run_dir}")

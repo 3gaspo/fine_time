@@ -72,7 +72,7 @@ def main(cfg: DictConfig) -> None:
             started = time.perf_counter()
             losses = _fit(pipeline, series, horizon, values, model_cfg, generator)
             destination.parent.mkdir(parents=True, exist_ok=True)
-            pipeline.save_pretrained(destination)
+            pipeline.model.save_pretrained(destination)
             metrics = {
                 "first_loss": losses[0],
                 "final_loss": losses[-1],

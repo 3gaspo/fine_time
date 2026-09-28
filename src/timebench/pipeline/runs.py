@@ -279,7 +279,11 @@ def _launch_matches(manifest: Mapping[str, Any], launch_id: str) -> bool:
     )
 
 
-def interrupt_launch(root: str | Path, launch_id: str) -> list[Path]:
+def interrupt_launch(
+    root: str | Path,
+    launch_id: str,
+    slurm_job_id: str | None = None,
+) -> list[Path]:
     """Mark task manifests still owned by a failed launch as interrupted."""
     base = Path(root).expanduser().resolve()
     if not base.exists():
@@ -295,6 +299,11 @@ def interrupt_launch(root: str | Path, launch_id: str) -> list[Path]:
         if (
             manifest["status"] == "running"
             and str(manifest.get("launch", {}).get("launch_id")) == str(launch_id)
+            and (
+                slurm_job_id is None
+                or str(manifest.get("launch", {}).get("slurm_job_id"))
+                == str(slurm_job_id)
+            )
         ):
             manifest["status"] = "interrupted"
             manifest["updated_at"] = _now()

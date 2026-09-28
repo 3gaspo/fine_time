@@ -49,10 +49,16 @@ time_workflow_on_exit() {
             time_log "stage $TIME_ACTIVE_STAGE completed status=failed exit_code=$status" >&2
         fi
         if [ -n "${TIME_RESULT_SCOPE:-}" ]; then
+            interrupt_args=(
+                "$TIME_RESULT_SCOPE"
+                --launch-id "$TIME_LAUNCH_ID"
+            )
+            if [ -n "${SLURM_JOB_ID:-}" ]; then
+                interrupt_args+=(--slurm-job-id "$SLURM_JOB_ID")
+            fi
             PYTHONPATH="$PROJECT_ROOT/src" python \
                 "$PROJECT_ROOT/scripts/interrupt_result_launch.py" \
-                "$TIME_RESULT_SCOPE" \
-                --launch-id "$TIME_LAUNCH_ID" >&2 || \
+                "${interrupt_args[@]}" >&2 || \
                 time_log "warning: could not mark unfinished task manifests interrupted" >&2
         fi
         if ! time_write_status failed "$status"; then

@@ -96,6 +96,20 @@ def main() -> None:
             assert interrupt_launch(root.parent, "launch_3") == [interrupted.run_dir]
             assert load_manifest(interrupted.run_dir)["status"] == "interrupted"
 
+            shared_launch_root = Path(temporary) / "shared_launch"
+            os.environ["TIME_LAUNCH_ID"] = "shared_launch"
+            os.environ["SLURM_JOB_ID"] = "301"
+            first_job = _allocate(shared_launch_root, frequency="H")
+            os.environ["SLURM_JOB_ID"] = "302"
+            second_job = _allocate(shared_launch_root, frequency="D")
+            assert interrupt_launch(
+                shared_launch_root,
+                "shared_launch",
+                slurm_job_id="301",
+            ) == [first_job.run_dir]
+            assert load_manifest(first_job.run_dir)["status"] == "interrupted"
+            assert load_manifest(second_job.run_dir)["status"] == "running"
+
             quota_root = Path(temporary) / "quota_identity"
             os.environ["TIME_LAUNCH_ID"] = "quota_launch"
             quota_run = _allocate(quota_root)
@@ -213,6 +227,7 @@ def main() -> None:
             try:
                 select_completed_runs(
                     task_specific_root,
+                    config_policy="error",
                     task_specific_model_fields={"value"},
                 )
             except ManifestError:
