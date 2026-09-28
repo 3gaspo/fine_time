@@ -86,6 +86,9 @@ Frozen and adapted task artifacts remain separate under
 lives under `<O>/task_finetuning/reports/frozen_vs_task_finetuned/`.
 Here `<O>` is `outputs/dgx` for DGX/local execution, Selena's scratch output
 root during execution, or `outputs/selena` after synchronization.
+The independent shared Seasonal checkout stores its completed cells below
+`outputs/seasonal_naive/evaluations/`; Fine TIME resolves them through
+`TIME_SEASONAL_EVALUATIONS_ROOT`.
 
 Every Slurm stream, Hydra directory, stage log, and workflow status is grouped
 below `logs/<surface>/task_finetuning/`. Launch IDs and timestamps remain in

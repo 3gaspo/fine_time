@@ -56,7 +56,7 @@ if [ "$experiment" = context_size ]; then
     plot_command=(
         uv run --no-sync python "$PROJECT_ROOT/scripts/plot_context_size.py"
         --tasks-root "$tasks_root"
-        --seasonal-root "$TIME_SEASONAL_TASKS_ROOT"
+        --seasonal-root "$TIME_SEASONAL_EVALUATIONS_ROOT"
         --launch-id "$TIME_LAUNCH_ID"
         --models "${FOUNDATION_ABLATION_MODELS[@]}"
         --output "$context_plot"
@@ -80,7 +80,7 @@ time_task_start "foundation_ablation experiment=$experiment outputs=$summary_roo
 summary_command=(
     uv run --no-sync python "$PROJECT_ROOT/scripts/compute_foundation_summary.py"
     --results-dir "$tasks_root"
-    --seasonal-naive-results-dir "$TIME_SEASONAL_TASKS_ROOT"
+    --seasonal-naive-results-dir "$TIME_SEASONAL_EVALUATIONS_ROOT"
     --models "${FOUNDATION_ABLATION_MODELS[@]}"
     --launch-id "$TIME_LAUNCH_ID"
     --config-policy "$config_policy"

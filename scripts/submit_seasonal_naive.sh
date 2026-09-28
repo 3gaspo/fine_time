@@ -33,19 +33,19 @@ else
     source "$PROJECT_ROOT/src/slurm/runtime_paths.sh"
     front="$PROJECT_ROOT/slurm/dgx/foundation_models/seasonal_naive.slurm"
 fi
-mkdir -p "$TIME_LOGS/foundation_models/slurm" "$TIME_SEASONAL_LOGS_ROOT/foundation_models/slurm"
+mkdir -p "$TIME_SEASONAL_LOGS_ROOT/seasonal_naive/slurm"
 
 launch_id="${TIME_LAUNCH_ID:-${cluster}_seasonal_$(date -u '+%Y%m%dT%H%M%SZ')_$$}"
 job_id="$(
     sbatch --parsable \
-        --output="$TIME_SEASONAL_LOGS_ROOT/foundation_models/slurm/%x_%j.out" \
-        --error="$TIME_SEASONAL_LOGS_ROOT/foundation_models/slurm/%x_%j.err" \
-        --export="ALL,TIME_LAUNCH_ID=$launch_id,OUTPUTS_ROOT=$TIME_SEASONAL_ROOT,LOGS_ROOT=$TIME_SEASONAL_LOGS_ROOT,TIME_EXPERIMENT=foundation_models" \
+        --output="$TIME_SEASONAL_LOGS_ROOT/seasonal_naive/slurm/%x_%j.out" \
+        --error="$TIME_SEASONAL_LOGS_ROOT/seasonal_naive/slurm/%x_%j.err" \
+        --export="ALL,TIME_LAUNCH_ID=$launch_id,OUTPUTS_ROOT=$TIME_SEASONAL_OUTPUTS_ROOT,LOGS_ROOT=$TIME_SEASONAL_LOGS_ROOT,TIME_EXPERIMENT=seasonal_naive" \
         "$front"
 )"
 job_id="${job_id%%;*}"
 
 echo "$seasonal_scope Seasonal Naive submitted job_id=$job_id launch_id=$launch_id"
-echo "Seasonal task root: $TIME_SEASONAL_TASKS_ROOT"
+echo "Seasonal evaluation root: $TIME_SEASONAL_EVALUATIONS_ROOT"
 echo "Seasonal logs root: $TIME_SEASONAL_LOGS_ROOT"
 echo "status: bash scripts/foundation_model_status.sh $cluster $launch_id"

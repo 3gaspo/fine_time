@@ -63,5 +63,5 @@ summary_job="$(
 summary_job="${summary_job%%;*}"
 
 echo "foundation summary and feature plot submitted job_id=$summary_job dependency=afterany:$dependency"
-echo "shared Seasonal Naive task root: $TIME_SEASONAL_TASKS_ROOT"
+echo "shared Seasonal Naive evaluation root: $TIME_SEASONAL_EVALUATIONS_ROOT"
 echo "status: bash scripts/foundation_model_status.sh $cluster $launch_id"

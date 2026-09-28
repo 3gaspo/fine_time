@@ -1,8 +1,8 @@
 #!/bin/bash
 #SBATCH --job-name=sseasonal
 #SBATCH --gres=gpu:1
-#SBATCH --output=/scratch/users/%u/codes/fine_time/logs/foundation_models/slurm/%x_%j.out
-#SBATCH --error=/scratch/users/%u/codes/fine_time/logs/foundation_models/slurm/%x_%j.err
+#SBATCH --output=/scratch/users/%u/codes/seasonal/logs/seasonal_naive/slurm/%x_%j.out
+#SBATCH --error=/scratch/users/%u/codes/seasonal/logs/seasonal_naive/slurm/%x_%j.err
 #SBATCH --time=23:00:00
 #SBATCH --partition=an
 #SBATCH --qos=an_preemptable
@@ -18,5 +18,6 @@ cd "$PROJECT_ROOT"
 export PROJECT_ROOT
 source "$PROJECT_ROOT/src/slurm/selena_runtime.sh"
 export TIME_MODEL=seasonal_naive
+export TIME_EXPERIMENT=seasonal_naive
 export TIME_LAUNCH_ID="${TIME_LAUNCH_ID:-selena_${SLURM_JOB_ID}}"
 source "$PROJECT_ROOT/src/slurm/run_foundation_model.sh"

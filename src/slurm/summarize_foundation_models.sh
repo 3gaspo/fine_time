@@ -26,7 +26,7 @@ summary_command=(
     uv run --no-sync python
     "$PROJECT_ROOT/scripts/compute_foundation_summary.py"
     --results-dir "$tasks_root"
-    --seasonal-naive-results-dir "$TIME_SEASONAL_TASKS_ROOT"
+    --seasonal-naive-results-dir "$TIME_SEASONAL_EVALUATIONS_ROOT"
     --models "${FOUNDATION_MODELS[@]}"
     --model-status seasonal_naive=completed,0
     --launch-id "$TIME_LAUNCH_ID"
@@ -73,7 +73,7 @@ plot_command=(
     "$PROJECT_ROOT/scripts/plot_feature_performance.py"
     --features-root "$TIME_METADATA/stl_features"
     --results-dir "$tasks_root"
-    --seasonal-naive-results-dir "$TIME_SEASONAL_TASKS_ROOT"
+    --seasonal-naive-results-dir "$TIME_SEASONAL_EVALUATIONS_ROOT"
     --output "$analysis_root/mase_vs_features.svg"
     --models "${FOUNDATION_LEARNED_MODELS[@]}"
     --launch-id "$TIME_LAUNCH_ID"

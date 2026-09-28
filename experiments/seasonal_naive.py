@@ -58,11 +58,7 @@ from timebench.evaluation.data import (
 )
 from timebench.evaluation.utils import get_available_terms
 from timebench.models import SeasonalNaivePredictor
-from timebench.paths import (
-    foundation_experiment_name,
-    foundation_experiment_root,
-    foundation_identity_root,
-)
+from timebench.paths import outputs_root
 from timebench.pipeline import allocate_run, resolve_target_mode
 from timebench.pipeline.inference_cache import (
     dependency_reference, load_raw_inference, save_raw_inference,
@@ -109,10 +105,10 @@ def run_seasonal_naive_experiment(
             raise ValueError(f"No terms defined for dataset '{dataset_name}' in config")
 
     if output_dir is None:
-        output_dir = str(foundation_experiment_root())
+        output_dir = str(outputs_root() / "seasonal_naive" / "evaluations")
 
     os.makedirs(output_dir, exist_ok=True)
-    experiment = foundation_experiment_name()
+    experiment = "seasonal_naive"
 
     print(f"\n{'='*60}")
     print(f"Model: Seasonal Naive")
@@ -156,9 +152,7 @@ def run_seasonal_naive_experiment(
 
         season_length = get_seasonality(dataset.freq)
         quantile_levels = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
-        identity_root = foundation_identity_root(
-            output_dir, "seasonal_naive", resolved_target_mode, dataset_name, term
-        )
+        identity_root = Path(output_dir) / resolved_target_mode / dataset_name / term
         identity = {"model": "seasonal_naive", "target_mode": resolved_target_mode,
             "dataset": dataset_name.rpartition("/")[0] or dataset_name,
             "frequency": dataset.freq, "term": term}
@@ -166,11 +160,11 @@ def run_seasonal_naive_experiment(
             "season_length": season_length}
         scientific_experiment = {"covariate_mode": covariate_mode,
             "covariate_channels": 0}
-        inference_root = foundation_identity_root(
-            Path(output_dir).parent / "inference", "seasonal_naive",
-            resolved_target_mode, dataset_name, term)
+        inference_root = (
+            Path(output_dir).parent / "inference" / resolved_target_mode / dataset_name / term
+        )
         inference_run = allocate_run(
-            inference_root, experiment=f"{experiment}_raw_inference",
+            inference_root, experiment="seasonal_naive_inference",
             identity=identity, model_config=scientific_model,
             pipeline_config={"prediction_length": prediction_length,
                 "test_length": test_length, "windows": dataset.windows,
