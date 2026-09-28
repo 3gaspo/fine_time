@@ -109,6 +109,7 @@ config/
 !/src/timebench/config/
 /src/timebench/config/*
 !/src/timebench/config/dataset_domains.json
+!/src/timebench/config/datasets.yaml
 
 # Thesis project local artifacts
 AGENTS.md
