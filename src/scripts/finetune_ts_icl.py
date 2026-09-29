@@ -17,7 +17,7 @@ import hydra
 import torch
 from omegaconf import DictConfig, OmegaConf
 from tsicl import TSICL
-from tsicl.utils import make_grid
+from tsicl.utils import complete_nans, make_grid
 
 from timebench.paths import foundation_weight_path
 from timebench.pipeline.runtime_resources import log_selected_device
@@ -32,6 +32,7 @@ from timebench.training import (
     select_tasks,
     set_seed,
 )
+from timebench.training.ts_icl_compat import prepare_training_contexts
 
 
 @hydra.main(version_base=None, config_path="../timebench/conf", config_name="fine_time")
@@ -126,17 +127,11 @@ def _fit(pipeline, series, context_length, horizon, values, model_cfg, generator
         target = target.unsqueeze(-1).to(device)
         grid = make_grid(pipeline._grid_len_forecasting, num_samples=len(context)).to(device)
         optimizer.zero_grad(set_to_none=True)
-        predictions = pipeline._run_forward(
-            grid=grid,
-            series_c=context,
-            covariates=None,
-            has_covar=False,
-            prediction_length=horizon,
-            setting="forecasting",
-            denormalize=False,
-            save_scaler=True,
-            allow_auto_complete=False,
-            allow_covar_forecast=False,
+        predictions = _run_forward(
+            pipeline,
+            grid,
+            context,
+            horizon,
         )
         normalized_target = pipeline.scaler.transform(target)
         mask = torch.isfinite(normalized_target).expand_as(predictions)
@@ -151,6 +146,28 @@ def _fit(pipeline, series, context_length, horizon, values, model_cfg, generator
         losses.append(float(loss.detach().cpu()))
     model.eval()
     return losses
+
+
+def _run_forward(pipeline, grid, context, horizon):
+    """Run the differentiable TS-ICL path with singleton-safe preparation."""
+
+    lookback_length = min(context.shape[1], pipeline.this_context_length)
+    grid_threshold = pipeline.max_context_length
+    coords_c = grid[:, grid_threshold - lookback_length : grid_threshold]
+    coords_t = grid[:, grid_threshold : grid_threshold + horizon]
+    prepared = prepare_training_contexts(
+        coords_c,
+        context[:, -lookback_length:],
+        complete_nans,
+    )
+    return pipeline._predict_batch(
+        series_c=prepared["series_c"],
+        coords_c=prepared["coords_c"],
+        coords_t=coords_t,
+        setting="forecasting",
+        denormalize=False,
+        save_scaler=True,
+    )
 
 
 if __name__ == "__main__":
