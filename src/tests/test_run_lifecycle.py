@@ -110,6 +110,27 @@ def main() -> None:
             assert load_manifest(first_job.run_dir)["status"] == "interrupted"
             assert load_manifest(second_job.run_dir)["status"] == "running"
 
+            with tempfile.TemporaryDirectory() as training_temporary:
+                training_root = Path(training_temporary) / "training_identity"
+                training = allocate_run(
+                    training_root,
+                    experiment="task_finetuning",
+                    identity={
+                        "model": "model_a",
+                        "dataset": "toy/H",
+                        "term": "short",
+                        "stage": "fine_tuning",
+                    },
+                    model_config={"value": 1},
+                    pipeline_config={"seed": 0},
+                    runtime_config={"device": "cpu"},
+                    experiment_config={"target_mode": "univariate"},
+                )
+                _complete(training)
+                selected_training = select_completed_runs(training_root)
+                assert len(selected_training) == 1
+                assert selected_training[0][0] == training.run_dir
+
             quota_root = Path(temporary) / "quota_identity"
             os.environ["TIME_LAUNCH_ID"] = "quota_launch"
             quota_run = _allocate(quota_root)

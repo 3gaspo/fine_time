@@ -980,18 +980,18 @@ def select_completed_runs(
     for item in selected:
         identity = item[1]["identity"]
         key = (
-            identity["model"],
-            identity["dataset"],
-            identity["frequency"],
-            identity["term"],
+            identity.get("model"),
+            identity.get("dataset"),
+            identity.get("frequency"),
+            identity.get("term"),
         )
         for group in by_task:
             sample = group[0][1]["identity"]
             sample_key = (
-                sample["model"],
-                sample["dataset"],
-                sample["frequency"],
-                sample["term"],
+                sample.get("model"),
+                sample.get("dataset"),
+                sample.get("frequency"),
+                sample.get("term"),
             )
             if key == sample_key:
                 group.append(item)
@@ -999,13 +999,14 @@ def select_completed_runs(
         else:
             by_task.append([item])
     for group in by_task:
-        modes = {item[1]["identity"]["target_mode"] for item in group}
+        modes = {item[1]["identity"].get("target_mode") for item in group}
         if len(modes) > 1:
             identity = group[0][1]["identity"]
             raise ManifestError(
                 "Multiple target modes match "
-                f"{identity['model']} {identity['dataset']}/{identity['frequency']} "
-                f"{identity['term']}: {sorted(modes)}; use --target-mode"
+                f"{identity.get('model')} {identity.get('dataset')}/"
+                f"{identity.get('frequency')} {identity.get('term')}: "
+                f"{sorted(map(str, modes))}; use --target-mode"
             )
 
     if config_policy == "error":
