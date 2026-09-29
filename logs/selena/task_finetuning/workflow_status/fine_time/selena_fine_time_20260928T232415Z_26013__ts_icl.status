@@ -1,0 +1,12 @@
+workflow=fine_time
+launch_id=selena_fine_time_20260928T232415Z_26013
+task=ts_icl
+state=failed
+stage=train
+active_task=model=ts_icl independent_per_task_fine_tuning=true profile=small
+launched_at=2026-09-28T23:24:30Z
+updated_at=2026-09-28T23:53:49Z
+exit_code=1
+slurm_job_id=3602395
+slurm_array_job_id=none
+slurm_array_task_id=none

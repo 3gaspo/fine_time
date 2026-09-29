@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "selections": [
+    {
+      "mode": "auto",
+      "run": "run_0",
+      "scientific_config": {
+        "experiment_config": {
+          "covariate_channels": 0,
+          "covariate_mode": "none",
+          "instance_normalization": "none"
+        },
+        "model_config": {
+          "adaptation": {
+            "source_checkpoint": "/fslarge/scratch/users/h61084/weights/chronos-bolt-base",
+            "state": "frozen"
+          },
+          "context_length": 2048,
+          "model_size": "base",
+          "quantile_levels": [
+            0.1,
+            0.2,
+            0.3,
+            0.4,
+            0.5,
+            0.6,
+            0.7,
+            0.8,
+            0.9
+          ]
+        },
+        "pipeline_config": {
+          "prediction_length": 12,
+          "target_mode": "univariate",
+          "test_length": 60,
+          "windows": 5
+        }
+      }
+    },
+    {
+      "mode": "auto",
+      "run": "run_1",
+      "scientific_config": {
+        "experiment_config": {
+          "covariate_channels": 0,
+          "covariate_mode": "none",
+          "instance_normalization": "none"
+        },
+        "model_config": {
+          "adaptation": {
+            "seed": 2021,
+            "source_checkpoint": "/fslarge/scratch/users/h61084/weights/chronos-bolt-base",
+            "state": "task_finetuned",
+            "training_config": {
+              "batch_size": 32,
+              "context_length": 2048,
+              "gradient_clip_norm": 1.0,
+              "learning_rate": 1e-05,
+              "min_context": 16,
+              "mode": "full",
+              "steps": 100,
+              "weight": "chronos-bolt-base"
+            },
+            "training_implementation": "source-adapted native Chronos-Bolt quantile loss",
+            "training_manifest": "/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/Vehicle_Sales/M/short/run_0/manifest.json"
+          },
+          "context_length": 2048,
+          "model_size": "base",
+          "quantile_levels": [
+            0.1,
+            0.2,
+            0.3,
+            0.4,
+            0.5,
+            0.6,
+            0.7,
+            0.8,
+            0.9
+          ]
+        },
+        "pipeline_config": {
+          "prediction_length": 12,
+          "target_mode": "univariate",
+          "test_length": 60,
+          "windows": 5
+        }
+      }
+    }
+  ]
+}

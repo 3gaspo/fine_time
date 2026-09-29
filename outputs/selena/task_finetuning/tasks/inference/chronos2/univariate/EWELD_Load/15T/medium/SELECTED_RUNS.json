@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "selections": [
+    {
+      "mode": "auto",
+      "run": "run_0",
+      "scientific_config": {
+        "experiment_config": {
+          "covariate_channels": 0,
+          "covariate_mode": "none",
+          "covariate_source": "none",
+          "covariate_time_span": "none",
+          "instance_normalization": "none"
+        },
+        "model_config": {
+          "adaptation": {
+            "source_checkpoint": "/fslarge/scratch/users/h61084/weights/chronos2",
+            "state": "frozen"
+          },
+          "context_length": 8192,
+          "model_size": "chronos2",
+          "quantile_levels": [
+            0.1,
+            0.2,
+            0.3,
+            0.4,
+            0.5,
+            0.6,
+            0.7,
+            0.8,
+            0.9
+          ]
+        },
+        "pipeline_config": {
+          "covariate_mode": "none",
+          "prediction_length": 96,
+          "target_mode": "univariate",
+          "test_length": 1344,
+          "windows": 14
+        }
+      }
+    },
+    {
+      "mode": "auto",
+      "run": "run_1",
+      "scientific_config": {
+        "experiment_config": {
+          "covariate_channels": 0,
+          "covariate_mode": "none",
+          "covariate_source": "none",
+          "covariate_time_span": "none",
+          "instance_normalization": "none"
+        },
+        "model_config": {
+          "adaptation": {
+            "seed": 2021,
+            "source_checkpoint": "/fslarge/scratch/users/h61084/weights/chronos2",
+            "state": "task_finetuned",
+            "training_config": {
+              "batch_size": 32,
+              "context_length": 8192,
+              "gradient_clip_norm": 1.0,
+              "learning_rate": 1e-06,
+              "min_context": 16,
+              "mode": "full",
+              "steps": 100,
+              "weight": "chronos2"
+            },
+            "training_implementation": "official Chronos2Pipeline.fit",
+            "training_manifest": "/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/EWELD_Load/15T/medium/run_0/manifest.json"
+          },
+          "context_length": 8192,
+          "model_size": "chronos2",
+          "quantile_levels": [
+            0.1,
+            0.2,
+            0.3,
+            0.4,
+            0.5,
+            0.6,
+            0.7,
+            0.8,
+            0.9
+          ]
+        },
+        "pipeline_config": {
+          "covariate_mode": "none",
+          "prediction_length": 96,
+          "target_mode": "univariate",
+          "test_length": 1344,
+          "windows": 14
+        }
+      }
+    }
+  ]
+}

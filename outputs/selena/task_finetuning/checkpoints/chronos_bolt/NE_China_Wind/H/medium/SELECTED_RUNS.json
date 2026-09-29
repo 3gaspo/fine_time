@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "selections": [
+    {
+      "mode": "auto",
+      "run": "run_0",
+      "scientific_config": {
+        "experiment_config": {
+          "target_mode": "univariate"
+        },
+        "model_config": {
+          "alias": "chronos_bolt",
+          "training": {
+            "batch_size": 32,
+            "context_length": 2048,
+            "gradient_clip_norm": 1.0,
+            "learning_rate": 1e-05,
+            "min_context": 16,
+            "mode": "full",
+            "steps": 100,
+            "weight": "chronos-bolt-base"
+          }
+        },
+        "pipeline_config": {
+          "prediction_length": 72,
+          "seed": 2021,
+          "test_length": 720,
+          "training_split": "TIME prefix before validation and test",
+          "validation_length": 720
+        }
+      }
+    }
+  ]
+}

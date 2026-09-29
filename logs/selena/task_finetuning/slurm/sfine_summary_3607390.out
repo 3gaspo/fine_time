@@ -1,0 +1,21 @@
+[2026-09-29 12:09:58 UTC] resources allocation {"CUDA_VISIBLE_DEVICES": "0", "SLURM_CPUS_PER_TASK": "8", "SLURM_JOB_GPUS": "0,1,2,3", "SLURM_JOB_ID": "3607390", "SLURM_MEM_PER_CPU": "unset", "SLURM_MEM_PER_NODE": "80000", "SLURM_STEP_GPUS": "0", "SLURM_STEP_ID": "0", "TIME_DEVICE": "unset", "cpu_count": 8, "host": "sean0013"}
+[2026-09-29 12:09:58 UTC] resources RAM {"MemAvailable_MiB": 372390.59375, "MemTotal_MiB": 386622.875, "cgroup_reason": "memory.max is unlimited", "cgroup_status": "unlimited"}
+[2026-09-29 12:09:58 UTC] resources nvidia_inventory {"columns": "index,uuid,name,driver,total_MiB,free_MiB,used_MiB", "devices": ["0, GPU-dbd5c613-e4b4-d9ff-3ea2-7c34bb769b45, NVIDIA H100 NVL, 560.35.05, 95830, 95350, 1"]}
+[2026-09-29 12:10:06 UTC] resources torch {"cuda_available": true, "note": "visibility probe; CPU-only stages need not use an allocated GPU", "version": "2.9.1+cu128", "visible_gpu_count": 1}
+[2026-09-29 12:10:06 UTC] resources cuda_device {"capability": "9.0", "free_MiB": 94825.125, "logical_index": 0, "name": "NVIDIA H100 NVL", "total_MiB": 95350.1875}
+2026-09-29 14:10:06 | workflow fine_time_summary started launch_id=selena_fine_time_20260929T092621Z_11326 task=frozen_vs_task_finetuned slurm_job_id=3607390 slurm_array_job_id=none slurm_array_task_id=none
+2026-09-29 14:10:06 | stage summarize started
+2026-09-29 14:10:06 | task equal_task_weighted_MASE states=frozen,task_finetuned started
+Fine TIME report artifacts:
+/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/reports/frozen_vs_task_finetuned/task_results.csv
+/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/reports/frozen_vs_task_finetuned/summary.csv
+/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/reports/frozen_vs_task_finetuned/summary.md
+/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/reports/frozen_vs_task_finetuned/summary.tex
+/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/reports/frozen_vs_task_finetuned/frozen_vs_finetuned_scatter.png
+/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/reports/frozen_vs_task_finetuned/mean_task_mase_comparison.png
+/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/reports/frozen_vs_task_finetuned/frozen_vs_finetuned_scatter.pdf
+/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/reports/frozen_vs_task_finetuned/mean_task_mase_comparison.pdf
+/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/reports/frozen_vs_task_finetuned/report_manifest.json
+2026-09-29 14:10:17 | task equal_task_weighted_MASE states=frozen,task_finetuned completed status=success
+2026-09-29 14:10:17 | stage summarize completed status=success
+2026-09-29 14:10:17 | workflow fine_time_summary completed status=success exit_code=0

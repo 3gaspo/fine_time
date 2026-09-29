@@ -1,0 +1,110 @@
+[2026-09-28 23:24:21 UTC] resources allocation {"CUDA_VISIBLE_DEVICES": "0", "SLURM_CPUS_PER_TASK": "8", "SLURM_JOB_GPUS": "0,1,2,3", "SLURM_JOB_ID": "3602395", "SLURM_MEM_PER_CPU": "unset", "SLURM_MEM_PER_NODE": "80000", "SLURM_STEP_GPUS": "0", "SLURM_STEP_ID": "0", "TIME_DEVICE": "unset", "cpu_count": 8, "host": "sean0015"}
+[2026-09-28 23:24:21 UTC] resources RAM {"MemAvailable_MiB": 374632.4296875, "MemTotal_MiB": 386622.87109375, "cgroup_reason": "memory.max is unlimited", "cgroup_status": "unlimited"}
+[2026-09-28 23:24:21 UTC] resources nvidia_inventory {"columns": "index,uuid,name,driver,total_MiB,free_MiB,used_MiB", "devices": ["0, GPU-a403e2c7-2bdc-75bf-88a4-0ca6c9e99969, NVIDIA H100 NVL, 560.35.05, 95830, 95350, 1"]}
+[2026-09-28 23:24:29 UTC] resources torch {"cuda_available": true, "note": "visibility probe; CPU-only stages need not use an allocated GPU", "version": "2.9.1+cu128", "visible_gpu_count": 1}
+[2026-09-28 23:24:29 UTC] resources cuda_device {"capability": "9.0", "free_MiB": 94825.125, "logical_index": 0, "name": "NVIDIA H100 NVL", "total_MiB": 95350.1875}
+2026-09-29 01:24:30 | workflow fine_time started launch_id=selena_fine_time_20260928T232415Z_26013 task=ts_icl slurm_job_id=3602395 slurm_array_job_id=none slurm_array_task_id=none
+2026-09-29 01:24:30 | stage train started
+2026-09-29 01:24:30 | task model=ts_icl independent_per_task_fine_tuning=true profile=small started
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/ts_icl/Australia_Solar/H/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602395 launched_at=2026-09-28T23:24:37.136075+00:00
+[1/90] fine-tune ts_icl on Australia_Solar/H/long
+[2026-09-28 23:24:38 UTC] resources selected_device {"device": "cuda", "model": "ts_icl", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/ts_icl/Australia_Solar/H/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602395 launched_at=2026-09-28T23:25:47.579283+00:00
+[2/90] fine-tune ts_icl on Australia_Solar/H/medium
+[2026-09-28 23:25:48 UTC] resources selected_device {"device": "cuda", "model": "ts_icl", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/ts_icl/Australia_Solar/H/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602395 launched_at=2026-09-28T23:26:49.930858+00:00
+[3/90] fine-tune ts_icl on Australia_Solar/H/short
+[2026-09-28 23:26:50 UTC] resources selected_device {"device": "cuda", "model": "ts_icl", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/ts_icl/Auto_Production_SF/M/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602395 launched_at=2026-09-28T23:27:51.276730+00:00
+[4/90] fine-tune ts_icl on Auto_Production_SF/M/short
+[2026-09-28 23:27:51 UTC] resources selected_device {"device": "cuda", "model": "ts_icl", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/ts_icl/CPHL/15T/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602395 launched_at=2026-09-28T23:27:57.021255+00:00
+[5/90] fine-tune ts_icl on CPHL/15T/long
+[2026-09-28 23:27:57 UTC] resources selected_device {"device": "cuda", "model": "ts_icl", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/ts_icl/CPHL/15T/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602395 launched_at=2026-09-28T23:29:03.834364+00:00
+[6/90] fine-tune ts_icl on CPHL/15T/medium
+[2026-09-28 23:29:04 UTC] resources selected_device {"device": "cuda", "model": "ts_icl", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/ts_icl/CPHL/15T/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602395 launched_at=2026-09-28T23:30:07.595847+00:00
+[7/90] fine-tune ts_icl on CPHL/15T/short
+[2026-09-28 23:30:07 UTC] resources selected_device {"device": "cuda", "model": "ts_icl", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/ts_icl/CPHL/30T/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602395 launched_at=2026-09-28T23:31:10.848974+00:00
+[8/90] fine-tune ts_icl on CPHL/30T/long
+[2026-09-28 23:31:11 UTC] resources selected_device {"device": "cuda", "model": "ts_icl", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/ts_icl/CPHL/30T/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602395 launched_at=2026-09-28T23:32:16.008082+00:00
+[9/90] fine-tune ts_icl on CPHL/30T/medium
+[2026-09-28 23:32:16 UTC] resources selected_device {"device": "cuda", "model": "ts_icl", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/ts_icl/CPHL/30T/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602395 launched_at=2026-09-28T23:33:18.696781+00:00
+[10/90] fine-tune ts_icl on CPHL/30T/short
+[2026-09-28 23:33:19 UTC] resources selected_device {"device": "cuda", "model": "ts_icl", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/ts_icl/CPHL/H/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602395 launched_at=2026-09-28T23:34:21.386344+00:00
+[11/90] fine-tune ts_icl on CPHL/H/long
+[2026-09-28 23:34:21 UTC] resources selected_device {"device": "cuda", "model": "ts_icl", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/ts_icl/CPHL/H/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602395 launched_at=2026-09-28T23:35:14.501074+00:00
+[12/90] fine-tune ts_icl on CPHL/H/medium
+[2026-09-28 23:35:14 UTC] resources selected_device {"device": "cuda", "model": "ts_icl", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/ts_icl/CPHL/H/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602395 launched_at=2026-09-28T23:36:07.165341+00:00
+[13/90] fine-tune ts_icl on CPHL/H/short
+[2026-09-28 23:36:07 UTC] resources selected_device {"device": "cuda", "model": "ts_icl", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/ts_icl/Coastal_T_S/15T/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602395 launched_at=2026-09-28T23:36:59.351636+00:00
+[14/90] fine-tune ts_icl on Coastal_T_S/15T/long
+[2026-09-28 23:36:59 UTC] resources selected_device {"device": "cuda", "model": "ts_icl", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/ts_icl/Coastal_T_S/15T/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602395 launched_at=2026-09-28T23:38:06.245554+00:00
+[15/90] fine-tune ts_icl on Coastal_T_S/15T/medium
+[2026-09-28 23:38:06 UTC] resources selected_device {"device": "cuda", "model": "ts_icl", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/ts_icl/Coastal_T_S/15T/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602395 launched_at=2026-09-28T23:39:09.930168+00:00
+[16/90] fine-tune ts_icl on Coastal_T_S/15T/short
+[2026-09-28 23:39:10 UTC] resources selected_device {"device": "cuda", "model": "ts_icl", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/ts_icl/Coastal_T_S/20T/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602395 launched_at=2026-09-28T23:40:12.542621+00:00
+[17/90] fine-tune ts_icl on Coastal_T_S/20T/long
+[2026-09-28 23:40:12 UTC] resources selected_device {"device": "cuda", "model": "ts_icl", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/ts_icl/Coastal_T_S/20T/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602395 launched_at=2026-09-28T23:41:18.299563+00:00
+[18/90] fine-tune ts_icl on Coastal_T_S/20T/medium
+[2026-09-28 23:41:18 UTC] resources selected_device {"device": "cuda", "model": "ts_icl", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/ts_icl/Coastal_T_S/20T/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602395 launched_at=2026-09-28T23:42:21.652102+00:00
+[19/90] fine-tune ts_icl on Coastal_T_S/20T/short
+[2026-09-28 23:42:22 UTC] resources selected_device {"device": "cuda", "model": "ts_icl", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/ts_icl/Coastal_T_S/H/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602395 launched_at=2026-09-28T23:43:24.238344+00:00
+[20/90] fine-tune ts_icl on Coastal_T_S/H/long
+[2026-09-28 23:43:24 UTC] resources selected_device {"device": "cuda", "model": "ts_icl", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/ts_icl/Coastal_T_S/H/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602395 launched_at=2026-09-28T23:44:22.779355+00:00
+[21/90] fine-tune ts_icl on Coastal_T_S/H/medium
+[2026-09-28 23:44:23 UTC] resources selected_device {"device": "cuda", "model": "ts_icl", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/ts_icl/Coastal_T_S/H/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602395 launched_at=2026-09-28T23:45:20.752816+00:00
+[22/90] fine-tune ts_icl on Coastal_T_S/H/short
+[2026-09-28 23:45:21 UTC] resources selected_device {"device": "cuda", "model": "ts_icl", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/ts_icl/Commodity_Import/M/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602395 launched_at=2026-09-28T23:46:17.453740+00:00
+[23/90] fine-tune ts_icl on Commodity_Import/M/short
+[2026-09-28 23:46:17 UTC] resources selected_device {"device": "cuda", "model": "ts_icl", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/ts_icl/Commodity_Production/M/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602395 launched_at=2026-09-28T23:46:25.643166+00:00
+[24/90] fine-tune ts_icl on Commodity_Production/M/short
+[2026-09-28 23:46:25 UTC] resources selected_device {"device": "cuda", "model": "ts_icl", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/ts_icl/Crypto/D/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602395 launched_at=2026-09-28T23:46:31.201097+00:00
+[25/90] fine-tune ts_icl on Crypto/D/short
+[2026-09-28 23:46:31 UTC] resources selected_device {"device": "cuda", "model": "ts_icl", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/ts_icl/ECDC_COVID/D/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602395 launched_at=2026-09-28T23:46:57.008013+00:00
+[26/90] fine-tune ts_icl on ECDC_COVID/D/short
+[2026-09-28 23:46:57 UTC] resources selected_device {"device": "cuda", "model": "ts_icl", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/ts_icl/ECDC_COVID/W/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602395 launched_at=2026-09-28T23:47:06.031194+00:00
+[27/90] fine-tune ts_icl on ECDC_COVID/W/short
+[2026-09-28 23:47:06 UTC] resources selected_device {"device": "cuda", "model": "ts_icl", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/ts_icl/EWELD_Load/15T/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602395 launched_at=2026-09-28T23:47:11.339536+00:00
+[28/90] fine-tune ts_icl on EWELD_Load/15T/long
+[2026-09-28 23:47:11 UTC] resources selected_device {"device": "cuda", "model": "ts_icl", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/ts_icl/EWELD_Load/15T/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602395 launched_at=2026-09-28T23:48:22.167249+00:00
+[29/90] fine-tune ts_icl on EWELD_Load/15T/medium
+[2026-09-28 23:48:22 UTC] resources selected_device {"device": "cuda", "model": "ts_icl", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/ts_icl/EWELD_Load/15T/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602395 launched_at=2026-09-28T23:49:25.982222+00:00
+[30/90] fine-tune ts_icl on EWELD_Load/15T/short
+[2026-09-28 23:49:26 UTC] resources selected_device {"device": "cuda", "model": "ts_icl", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/ts_icl/Finland_Traffic/15T/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602395 launched_at=2026-09-28T23:50:28.638568+00:00
+[31/90] fine-tune ts_icl on Finland_Traffic/15T/long
+[2026-09-28 23:50:29 UTC] resources selected_device {"device": "cuda", "model": "ts_icl", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/ts_icl/Finland_Traffic/15T/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602395 launched_at=2026-09-28T23:51:39.401276+00:00
+[32/90] fine-tune ts_icl on Finland_Traffic/15T/medium
+[2026-09-28 23:51:39 UTC] resources selected_device {"device": "cuda", "model": "ts_icl", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/ts_icl/Finland_Traffic/15T/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602395 launched_at=2026-09-28T23:52:43.142005+00:00
+[33/90] fine-tune ts_icl on Finland_Traffic/15T/short
+[2026-09-28 23:52:43 UTC] resources selected_device {"device": "cuda", "model": "ts_icl", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/ts_icl/Global_Influenza/W/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602395 launched_at=2026-09-28T23:53:45.690992+00:00
+[34/90] fine-tune ts_icl on Global_Influenza/W/short
+[2026-09-28 23:53:46 UTC] resources selected_device {"device": "cuda", "model": "ts_icl", "stage": "finetune"}

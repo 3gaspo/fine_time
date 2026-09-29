@@ -1,0 +1,17 @@
+/fssmall/home/h61084/codes/fine_time/.venv/lib/python3.12/site-packages/gluonts/json.py:102: UserWarning: Using `json`-module for json-handling. Consider installing one of `orjson`, `ujson` to speed up serialization and deserialization.
+  warnings.warn(
+/fssmall/home/h61084/codes/fine_time/.venv/lib/python3.12/site-packages/gluonts/json.py:102: UserWarning: Using `json`-module for json-handling. Consider installing one of `orjson`, `ujson` to speed up serialization and deserialization.
+  warnings.warn(
+Error executing job with overrides: ['model=chronos_bolt']
+Traceback (most recent call last):
+  File "/fssmall/home/h61084/codes/fine_time/src/scripts/evaluate_fine_time.py", line 76, in main
+    "source_checkpoint": training_manifest["model_config"]["source_checkpoint"],
+                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'source_checkpoint'
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+srun: error: sean0015: task 0: Exited with exit code 1
+2026-09-29 10:30:19 | task model=chronos_bolt states=frozen,task_finetuned target_mode=univariate completed status=failed exit_code=1
+2026-09-29 10:30:19 | stage evaluate completed status=failed exit_code=1
+TIME interrupted-launch recovery launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606312 tasks=0 root=/scratch/users/h61084/codes/fine_time/outputs/task_finetuning
+2026-09-29 10:30:21 | workflow fine_time completed status=failed exit_code=1

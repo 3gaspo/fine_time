@@ -1,0 +1,63 @@
+{
+  "error": {
+    "message": "'ChronosBoltPipeline' object has no attribute 'save_pretrained'",
+    "type": "AttributeError"
+  },
+  "experiment": "task_finetuning",
+  "experiment_config": {
+    "target_mode": "univariate"
+  },
+  "identity": {
+    "dataset": "Australia_Solar/H",
+    "model": "chronos_bolt",
+    "stage": "fine_tuning",
+    "term": "long"
+  },
+  "launch": {
+    "action": "new",
+    "attempts": [
+      {
+        "action": "new",
+        "launch_id": "selena_fine_time_20260928T232415Z_26013",
+        "launched_at": "2026-09-28T23:24:49.893534+00:00",
+        "slurm_array_task_id": null,
+        "slurm_job_id": "3602394"
+      }
+    ],
+    "launch_id": "selena_fine_time_20260928T232415Z_26013",
+    "launched_at": "2026-09-28T23:24:49.893534+00:00",
+    "slurm_job_id": "3602394"
+  },
+  "model_config": {
+    "alias": "chronos_bolt",
+    "training": {
+      "batch_size": 32,
+      "context_length": 2048,
+      "gradient_clip_norm": 1.0,
+      "learning_rate": 1e-05,
+      "min_context": 16,
+      "mode": "full",
+      "steps": 100,
+      "weight": "chronos-bolt-base"
+    }
+  },
+  "pipeline_config": {
+    "prediction_length": 168,
+    "seed": 2021,
+    "test_length": 2520,
+    "training_split": "TIME prefix before validation and test",
+    "validation_length": 2520
+  },
+  "project": "fine_time",
+  "provenance": {
+    "dataset_config": "project default"
+  },
+  "required_artifacts": [],
+  "runtime_config": {
+    "source_checkpoint": "/fslarge/scratch/users/h61084/weights/chronos-bolt-base"
+  },
+  "schema_version": 1,
+  "started_at": "2026-09-28T23:24:49.893534+00:00",
+  "status": "interrupted",
+  "updated_at": "2026-09-28T23:25:03.889713+00:00"
+}

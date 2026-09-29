@@ -1,0 +1,167 @@
+{
+  "artifact_metadata": {
+    "evaluation": {
+      "adaptation": {
+        "source_checkpoint": "/fslarge/scratch/users/h61084/weights/tsicl/tsicl-v1.ckpt",
+        "state": "frozen"
+      },
+      "context_length": 4096,
+      "covariate_channels": 0,
+      "covariate_mode": "none",
+      "dataset_config": "Water_Quality_Darwin/15T/short",
+      "evaluation_grid": {
+        "definition": "finite_ground_truth_and_seasonal_naive_mase",
+        "source": "/fslarge/scratch/users/h61084/codes/seasonal/outputs/seasonal_naive/evaluations/univariate/Water_Quality_Darwin/15T/short/run_0/evaluation_grid.npz",
+        "total_values": 3780,
+        "valid_values": 3780
+      },
+      "experiment": "task_finetuning",
+      "freq": "15T",
+      "inference_seconds": 90.34299541637301,
+      "instance_normalization": "none",
+      "metric_names": [
+        "MSE",
+        "MAE",
+        "RMSE",
+        "MAPE",
+        "sMAPE",
+        "MASE",
+        "ND",
+        "CRPS"
+      ],
+      "metrics_summary_file": "metrics_summary.json",
+      "model": "ts_icl",
+      "model_size": "tsicl-v1",
+      "num_model_inputs": 3780,
+      "num_quantiles": 9,
+      "num_series": 7,
+      "num_variates": 6,
+      "num_windows": 90,
+      "prediction_length": 16,
+      "prediction_outputs": {
+        "cells_with_nan": 0,
+        "evaluation_nan_rate": 0.0,
+        "evaluation_nan_values": 0,
+        "evaluation_values": 544158,
+        "nan_rate": 0.0,
+        "nan_values": 0,
+        "total_cells": 3780,
+        "total_values": 544320
+      },
+      "prediction_scale_factor": 1.0,
+      "quantile_levels": [
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7,
+        0.8,
+        0.9
+      ],
+      "seasonality": 96,
+      "target_mode": "univariate"
+    }
+  },
+  "completed_at": "2026-09-29T11:51:44.646330+00:00",
+  "experiment": "task_finetuning",
+  "experiment_config": {
+    "covariate_channels": 0,
+    "covariate_mode": "none",
+    "instance_normalization": "none"
+  },
+  "identity": {
+    "dataset": "Water_Quality_Darwin",
+    "frequency": "15T",
+    "model": "ts_icl",
+    "target_mode": "univariate",
+    "term": "short"
+  },
+  "launch": {
+    "action": "new",
+    "attempts": [
+      {
+        "action": "new",
+        "launch_id": "selena_fine_time_20260929T092621Z_11326",
+        "launched_at": "2026-09-29T11:51:43.461815+00:00",
+        "slurm_array_task_id": null,
+        "slurm_job_id": "3607389"
+      }
+    ],
+    "launch_id": "selena_fine_time_20260929T092621Z_11326",
+    "launched_at": "2026-09-29T11:51:43.461815+00:00",
+    "slurm_job_id": "3607389"
+  },
+  "model_config": {
+    "adaptation": {
+      "source_checkpoint": "/fslarge/scratch/users/h61084/weights/tsicl/tsicl-v1.ckpt",
+      "state": "frozen"
+    },
+    "context_length": 4096,
+    "model_size": "tsicl-v1",
+    "quantile_levels": [
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9
+    ]
+  },
+  "pipeline_config": {
+    "evaluation_grid": {
+      "definition": "finite_ground_truth_and_seasonal_naive_mase",
+      "producer": {
+        "completed_at": "2026-09-25T21:33:40.494326+00:00",
+        "identity": {
+          "dataset": "Water_Quality_Darwin",
+          "frequency": "15T",
+          "model": "seasonal_naive",
+          "target_mode": "univariate",
+          "term": "short"
+        },
+        "run": "run_0"
+      }
+    },
+    "nan_policy": "omit_nan_predictions_report_counts_reject_infinity",
+    "prediction_length": 16,
+    "raw_inference": {
+      "completed_at": "2026-09-29T11:51:43.455315+00:00",
+      "identity": {
+        "dataset": "Water_Quality_Darwin",
+        "frequency": "15T",
+        "model": "ts_icl",
+        "target_mode": "univariate",
+        "term": "short"
+      },
+      "run": "run_0"
+    },
+    "seasonality": 96,
+    "test_length": 1440,
+    "windows": 90
+  },
+  "project": "fine_time",
+  "provenance": {
+    "dataset_config_path": null,
+    "evaluation_grid": "/fslarge/scratch/users/h61084/codes/seasonal/outputs/seasonal_naive/evaluations/univariate/Water_Quality_Darwin/15T/short/run_0/evaluation_grid.npz",
+    "raw_inference_manifest": "/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/tasks/inference/ts_icl/univariate/Water_Quality_Darwin/15T/short/run_0/manifest.json"
+  },
+  "required_artifacts": [
+    "predictions.npz",
+    "metrics.npz",
+    "metrics_summary.json"
+  ],
+  "runtime_config": {
+    "batch_size": 32,
+    "checkpoint_path": "/fslarge/scratch/users/h61084/weights/tsicl/tsicl-v1.ckpt",
+    "device": "cuda"
+  },
+  "schema_version": 1,
+  "started_at": "2026-09-29T11:51:43.461815+00:00",
+  "status": "completed",
+  "updated_at": "2026-09-29T11:51:44.646330+00:00"
+}

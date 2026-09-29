@@ -1,0 +1,167 @@
+{
+  "artifact_metadata": {
+    "evaluation": {
+      "adaptation": {
+        "source_checkpoint": "/fslarge/scratch/users/h61084/weights/chronos-bolt-base",
+        "state": "frozen"
+      },
+      "context_length": 2048,
+      "covariate_channels": 0,
+      "covariate_mode": "none",
+      "dataset_config": "ECDC_COVID/D/short",
+      "evaluation_grid": {
+        "definition": "finite_ground_truth_and_seasonal_naive_mase",
+        "source": "/fslarge/scratch/users/h61084/codes/seasonal/outputs/seasonal_naive/evaluations/univariate/ECDC_COVID/D/short/run_0/evaluation_grid.npz",
+        "total_values": 45,
+        "valid_values": 45
+      },
+      "experiment": "task_finetuning",
+      "freq": "D",
+      "inference_seconds": 0.047824405948631465,
+      "instance_normalization": "none",
+      "metric_names": [
+        "MSE",
+        "MAE",
+        "RMSE",
+        "MAPE",
+        "sMAPE",
+        "MASE",
+        "ND",
+        "CRPS"
+      ],
+      "metrics_summary_file": "metrics_summary.json",
+      "model": "chronos_bolt",
+      "model_size": "base",
+      "num_model_inputs": 45,
+      "num_quantiles": 9,
+      "num_series": 9,
+      "num_variates": 1,
+      "num_windows": 5,
+      "prediction_length": 30,
+      "prediction_outputs": {
+        "cells_with_nan": 0,
+        "evaluation_nan_rate": 0.0,
+        "evaluation_nan_values": 0,
+        "evaluation_values": 10980,
+        "nan_rate": 0.0,
+        "nan_values": 0,
+        "total_cells": 45,
+        "total_values": 12150
+      },
+      "prediction_scale_factor": 1.0,
+      "quantile_levels": [
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7,
+        0.8,
+        0.9
+      ],
+      "seasonality": 1,
+      "target_mode": "univariate"
+    }
+  },
+  "completed_at": "2026-09-29T10:55:29.834151+00:00",
+  "experiment": "task_finetuning",
+  "experiment_config": {
+    "covariate_channels": 0,
+    "covariate_mode": "none",
+    "instance_normalization": "none"
+  },
+  "identity": {
+    "dataset": "ECDC_COVID",
+    "frequency": "D",
+    "model": "chronos_bolt",
+    "target_mode": "univariate",
+    "term": "short"
+  },
+  "launch": {
+    "action": "new",
+    "attempts": [
+      {
+        "action": "new",
+        "launch_id": "selena_fine_time_20260929T092621Z_11326",
+        "launched_at": "2026-09-29T10:55:29.813229+00:00",
+        "slurm_array_task_id": null,
+        "slurm_job_id": "3607388"
+      }
+    ],
+    "launch_id": "selena_fine_time_20260929T092621Z_11326",
+    "launched_at": "2026-09-29T10:55:29.813229+00:00",
+    "slurm_job_id": "3607388"
+  },
+  "model_config": {
+    "adaptation": {
+      "source_checkpoint": "/fslarge/scratch/users/h61084/weights/chronos-bolt-base",
+      "state": "frozen"
+    },
+    "context_length": 2048,
+    "model_size": "base",
+    "quantile_levels": [
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9
+    ]
+  },
+  "pipeline_config": {
+    "evaluation_grid": {
+      "definition": "finite_ground_truth_and_seasonal_naive_mase",
+      "producer": {
+        "completed_at": "2026-09-25T21:43:37.396849+00:00",
+        "identity": {
+          "dataset": "ECDC_COVID",
+          "frequency": "D",
+          "model": "seasonal_naive",
+          "target_mode": "univariate",
+          "term": "short"
+        },
+        "run": "run_0"
+      }
+    },
+    "nan_policy": "omit_nan_predictions_report_counts_reject_infinity",
+    "prediction_length": 30,
+    "raw_inference": {
+      "completed_at": "2026-09-29T10:55:29.806991+00:00",
+      "identity": {
+        "dataset": "ECDC_COVID",
+        "frequency": "D",
+        "model": "chronos_bolt",
+        "target_mode": "univariate",
+        "term": "short"
+      },
+      "run": "run_0"
+    },
+    "seasonality": 1,
+    "test_length": 150,
+    "windows": 5
+  },
+  "project": "fine_time",
+  "provenance": {
+    "dataset_config_path": null,
+    "evaluation_grid": "/fslarge/scratch/users/h61084/codes/seasonal/outputs/seasonal_naive/evaluations/univariate/ECDC_COVID/D/short/run_0/evaluation_grid.npz",
+    "raw_inference_manifest": "/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/tasks/inference/chronos_bolt/univariate/ECDC_COVID/D/short/run_0/manifest.json"
+  },
+  "required_artifacts": [
+    "predictions.npz",
+    "metrics.npz",
+    "metrics_summary.json"
+  ],
+  "runtime_config": {
+    "batch_size": 32,
+    "checkpoint_path": "/fslarge/scratch/users/h61084/weights/chronos-bolt-base",
+    "device": "cuda"
+  },
+  "schema_version": 1,
+  "started_at": "2026-09-29T10:55:29.813229+00:00",
+  "status": "completed",
+  "updated_at": "2026-09-29T10:55:29.834151+00:00"
+}

@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "selections": [
+    {
+      "mode": "auto",
+      "run": "run_0",
+      "scientific_config": {
+        "experiment_config": {
+          "covariate_channels": 0,
+          "covariate_mode": "none",
+          "instance_normalization": "none"
+        },
+        "model_config": {
+          "adaptation": {
+            "seed": 2021,
+            "source_checkpoint": "/fslarge/scratch/users/h61084/weights/chronos-bolt-base",
+            "state": "task_finetuned",
+            "training_config": {
+              "batch_size": 32,
+              "context_length": 2048,
+              "gradient_clip_norm": 1.0,
+              "learning_rate": 1e-05,
+              "min_context": 16,
+              "mode": "full",
+              "steps": 100,
+              "weight": "chronos-bolt-base"
+            },
+            "training_implementation": "source-adapted native Chronos-Bolt quantile loss",
+            "training_manifest": "/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/SG_PM25/H/short/run_0/manifest.json"
+          },
+          "context_length": 2048,
+          "model_size": "base",
+          "quantile_levels": [
+            0.1,
+            0.2,
+            0.3,
+            0.4,
+            0.5,
+            0.6,
+            0.7,
+            0.8,
+            0.9
+          ]
+        },
+        "pipeline_config": {
+          "evaluation_grid": {
+            "definition": "finite_ground_truth_and_seasonal_naive_mase",
+            "producer": {
+              "completed_at": "2026-09-25T21:40:20.548494+00:00",
+              "identity": {
+                "dataset": "SG_PM25",
+                "frequency": "H",
+                "model": "seasonal_naive",
+                "target_mode": "univariate",
+                "term": "short"
+              },
+              "run": "run_0"
+            }
+          },
+          "nan_policy": "omit_nan_predictions_report_counts_reject_infinity",
+          "prediction_length": 24,
+          "raw_inference": {
+            "completed_at": "2026-09-29T11:00:20.035642+00:00",
+            "identity": {
+              "dataset": "SG_PM25",
+              "frequency": "H",
+              "model": "chronos_bolt",
+              "target_mode": "univariate",
+              "term": "short"
+            },
+            "run": "run_1"
+          },
+          "seasonality": 24,
+          "test_length": 2208,
+          "windows": 92
+        }
+      }
+    }
+  ]
+}

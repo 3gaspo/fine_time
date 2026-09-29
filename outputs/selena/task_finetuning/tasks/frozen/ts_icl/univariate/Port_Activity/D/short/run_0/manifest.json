@@ -1,0 +1,167 @@
+{
+  "artifact_metadata": {
+    "evaluation": {
+      "adaptation": {
+        "source_checkpoint": "/fslarge/scratch/users/h61084/weights/tsicl/tsicl-v1.ckpt",
+        "state": "frozen"
+      },
+      "context_length": 4096,
+      "covariate_channels": 0,
+      "covariate_mode": "none",
+      "dataset_config": "Port_Activity/D/short",
+      "evaluation_grid": {
+        "definition": "finite_ground_truth_and_seasonal_naive_mase",
+        "source": "/fslarge/scratch/users/h61084/codes/seasonal/outputs/seasonal_naive/evaluations/univariate/Port_Activity/D/short/run_0/evaluation_grid.npz",
+        "total_values": 2376,
+        "valid_values": 2376
+      },
+      "experiment": "task_finetuning",
+      "freq": "D",
+      "inference_seconds": 40.89814984053373,
+      "instance_normalization": "none",
+      "metric_names": [
+        "MSE",
+        "MAE",
+        "RMSE",
+        "MAPE",
+        "sMAPE",
+        "MASE",
+        "ND",
+        "CRPS"
+      ],
+      "metrics_summary_file": "metrics_summary.json",
+      "model": "ts_icl",
+      "model_size": "tsicl-v1",
+      "num_model_inputs": 2376,
+      "num_quantiles": 9,
+      "num_series": 99,
+      "num_variates": 2,
+      "num_windows": 12,
+      "prediction_length": 30,
+      "prediction_outputs": {
+        "cells_with_nan": 0,
+        "evaluation_nan_rate": 0.0,
+        "evaluation_nan_values": 0,
+        "evaluation_values": 641520,
+        "nan_rate": 0.0,
+        "nan_values": 0,
+        "total_cells": 2376,
+        "total_values": 641520
+      },
+      "prediction_scale_factor": 10.0,
+      "quantile_levels": [
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7,
+        0.8,
+        0.9
+      ],
+      "seasonality": 1,
+      "target_mode": "univariate"
+    }
+  },
+  "completed_at": "2026-09-29T11:26:06.059216+00:00",
+  "experiment": "task_finetuning",
+  "experiment_config": {
+    "covariate_channels": 0,
+    "covariate_mode": "none",
+    "instance_normalization": "none"
+  },
+  "identity": {
+    "dataset": "Port_Activity",
+    "frequency": "D",
+    "model": "ts_icl",
+    "target_mode": "univariate",
+    "term": "short"
+  },
+  "launch": {
+    "action": "new",
+    "attempts": [
+      {
+        "action": "new",
+        "launch_id": "selena_fine_time_20260929T092621Z_11326",
+        "launched_at": "2026-09-29T11:26:05.421421+00:00",
+        "slurm_array_task_id": null,
+        "slurm_job_id": "3607389"
+      }
+    ],
+    "launch_id": "selena_fine_time_20260929T092621Z_11326",
+    "launched_at": "2026-09-29T11:26:05.421421+00:00",
+    "slurm_job_id": "3607389"
+  },
+  "model_config": {
+    "adaptation": {
+      "source_checkpoint": "/fslarge/scratch/users/h61084/weights/tsicl/tsicl-v1.ckpt",
+      "state": "frozen"
+    },
+    "context_length": 4096,
+    "model_size": "tsicl-v1",
+    "quantile_levels": [
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9
+    ]
+  },
+  "pipeline_config": {
+    "evaluation_grid": {
+      "definition": "finite_ground_truth_and_seasonal_naive_mase",
+      "producer": {
+        "completed_at": "2026-09-25T21:43:21.912949+00:00",
+        "identity": {
+          "dataset": "Port_Activity",
+          "frequency": "D",
+          "model": "seasonal_naive",
+          "target_mode": "univariate",
+          "term": "short"
+        },
+        "run": "run_0"
+      }
+    },
+    "nan_policy": "omit_nan_predictions_report_counts_reject_infinity",
+    "prediction_length": 30,
+    "raw_inference": {
+      "completed_at": "2026-09-29T11:26:05.414952+00:00",
+      "identity": {
+        "dataset": "Port_Activity",
+        "frequency": "D",
+        "model": "ts_icl",
+        "target_mode": "univariate",
+        "term": "short"
+      },
+      "run": "run_0"
+    },
+    "seasonality": 1,
+    "test_length": 365,
+    "windows": 12
+  },
+  "project": "fine_time",
+  "provenance": {
+    "dataset_config_path": null,
+    "evaluation_grid": "/fslarge/scratch/users/h61084/codes/seasonal/outputs/seasonal_naive/evaluations/univariate/Port_Activity/D/short/run_0/evaluation_grid.npz",
+    "raw_inference_manifest": "/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/tasks/inference/ts_icl/univariate/Port_Activity/D/short/run_0/manifest.json"
+  },
+  "required_artifacts": [
+    "predictions.npz",
+    "metrics.npz",
+    "metrics_summary.json"
+  ],
+  "runtime_config": {
+    "batch_size": 32,
+    "checkpoint_path": "/fslarge/scratch/users/h61084/weights/tsicl/tsicl-v1.ckpt",
+    "device": "cuda"
+  },
+  "schema_version": 1,
+  "started_at": "2026-09-29T11:26:05.421421+00:00",
+  "status": "completed",
+  "updated_at": "2026-09-29T11:26:06.059216+00:00"
+}

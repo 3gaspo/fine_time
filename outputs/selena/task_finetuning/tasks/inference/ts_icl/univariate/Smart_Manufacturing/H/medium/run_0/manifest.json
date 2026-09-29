@@ -1,0 +1,74 @@
+{
+  "completed_at": "2026-09-29T11:46:20.563494+00:00",
+  "experiment": "task_finetuning_raw_inference",
+  "experiment_config": {
+    "covariate_channels": 0,
+    "covariate_mode": "none",
+    "instance_normalization": "none"
+  },
+  "identity": {
+    "dataset": "Smart_Manufacturing",
+    "frequency": "H",
+    "model": "ts_icl",
+    "target_mode": "univariate",
+    "term": "medium"
+  },
+  "launch": {
+    "action": "new",
+    "attempts": [
+      {
+        "action": "new",
+        "launch_id": "selena_fine_time_20260929T092621Z_11326",
+        "launched_at": "2026-09-29T11:46:15.437163+00:00",
+        "slurm_array_task_id": null,
+        "slurm_job_id": "3607389"
+      }
+    ],
+    "launch_id": "selena_fine_time_20260929T092621Z_11326",
+    "launched_at": "2026-09-29T11:46:15.437163+00:00",
+    "slurm_job_id": "3607389"
+  },
+  "model_config": {
+    "adaptation": {
+      "source_checkpoint": "/fslarge/scratch/users/h61084/weights/tsicl/tsicl-v1.ckpt",
+      "state": "frozen"
+    },
+    "context_length": 4096,
+    "model_size": "tsicl-v1",
+    "quantile_levels": [
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9
+    ]
+  },
+  "pipeline_config": {
+    "covariate_mode": "none",
+    "prediction_length": 168,
+    "target_mode": "univariate",
+    "test_length": 336,
+    "windows": 2
+  },
+  "project": "fine_time",
+  "provenance": {
+    "dataset_config_path": null
+  },
+  "required_artifacts": [
+    "raw_predictions.npz",
+    "inference.json"
+  ],
+  "runtime_config": {
+    "batch_size": 32,
+    "checkpoint_path": "/fslarge/scratch/users/h61084/weights/tsicl/tsicl-v1.ckpt",
+    "device": "cuda"
+  },
+  "schema_version": 1,
+  "started_at": "2026-09-29T11:46:15.437163+00:00",
+  "status": "completed",
+  "updated_at": "2026-09-29T11:46:20.563494+00:00"
+}

@@ -1,0 +1,552 @@
+[2026-09-28 23:24:18 UTC] resources allocation {"CUDA_VISIBLE_DEVICES": "0", "SLURM_CPUS_PER_TASK": "8", "SLURM_JOB_GPUS": "0,1,2,3", "SLURM_JOB_ID": "3602393", "SLURM_MEM_PER_CPU": "unset", "SLURM_MEM_PER_NODE": "80000", "SLURM_STEP_GPUS": "0", "SLURM_STEP_ID": "0", "TIME_DEVICE": "unset", "cpu_count": 8, "host": "sean0011"}
+[2026-09-28 23:24:18 UTC] resources RAM {"MemAvailable_MiB": 371366.24609375, "MemTotal_MiB": 386622.8671875, "cgroup_reason": "memory.max is unlimited", "cgroup_status": "unlimited"}
+[2026-09-28 23:24:18 UTC] resources nvidia_inventory {"columns": "index,uuid,name,driver,total_MiB,free_MiB,used_MiB", "devices": ["0, GPU-b6080839-b470-20b0-cf65-805869e2c982, NVIDIA H100 NVL, 560.35.05, 95830, 95350, 1"]}
+[2026-09-28 23:24:28 UTC] resources torch {"cuda_available": true, "note": "visibility probe; CPU-only stages need not use an allocated GPU", "version": "2.9.1+cu128", "visible_gpu_count": 1}
+[2026-09-28 23:24:28 UTC] resources cuda_device {"capability": "9.0", "free_MiB": 94825.125, "logical_index": 0, "name": "NVIDIA H100 NVL", "total_MiB": 95350.1875}
+2026-09-29 01:24:29 | workflow fine_time started launch_id=selena_fine_time_20260928T232415Z_26013 task=chronos2 slurm_job_id=3602393 slurm_array_job_id=none slurm_array_task_id=none
+2026-09-29 01:24:29 | stage train started
+2026-09-29 01:24:29 | task model=chronos2 independent_per_task_fine_tuning=true profile=small started
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Australia_Solar/H/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:24:49.888141+00:00
+[1/90] fine-tune chronos2 on Australia_Solar/H/long
+[2026-09-28 23:24:49 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '2.617', 'grad_norm': '17', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '14.17', 'train_samples_per_second': '225.9', 'train_steps_per_second': '7.059', 'train_loss': '2.617', 'epoch': '1'}
+[2026-09-29 01:25:07,135][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Australia_Solar/H/long/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Australia_Solar/H/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:25:07.147908+00:00
+[2/90] fine-tune chronos2 on Australia_Solar/H/medium
+[2026-09-28 23:25:07 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '2.307', 'grad_norm': '18.2', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '13.19', 'train_samples_per_second': '242.6', 'train_steps_per_second': '7.581', 'train_loss': '2.307', 'epoch': '1'}
+[2026-09-29 01:25:22,103][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Australia_Solar/H/medium/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Australia_Solar/H/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:25:22.112665+00:00
+[3/90] fine-tune chronos2 on Australia_Solar/H/short
+[2026-09-28 23:25:22 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '1.551', 'grad_norm': '21.26', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '13.26', 'train_samples_per_second': '241.4', 'train_steps_per_second': '7.542', 'train_loss': '1.551', 'epoch': '1'}
+[2026-09-29 01:25:37,134][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Australia_Solar/H/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Auto_Production_SF/M/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:25:37.144430+00:00
+[4/90] fine-tune chronos2 on Auto_Production_SF/M/short
+[2026-09-28 23:25:37 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '2.217', 'grad_norm': '18.38', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '4.588', 'train_samples_per_second': '697.4', 'train_steps_per_second': '21.8', 'train_loss': '2.217', 'epoch': '1'}
+[2026-09-29 01:25:43,467][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Auto_Production_SF/M/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/CPHL/15T/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:25:43.476712+00:00
+[5/90] fine-tune chronos2 on CPHL/15T/long
+[2026-09-28 23:25:43 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '7.58', 'grad_norm': '36.93', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '11.79', 'train_samples_per_second': '271.4', 'train_steps_per_second': '8.482', 'train_loss': '7.58', 'epoch': '1'}
+[2026-09-29 01:25:57,038][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/CPHL/15T/long/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/CPHL/15T/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:25:57.047520+00:00
+[6/90] fine-tune chronos2 on CPHL/15T/medium
+[2026-09-28 23:25:57 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '6.509', 'grad_norm': '26.04', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '11.62', 'train_samples_per_second': '275.5', 'train_steps_per_second': '8.608', 'train_loss': '6.509', 'epoch': '1'}
+[2026-09-29 01:26:10,356][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/CPHL/15T/medium/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/CPHL/15T/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:26:10.365176+00:00
+[7/90] fine-tune chronos2 on CPHL/15T/short
+[2026-09-28 23:26:10 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '2.974', 'grad_norm': '22.54', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '11.82', 'train_samples_per_second': '270.7', 'train_steps_per_second': '8.458', 'train_loss': '2.974', 'epoch': '1'}
+[2026-09-29 01:26:23,870][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/CPHL/15T/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/CPHL/30T/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:26:23.878865+00:00
+[8/90] fine-tune chronos2 on CPHL/30T/long
+[2026-09-28 23:26:23 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '5.349', 'grad_norm': '29.08', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '13.31', 'train_samples_per_second': '240.3', 'train_steps_per_second': '7.511', 'train_loss': '5.349', 'epoch': '1'}
+[2026-09-29 01:26:38,872][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/CPHL/30T/long/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/CPHL/30T/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:26:38.880564+00:00
+[9/90] fine-tune chronos2 on CPHL/30T/medium
+[2026-09-28 23:26:38 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '4.5', 'grad_norm': '19.99', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '13.19', 'train_samples_per_second': '242.7', 'train_steps_per_second': '7.583', 'train_loss': '4.5', 'epoch': '1'}
+[2026-09-29 01:26:53,712][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/CPHL/30T/medium/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/CPHL/30T/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:26:53.721082+00:00
+[10/90] fine-tune chronos2 on CPHL/30T/short
+[2026-09-28 23:26:53 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '3.041', 'grad_norm': '30.62', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '13.31', 'train_samples_per_second': '240.4', 'train_steps_per_second': '7.511', 'train_loss': '3.041', 'epoch': '1'}
+[2026-09-29 01:27:08,707][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/CPHL/30T/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/CPHL/H/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:27:08.715583+00:00
+[11/90] fine-tune chronos2 on CPHL/H/long
+[2026-09-28 23:27:08 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '7.928', 'grad_norm': '35.05', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '10.33', 'train_samples_per_second': '309.8', 'train_steps_per_second': '9.683', 'train_loss': '7.928', 'epoch': '1'}
+[2026-09-29 01:27:20,707][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/CPHL/H/long/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/CPHL/H/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:27:20.715245+00:00
+[12/90] fine-tune chronos2 on CPHL/H/medium
+[2026-09-28 23:27:20 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '7.066', 'grad_norm': '30.44', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '10.54', 'train_samples_per_second': '303.6', 'train_steps_per_second': '9.488', 'train_loss': '7.066', 'epoch': '1'}
+[2026-09-29 01:27:32,916][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/CPHL/H/medium/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/CPHL/H/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:27:32.924571+00:00
+[13/90] fine-tune chronos2 on CPHL/H/short
+[2026-09-28 23:27:32 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '4.317', 'grad_norm': '24.21', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '10.55', 'train_samples_per_second': '303.3', 'train_steps_per_second': '9.477', 'train_loss': '4.317', 'epoch': '1'}
+[2026-09-29 01:27:45,148][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/CPHL/H/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Coastal_T_S/15T/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:27:45.157215+00:00
+[14/90] fine-tune chronos2 on Coastal_T_S/15T/long
+[2026-09-28 23:27:45 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '6.338', 'grad_norm': '20.28', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '14.01', 'train_samples_per_second': '228.4', 'train_steps_per_second': '7.138', 'train_loss': '6.338', 'epoch': '1'}
+[2026-09-29 01:28:00,883][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Coastal_T_S/15T/long/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Coastal_T_S/15T/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:28:00.891898+00:00
+[15/90] fine-tune chronos2 on Coastal_T_S/15T/medium
+[2026-09-28 23:28:00 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '5.497', 'grad_norm': '26.88', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '13.7', 'train_samples_per_second': '233.6', 'train_steps_per_second': '7.299', 'train_loss': '5.497', 'epoch': '1'}
+[2026-09-29 01:28:16,258][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Coastal_T_S/15T/medium/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Coastal_T_S/15T/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:28:16.266885+00:00
+[16/90] fine-tune chronos2 on Coastal_T_S/15T/short
+[2026-09-28 23:28:16 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '3.305', 'grad_norm': '18.38', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '13.6', 'train_samples_per_second': '235.2', 'train_steps_per_second': '7.351', 'train_loss': '3.305', 'epoch': '1'}
+[2026-09-29 01:28:31,540][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Coastal_T_S/15T/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Coastal_T_S/20T/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:28:31.549436+00:00
+[17/90] fine-tune chronos2 on Coastal_T_S/20T/long
+[2026-09-28 23:28:31 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '4.033', 'grad_norm': '36.73', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '9.493', 'train_samples_per_second': '337.1', 'train_steps_per_second': '10.53', 'train_loss': '4.033', 'epoch': '1'}
+[2026-09-29 01:28:42,698][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Coastal_T_S/20T/long/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Coastal_T_S/20T/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:28:42.707148+00:00
+[18/90] fine-tune chronos2 on Coastal_T_S/20T/medium
+[2026-09-28 23:28:42 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '2.928', 'grad_norm': '40.81', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '9.363', 'train_samples_per_second': '341.8', 'train_steps_per_second': '10.68', 'train_loss': '2.928', 'epoch': '1'}
+[2026-09-29 01:28:53,725][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Coastal_T_S/20T/medium/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Coastal_T_S/20T/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:28:53.734268+00:00
+[19/90] fine-tune chronos2 on Coastal_T_S/20T/short
+[2026-09-28 23:28:53 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '0.8938', 'grad_norm': '36.06', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '9.389', 'train_samples_per_second': '340.8', 'train_steps_per_second': '10.65', 'train_loss': '0.8938', 'epoch': '1'}
+[2026-09-29 01:29:04,770][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Coastal_T_S/20T/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Coastal_T_S/H/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:29:04.779181+00:00
+[20/90] fine-tune chronos2 on Coastal_T_S/H/long
+[2026-09-28 23:29:04 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '7.346', 'grad_norm': '52.99', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '9.799', 'train_samples_per_second': '326.6', 'train_steps_per_second': '10.21', 'train_loss': '7.346', 'epoch': '1'}
+[2026-09-29 01:29:16,260][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Coastal_T_S/H/long/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Coastal_T_S/H/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:29:16.268860+00:00
+[21/90] fine-tune chronos2 on Coastal_T_S/H/medium
+[2026-09-28 23:29:16 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '5.726', 'grad_norm': '32.86', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '9.828', 'train_samples_per_second': '325.6', 'train_steps_per_second': '10.18', 'train_loss': '5.726', 'epoch': '1'}
+[2026-09-29 01:29:27,770][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Coastal_T_S/H/medium/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Coastal_T_S/H/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:29:27.778586+00:00
+[22/90] fine-tune chronos2 on Coastal_T_S/H/short
+[2026-09-28 23:29:27 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '2.777', 'grad_norm': '28.96', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '9.868', 'train_samples_per_second': '324.3', 'train_steps_per_second': '10.13', 'train_loss': '2.777', 'epoch': '1'}
+[2026-09-29 01:29:39,319][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Coastal_T_S/H/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Commodity_Import/M/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:29:39.328307+00:00
+[23/90] fine-tune chronos2 on Commodity_Import/M/short
+[2026-09-28 23:29:39 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '4.785', 'grad_norm': '28.26', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '5.351', 'train_samples_per_second': '598', 'train_steps_per_second': '18.69', 'train_loss': '4.785', 'epoch': '1'}
+[2026-09-29 01:29:46,350][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Commodity_Import/M/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Commodity_Production/M/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:29:46.359307+00:00
+[24/90] fine-tune chronos2 on Commodity_Production/M/short
+[2026-09-28 23:29:46 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '5.279', 'grad_norm': '60.54', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '4.846', 'train_samples_per_second': '660.4', 'train_steps_per_second': '20.64', 'train_loss': '5.279', 'epoch': '1'}
+[2026-09-29 01:29:52,855][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Commodity_Production/M/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Crypto/D/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:29:52.863919+00:00
+[25/90] fine-tune chronos2 on Crypto/D/short
+[2026-09-28 23:29:52 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '2.217', 'grad_norm': '32.26', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '5.297', 'train_samples_per_second': '604.1', 'train_steps_per_second': '18.88', 'train_loss': '2.217', 'epoch': '1'}
+[2026-09-29 01:29:59,782][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Crypto/D/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/ECDC_COVID/D/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:29:59.790987+00:00
+[26/90] fine-tune chronos2 on ECDC_COVID/D/short
+[2026-09-28 23:29:59 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '3.571', 'grad_norm': '97.29', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '4.586', 'train_samples_per_second': '697.8', 'train_steps_per_second': '21.8', 'train_loss': '3.571', 'epoch': '1'}
+[2026-09-29 01:30:06,005][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/ECDC_COVID/D/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/ECDC_COVID/W/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:30:06.014639+00:00
+[27/90] fine-tune chronos2 on ECDC_COVID/W/short
+[2026-09-28 23:30:06 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '8.661', 'grad_norm': '100.1', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '4.573', 'train_samples_per_second': '699.7', 'train_steps_per_second': '21.87', 'train_loss': '8.661', 'epoch': '1'}
+[2026-09-29 01:30:12,210][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/ECDC_COVID/W/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/EWELD_Load/15T/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:30:12.219880+00:00
+[28/90] fine-tune chronos2 on EWELD_Load/15T/long
+[2026-09-28 23:30:12 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '4.752', 'grad_norm': '20.76', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '14.34', 'train_samples_per_second': '223.1', 'train_steps_per_second': '6.972', 'train_loss': '4.752', 'epoch': '1'}
+[2026-09-29 01:30:28,247][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/EWELD_Load/15T/long/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/EWELD_Load/15T/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:30:28.256381+00:00
+[29/90] fine-tune chronos2 on EWELD_Load/15T/medium
+[2026-09-28 23:30:28 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '3.851', 'grad_norm': '29.52', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '13.64', 'train_samples_per_second': '234.6', 'train_steps_per_second': '7.332', 'train_loss': '3.851', 'epoch': '1'}
+[2026-09-29 01:30:43,624][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/EWELD_Load/15T/medium/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/EWELD_Load/15T/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:30:43.635231+00:00
+[30/90] fine-tune chronos2 on EWELD_Load/15T/short
+[2026-09-28 23:30:43 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '2.241', 'grad_norm': '57.98', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '13.76', 'train_samples_per_second': '232.5', 'train_steps_per_second': '7.266', 'train_loss': '2.241', 'epoch': '1'}
+[2026-09-29 01:30:59,160][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/EWELD_Load/15T/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Finland_Traffic/15T/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:30:59.170105+00:00
+[31/90] fine-tune chronos2 on Finland_Traffic/15T/long
+[2026-09-28 23:30:59 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '1.813', 'grad_norm': '5.081', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '14.79', 'train_samples_per_second': '216.4', 'train_steps_per_second': '6.762', 'train_loss': '1.813', 'epoch': '1'}
+[2026-09-29 01:31:15,733][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Finland_Traffic/15T/long/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Finland_Traffic/15T/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:31:15.741732+00:00
+[32/90] fine-tune chronos2 on Finland_Traffic/15T/medium
+[2026-09-28 23:31:15 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '1.63', 'grad_norm': '13.48', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '13.83', 'train_samples_per_second': '231.4', 'train_steps_per_second': '7.231', 'train_loss': '1.63', 'epoch': '1'}
+[2026-09-29 01:31:31,286][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Finland_Traffic/15T/medium/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Finland_Traffic/15T/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:31:31.294660+00:00
+[33/90] fine-tune chronos2 on Finland_Traffic/15T/short
+[2026-09-28 23:31:31 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '1.41', 'grad_norm': '20.96', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '13.64', 'train_samples_per_second': '234.6', 'train_steps_per_second': '7.332', 'train_loss': '1.41', 'epoch': '1'}
+[2026-09-29 01:31:46,783][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Finland_Traffic/15T/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Global_Influenza/W/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:31:46.793084+00:00
+[34/90] fine-tune chronos2 on Global_Influenza/W/short
+[2026-09-28 23:31:46 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '6.929', 'grad_norm': '55.22', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '4.823', 'train_samples_per_second': '663.5', 'train_steps_per_second': '20.73', 'train_loss': '6.929', 'epoch': '1'}
+[2026-09-29 01:31:53,312][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Global_Influenza/W/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Global_Price/Q/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:31:53.321262+00:00
+[35/90] fine-tune chronos2 on Global_Price/Q/short
+[2026-09-28 23:31:53 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '1.623', 'grad_norm': '19.91', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '4.511', 'train_samples_per_second': '709.4', 'train_steps_per_second': '22.17', 'train_loss': '1.623', 'epoch': '1'}
+[2026-09-29 01:31:59,510][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Global_Price/Q/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Housing_Inventory/M/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:31:59.519987+00:00
+[36/90] fine-tune chronos2 on Housing_Inventory/M/short
+[2026-09-28 23:31:59 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '5.303', 'grad_norm': '79.12', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '4.773', 'train_samples_per_second': '670.5', 'train_steps_per_second': '20.95', 'train_loss': '5.303', 'epoch': '1'}
+[2026-09-29 01:32:05,949][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Housing_Inventory/M/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/JOLTS/M/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:32:05.958734+00:00
+[37/90] fine-tune chronos2 on JOLTS/M/short
+[2026-09-28 23:32:05 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '2.918', 'grad_norm': '32.91', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '4.546', 'train_samples_per_second': '704', 'train_steps_per_second': '22', 'train_loss': '2.918', 'epoch': '1'}
+[2026-09-29 01:32:12,145][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/JOLTS/M/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Job_Claims/W/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:32:12.154576+00:00
+[38/90] fine-tune chronos2 on Job_Claims/W/short
+[2026-09-28 23:32:12 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '4.256', 'grad_norm': '84.91', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '4.51', 'train_samples_per_second': '709.6', 'train_steps_per_second': '22.17', 'train_loss': '4.256', 'epoch': '1'}
+[2026-09-29 01:32:18,292][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Job_Claims/W/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/MetroPT-3/5T/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:32:18.302275+00:00
+[39/90] fine-tune chronos2 on MetroPT-3/5T/long
+[2026-09-28 23:32:18 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '6.45', 'grad_norm': '3.737', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '14.04', 'train_samples_per_second': '227.9', 'train_steps_per_second': '7.122', 'train_loss': '6.45', 'epoch': '1'}
+[2026-09-29 01:32:34,015][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/MetroPT-3/5T/long/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/MetroPT-3/5T/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:32:34.023731+00:00
+[40/90] fine-tune chronos2 on MetroPT-3/5T/medium
+[2026-09-28 23:32:34 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '6.367', 'grad_norm': '7.182', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '13.81', 'train_samples_per_second': '231.7', 'train_steps_per_second': '7.241', 'train_loss': '6.367', 'epoch': '1'}
+[2026-09-29 01:32:49,505][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/MetroPT-3/5T/medium/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/MetroPT-3/5T/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:32:49.513602+00:00
+[41/90] fine-tune chronos2 on MetroPT-3/5T/short
+[2026-09-28 23:32:49 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '5.814', 'grad_norm': '16.28', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '13.33', 'train_samples_per_second': '240', 'train_steps_per_second': '7.501', 'train_loss': '5.814', 'epoch': '1'}
+[2026-09-29 01:33:04,552][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/MetroPT-3/5T/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/NE_China_Wind/H/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:33:04.561207+00:00
+[42/90] fine-tune chronos2 on NE_China_Wind/H/long
+[2026-09-28 23:33:04 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '7.29', 'grad_norm': '21.26', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '11.41', 'train_samples_per_second': '280.5', 'train_steps_per_second': '8.766', 'train_loss': '7.29', 'epoch': '1'}
+[2026-09-29 01:33:17,625][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/NE_China_Wind/H/long/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/NE_China_Wind/H/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:33:17.633843+00:00
+[43/90] fine-tune chronos2 on NE_China_Wind/H/medium
+[2026-09-28 23:33:17 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '5.928', 'grad_norm': '33.38', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '11.44', 'train_samples_per_second': '279.8', 'train_steps_per_second': '8.744', 'train_loss': '5.928', 'epoch': '1'}
+[2026-09-29 01:33:30,744][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/NE_China_Wind/H/medium/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/NE_China_Wind/H/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:33:30.753057+00:00
+[44/90] fine-tune chronos2 on NE_China_Wind/H/short
+[2026-09-28 23:33:30 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '3.49', 'grad_norm': '50.68', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '11.47', 'train_samples_per_second': '278.9', 'train_steps_per_second': '8.716', 'train_loss': '3.49', 'epoch': '1'}
+[2026-09-29 01:33:43,889][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/NE_China_Wind/H/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Oil_Price/B/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:33:43.898562+00:00
+[45/90] fine-tune chronos2 on Oil_Price/B/short
+[2026-09-28 23:33:43 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '1.323', 'grad_norm': '17.37', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '6.79', 'train_samples_per_second': '471.3', 'train_steps_per_second': '14.73', 'train_loss': '1.323', 'epoch': '1'}
+[2026-09-29 01:33:52,611][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Oil_Price/B/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Online_Retail_2_UCI/D/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:33:52.620686+00:00
+[46/90] fine-tune chronos2 on Online_Retail_2_UCI/D/short
+[2026-09-28 23:33:52 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '5.124', 'grad_norm': '23.94', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '4.77', 'train_samples_per_second': '670.9', 'train_steps_per_second': '20.96', 'train_loss': '5.124', 'epoch': '1'}
+[2026-09-29 01:33:59,059][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Online_Retail_2_UCI/D/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/OpenElectricity_NEM/5T/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:33:59.068622+00:00
+[47/90] fine-tune chronos2 on OpenElectricity_NEM/5T/long
+[2026-09-28 23:33:59 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '4.794', 'grad_norm': '40.31', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '14.08', 'train_samples_per_second': '227.3', 'train_steps_per_second': '7.103', 'train_loss': '4.794', 'epoch': '1'}
+[2026-09-29 01:34:14,887][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/OpenElectricity_NEM/5T/long/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/OpenElectricity_NEM/5T/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:34:14.896258+00:00
+[48/90] fine-tune chronos2 on OpenElectricity_NEM/5T/medium
+[2026-09-28 23:34:15 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '3.924', 'grad_norm': '36.86', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '13.86', 'train_samples_per_second': '230.9', 'train_steps_per_second': '7.216', 'train_loss': '3.924', 'epoch': '1'}
+[2026-09-29 01:34:30,652][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/OpenElectricity_NEM/5T/medium/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/OpenElectricity_NEM/5T/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:34:30.660815+00:00
+[49/90] fine-tune chronos2 on OpenElectricity_NEM/5T/short
+[2026-09-28 23:34:30 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '1.874', 'grad_norm': '31.74', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '13.87', 'train_samples_per_second': '230.7', 'train_steps_per_second': '7.209', 'train_loss': '1.874', 'epoch': '1'}
+[2026-09-29 01:34:46,296][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/OpenElectricity_NEM/5T/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Port_Activity/D/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:34:46.304684+00:00
+[50/90] fine-tune chronos2 on Port_Activity/D/short
+[2026-09-28 23:34:46 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '7.643', 'grad_norm': '7.795', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '5.061', 'train_samples_per_second': '632.2', 'train_steps_per_second': '19.76', 'train_loss': '7.643', 'epoch': '1'}
+[2026-09-29 01:34:53,057][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Port_Activity/D/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Port_Activity/W/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:34:53.066277+00:00
+[51/90] fine-tune chronos2 on Port_Activity/W/short
+[2026-09-28 23:34:53 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '7.37', 'grad_norm': '20.03', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '4.797', 'train_samples_per_second': '667.1', 'train_steps_per_second': '20.85', 'train_loss': '7.37', 'epoch': '1'}
+[2026-09-29 01:34:59,505][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Port_Activity/W/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/SG_Carpark/15T/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:34:59.515048+00:00
+[52/90] fine-tune chronos2 on SG_Carpark/15T/long
+[2026-09-28 23:34:59 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '3.575', 'grad_norm': '9.107', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '14.43', 'train_samples_per_second': '221.7', 'train_steps_per_second': '6.929', 'train_loss': '3.575', 'epoch': '1'}
+[2026-09-29 01:35:15,905][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/SG_Carpark/15T/long/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/SG_Carpark/15T/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:35:15.914776+00:00
+[53/90] fine-tune chronos2 on SG_Carpark/15T/medium
+[2026-09-28 23:35:16 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '2.854', 'grad_norm': '14.25', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '13.68', 'train_samples_per_second': '233.9', 'train_steps_per_second': '7.309', 'train_loss': '2.854', 'epoch': '1'}
+[2026-09-29 01:35:31,499][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/SG_Carpark/15T/medium/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/SG_Carpark/15T/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:35:31.508656+00:00
+[54/90] fine-tune chronos2 on SG_Carpark/15T/short
+[2026-09-28 23:35:31 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '2.025', 'grad_norm': '29.27', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '13.5', 'train_samples_per_second': '237.1', 'train_steps_per_second': '7.409', 'train_loss': '2.025', 'epoch': '1'}
+[2026-09-29 01:35:46,909][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/SG_Carpark/15T/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/SG_PM25/H/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:35:46.918732+00:00
+[55/90] fine-tune chronos2 on SG_PM25/H/long
+[2026-09-28 23:35:46 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '7.421', 'grad_norm': '13.94', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '13.94', 'train_samples_per_second': '229.5', 'train_steps_per_second': '7.172', 'train_loss': '7.421', 'epoch': '1'}
+[2026-09-29 01:36:02,556][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/SG_PM25/H/long/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/SG_PM25/H/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:36:02.565609+00:00
+[56/90] fine-tune chronos2 on SG_PM25/H/medium
+[2026-09-28 23:36:02 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '6.746', 'grad_norm': '13', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '13.96', 'train_samples_per_second': '229.2', 'train_steps_per_second': '7.164', 'train_loss': '6.746', 'epoch': '1'}
+[2026-09-29 01:36:18,205][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/SG_PM25/H/medium/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/SG_PM25/H/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:36:18.214335+00:00
+[57/90] fine-tune chronos2 on SG_PM25/H/short
+[2026-09-28 23:36:18 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '5.284', 'grad_norm': '16.23', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '13.89', 'train_samples_per_second': '230.4', 'train_steps_per_second': '7.202', 'train_loss': '5.284', 'epoch': '1'}
+[2026-09-29 01:36:33,789][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/SG_PM25/H/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/SG_Weather/D/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:36:33.801001+00:00
+[58/90] fine-tune chronos2 on SG_Weather/D/long
+[2026-09-28 23:36:33 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '6.066', 'grad_norm': '23.51', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '4.959', 'train_samples_per_second': '645.3', 'train_steps_per_second': '20.16', 'train_loss': '6.066', 'epoch': '1'}
+[2026-09-29 01:36:40,419][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/SG_Weather/D/long/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/SG_Weather/D/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:36:40.427611+00:00
+[59/90] fine-tune chronos2 on SG_Weather/D/medium
+[2026-09-28 23:36:40 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '2.97', 'grad_norm': '14.99', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '4.786', 'train_samples_per_second': '668.7', 'train_steps_per_second': '20.9', 'train_loss': '2.97', 'epoch': '1'}
+[2026-09-29 01:36:46,850][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/SG_Weather/D/medium/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/SG_Weather/D/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:36:46.859594+00:00
+[60/90] fine-tune chronos2 on SG_Weather/D/short
+[2026-09-28 23:36:46 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '1.228', 'grad_norm': '7.808', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '4.78', 'train_samples_per_second': '669.4', 'train_steps_per_second': '20.92', 'train_loss': '1.228', 'epoch': '1'}
+[2026-09-29 01:36:53,322][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/SG_Weather/D/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Smart_Manufacturing/H/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:36:53.331416+00:00
+[61/90] fine-tune chronos2 on Smart_Manufacturing/H/long
+[2026-09-28 23:36:53 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '6.743', 'grad_norm': '1.055', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '4.851', 'train_samples_per_second': '659.6', 'train_steps_per_second': '20.61', 'train_loss': '6.743', 'epoch': '1'}
+[2026-09-29 01:36:59,845][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Smart_Manufacturing/H/long/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Smart_Manufacturing/H/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:36:59.854155+00:00
+[62/90] fine-tune chronos2 on Smart_Manufacturing/H/medium
+[2026-09-28 23:36:59 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '6.415', 'grad_norm': '2.137', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '4.828', 'train_samples_per_second': '662.8', 'train_steps_per_second': '20.71', 'train_loss': '6.415', 'epoch': '1'}
+[2026-09-29 01:37:06,500][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Smart_Manufacturing/H/medium/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Smart_Manufacturing/H/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:37:06.509365+00:00
+[63/90] fine-tune chronos2 on Smart_Manufacturing/H/short
+[2026-09-28 23:37:06 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '5.022', 'grad_norm': '4.308', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '4.845', 'train_samples_per_second': '660.5', 'train_steps_per_second': '20.64', 'train_loss': '5.022', 'epoch': '1'}
+[2026-09-29 01:37:13,056][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Smart_Manufacturing/H/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Supply_Chain_Customer/D/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:37:13.065385+00:00
+[64/90] fine-tune chronos2 on Supply_Chain_Customer/D/short
+[2026-09-28 23:37:13 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '4.44', 'grad_norm': '13.79', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '4.712', 'train_samples_per_second': '679.1', 'train_steps_per_second': '21.22', 'train_loss': '4.44', 'epoch': '1'}
+[2026-09-29 01:37:19,431][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Supply_Chain_Customer/D/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Supply_Chain_Location/D/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:37:19.439995+00:00
+[65/90] fine-tune chronos2 on Supply_Chain_Location/D/short
+[2026-09-28 23:37:19 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '4.77', 'grad_norm': '14.53', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '4.639', 'train_samples_per_second': '689.7', 'train_steps_per_second': '21.55', 'train_loss': '4.77', 'epoch': '1'}
+[2026-09-29 01:37:25,745][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Supply_Chain_Location/D/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/US_Labor/M/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:37:25.755061+00:00
+[66/90] fine-tune chronos2 on US_Labor/M/short
+[2026-09-28 23:37:25 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '2.904', 'grad_norm': '48.5', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '4.792', 'train_samples_per_second': '667.8', 'train_steps_per_second': '20.87', 'train_loss': '2.904', 'epoch': '1'}
+[2026-09-29 01:37:32,180][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/US_Labor/M/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/US_Term_Structure/B/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:37:32.189647+00:00
+[67/90] fine-tune chronos2 on US_Term_Structure/B/short
+[2026-09-28 23:37:32 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '0.9132', 'grad_norm': '26.17', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '12.98', 'train_samples_per_second': '246.5', 'train_steps_per_second': '7.702', 'train_loss': '0.9132', 'epoch': '1'}
+[2026-09-29 01:37:46,920][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/US_Term_Structure/B/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Uncertainty_1M/M/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:37:46.929533+00:00
+[68/90] fine-tune chronos2 on Uncertainty_1M/M/short
+[2026-09-28 23:37:46 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '1.544', 'grad_norm': '28.17', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '4.679', 'train_samples_per_second': '683.9', 'train_steps_per_second': '21.37', 'train_loss': '1.544', 'epoch': '1'}
+[2026-09-29 01:37:53,344][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Uncertainty_1M/M/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Vehicle_Sales/M/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:37:53.353670+00:00
+[69/90] fine-tune chronos2 on Vehicle_Sales/M/short
+[2026-09-28 23:37:53 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '3.282', 'grad_norm': '30.91', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '4.514', 'train_samples_per_second': '708.8', 'train_steps_per_second': '22.15', 'train_loss': '3.282', 'epoch': '1'}
+[2026-09-29 01:37:59,492][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Vehicle_Sales/M/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Vehicle_Supply/M/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:37:59.501405+00:00
+[70/90] fine-tune chronos2 on Vehicle_Supply/M/short
+[2026-09-28 23:37:59 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '5.157', 'grad_norm': '33.09', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '4.506', 'train_samples_per_second': '710.2', 'train_steps_per_second': '22.2', 'train_loss': '5.157', 'epoch': '1'}
+[2026-09-29 01:38:05,644][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Vehicle_Supply/M/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/WUI_Global/Q/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:38:05.653990+00:00
+[71/90] fine-tune chronos2 on WUI_Global/Q/short
+[2026-09-28 23:38:05 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '2.021', 'grad_norm': '10.36', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '4.792', 'train_samples_per_second': '667.8', 'train_steps_per_second': '20.87', 'train_loss': '2.021', 'epoch': '1'}
+[2026-09-29 01:38:12,104][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/WUI_Global/Q/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Water_Quality_Darwin/15T/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:38:12.113794+00:00
+[72/90] fine-tune chronos2 on Water_Quality_Darwin/15T/long
+[2026-09-28 23:38:12 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '3.925', 'grad_norm': '58.67', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '13.64', 'train_samples_per_second': '234.6', 'train_steps_per_second': '7.332', 'train_loss': '3.925', 'epoch': '1'}
+[2026-09-29 01:38:27,469][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Water_Quality_Darwin/15T/long/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Water_Quality_Darwin/15T/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:38:27.478114+00:00
+[73/90] fine-tune chronos2 on Water_Quality_Darwin/15T/medium
+[2026-09-28 23:38:27 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '2.77', 'grad_norm': '24.1', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '13.4', 'train_samples_per_second': '238.8', 'train_steps_per_second': '7.462', 'train_loss': '2.77', 'epoch': '1'}
+[2026-09-29 01:38:42,742][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Water_Quality_Darwin/15T/medium/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Water_Quality_Darwin/15T/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:38:42.751244+00:00
+[74/90] fine-tune chronos2 on Water_Quality_Darwin/15T/short
+[2026-09-28 23:38:42 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '2.054', 'grad_norm': '26.98', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '13.27', 'train_samples_per_second': '241.1', 'train_steps_per_second': '7.534', 'train_loss': '2.054', 'epoch': '1'}
+[2026-09-29 01:38:57,754][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Water_Quality_Darwin/15T/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/azure2019_U/5T/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:38:57.763653+00:00
+[75/90] fine-tune chronos2 on azure2019_U/5T/short
+[2026-09-28 23:38:57 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '6.349', 'grad_norm': '33.98', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '4.972', 'train_samples_per_second': '643.7', 'train_steps_per_second': '20.11', 'train_loss': '6.349', 'epoch': '1'}
+[2026-09-29 01:39:04,418][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/azure2019_U/5T/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/current_velocity/10T/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:39:04.428183+00:00
+[76/90] fine-tune chronos2 on current_velocity/10T/long
+[2026-09-28 23:39:04 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '6.12', 'grad_norm': '34.65', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '13.98', 'train_samples_per_second': '229', 'train_steps_per_second': '7.156', 'train_loss': '6.12', 'epoch': '1'}
+[2026-09-29 01:39:20,135][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/current_velocity/10T/long/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/current_velocity/10T/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:39:20.144183+00:00
+[77/90] fine-tune chronos2 on current_velocity/10T/medium
+[2026-09-28 23:39:20 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '4.939', 'grad_norm': '19.56', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '13.55', 'train_samples_per_second': '236.2', 'train_steps_per_second': '7.38', 'train_loss': '4.939', 'epoch': '1'}
+[2026-09-29 01:39:35,437][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/current_velocity/10T/medium/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/current_velocity/10T/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:39:35.446251+00:00
+[78/90] fine-tune chronos2 on current_velocity/10T/short
+[2026-09-28 23:39:35 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '2.281', 'grad_norm': '19.8', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '13.57', 'train_samples_per_second': '235.7', 'train_steps_per_second': '7.367', 'train_loss': '2.281', 'epoch': '1'}
+[2026-09-29 01:39:50,791][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/current_velocity/10T/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/current_velocity/15T/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:39:50.800112+00:00
+[79/90] fine-tune chronos2 on current_velocity/15T/long
+[2026-09-28 23:39:50 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '8.77', 'grad_norm': '29.34', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '13.71', 'train_samples_per_second': '233.4', 'train_steps_per_second': '7.294', 'train_loss': '8.77', 'epoch': '1'}
+[2026-09-29 01:40:06,217][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/current_velocity/15T/long/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/current_velocity/15T/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:40:06.225584+00:00
+[80/90] fine-tune chronos2 on current_velocity/15T/medium
+[2026-09-28 23:40:06 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '7.306', 'grad_norm': '28.86', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '13.4', 'train_samples_per_second': '238.8', 'train_steps_per_second': '7.461', 'train_loss': '7.306', 'epoch': '1'}
+[2026-09-29 01:40:21,342][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/current_velocity/15T/medium/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/current_velocity/15T/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:40:21.350583+00:00
+[81/90] fine-tune chronos2 on current_velocity/15T/short
+[2026-09-28 23:40:21 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '3.855', 'grad_norm': '24.8', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '13.29', 'train_samples_per_second': '240.8', 'train_steps_per_second': '7.525', 'train_loss': '3.855', 'epoch': '1'}
+[2026-09-29 01:40:36,577][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/current_velocity/15T/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/current_velocity/5T/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:40:36.586385+00:00
+[82/90] fine-tune chronos2 on current_velocity/5T/long
+[2026-09-28 23:40:36 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '7.648', 'grad_norm': '33.49', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '14.95', 'train_samples_per_second': '214', 'train_steps_per_second': '6.687', 'train_loss': '7.648', 'epoch': '1'}
+[2026-09-29 01:40:53,247][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/current_velocity/5T/long/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/current_velocity/5T/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:40:53.255633+00:00
+[83/90] fine-tune chronos2 on current_velocity/5T/medium
+[2026-09-28 23:40:53 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '6.359', 'grad_norm': '46.69', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '14.18', 'train_samples_per_second': '225.7', 'train_steps_per_second': '7.054', 'train_loss': '6.359', 'epoch': '1'}
+[2026-09-29 01:41:09,126][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/current_velocity/5T/medium/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/current_velocity/5T/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:41:09.134935+00:00
+[84/90] fine-tune chronos2 on current_velocity/5T/short
+[2026-09-28 23:41:09 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '3.249', 'grad_norm': '31.91', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '13.77', 'train_samples_per_second': '232.3', 'train_steps_per_second': '7.26', 'train_loss': '3.249', 'epoch': '1'}
+[2026-09-29 01:41:24,613][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/current_velocity/5T/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/current_velocity/H/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:41:24.622512+00:00
+[85/90] fine-tune chronos2 on current_velocity/H/long
+[2026-09-28 23:41:24 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '8.339', 'grad_norm': '43.74', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '6.222', 'train_samples_per_second': '514.3', 'train_steps_per_second': '16.07', 'train_loss': '8.339', 'epoch': '1'}
+[2026-09-29 01:41:32,541][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/current_velocity/H/long/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/current_velocity/H/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:41:32.550179+00:00
+[86/90] fine-tune chronos2 on current_velocity/H/medium
+[2026-09-28 23:41:32 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '7.25', 'grad_norm': '49.07', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '5.931', 'train_samples_per_second': '539.5', 'train_steps_per_second': '16.86', 'train_loss': '7.25', 'epoch': '1'}
+[2026-09-29 01:41:40,155][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/current_velocity/H/medium/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/current_velocity/H/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:41:40.164295+00:00
+[87/90] fine-tune chronos2 on current_velocity/H/short
+[2026-09-28 23:41:40 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '3.801', 'grad_norm': '29.99', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '5.962', 'train_samples_per_second': '536.7', 'train_steps_per_second': '16.77', 'train_loss': '3.801', 'epoch': '1'}
+[2026-09-29 01:41:47,822][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/current_velocity/H/short/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/epf_electricity_price/H/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:41:47.831941+00:00
+[88/90] fine-tune chronos2 on epf_electricity_price/H/long
+[2026-09-28 23:41:47 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '4.243', 'grad_norm': '18.75', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '13.98', 'train_samples_per_second': '228.8', 'train_steps_per_second': '7.151', 'train_loss': '4.243', 'epoch': '1'}
+[2026-09-29 01:42:03,510][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/epf_electricity_price/H/long/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/epf_electricity_price/H/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:42:03.519482+00:00
+[89/90] fine-tune chronos2 on epf_electricity_price/H/medium
+[2026-09-28 23:42:03 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '3.599', 'grad_norm': '19.45', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '13.99', 'train_samples_per_second': '228.8', 'train_steps_per_second': '7.15', 'train_loss': '3.599', 'epoch': '1'}
+[2026-09-29 01:42:19,331][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/epf_electricity_price/H/medium/run_0/finetuned-ckpt
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/epf_electricity_price/H/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602393 launched_at=2026-09-28T23:42:19.339726+00:00
+[90/90] fine-tune chronos2 on epf_electricity_price/H/short
+[2026-09-28 23:42:19 UTC] resources selected_device {"device": "cuda", "model": "chronos2", "stage": "finetune"}
+{'loss': '2.431', 'grad_norm': '22.73', 'learning_rate': '1e-08', 'epoch': '1'}
+{'train_runtime': '13.99', 'train_samples_per_second': '228.8', 'train_steps_per_second': '7.15', 'train_loss': '2.431', 'epoch': '1'}
+[2026-09-29 01:42:34,982][chronos.chronos2.pipeline][INFO] - Finetuned model saved to /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/epf_electricity_price/H/short/run_0/finetuned-ckpt
+2026-09-29 01:42:36 | task model=chronos2 independent_per_task_fine_tuning=true profile=small completed status=success
+2026-09-29 01:42:36 | stage train completed status=success
+2026-09-29 01:42:36 | stage evaluate started
+2026-09-29 01:42:36 | task model=chronos2 states=frozen,task_finetuned target_mode=univariate started

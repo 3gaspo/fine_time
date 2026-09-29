@@ -1,0 +1,193 @@
+{
+  "artifact_metadata": {
+    "evaluation": {
+      "adaptation": {
+        "seed": 2021,
+        "source_checkpoint": "/fslarge/scratch/users/h61084/weights/tsicl/tsicl-v1.ckpt",
+        "state": "task_finetuned",
+        "training_config": {
+          "batch_size": 8,
+          "context_length": 4096,
+          "gradient_clip_norm": 1.0,
+          "learning_rate": 1e-06,
+          "min_context": 16,
+          "mode": "full",
+          "steps": 100,
+          "weight": "tsicl/tsicl-v1.ckpt"
+        },
+        "training_implementation": "project adapter over TS-ICL forecasting internals",
+        "training_manifest": "/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/ts_icl/azure2019_U/5T/short/run_0/manifest.json"
+      },
+      "context_length": 4096,
+      "covariate_channels": 0,
+      "covariate_mode": "none",
+      "dataset_config": "azure2019_U/5T/short",
+      "evaluation_grid": {
+        "definition": "finite_ground_truth_and_seasonal_naive_mase",
+        "source": "/fslarge/scratch/users/h61084/codes/seasonal/outputs/seasonal_naive/evaluations/univariate/azure2019_U/5T/short/run_0/evaluation_grid.npz",
+        "total_values": 1404,
+        "valid_values": 1404
+      },
+      "experiment": "task_finetuning",
+      "freq": "5T",
+      "inference_seconds": 20.152394957840443,
+      "instance_normalization": "none",
+      "metric_names": [
+        "MSE",
+        "MAE",
+        "RMSE",
+        "MAPE",
+        "sMAPE",
+        "MASE",
+        "ND",
+        "CRPS"
+      ],
+      "metrics_summary_file": "metrics_summary.json",
+      "model": "ts_icl",
+      "model_size": "tsicl-v1",
+      "num_model_inputs": 1404,
+      "num_quantiles": 9,
+      "num_series": 78,
+      "num_variates": 3,
+      "num_windows": 6,
+      "prediction_length": 48,
+      "prediction_outputs": {
+        "cells_with_nan": 0,
+        "evaluation_nan_rate": 0.0,
+        "evaluation_nan_values": 0,
+        "evaluation_values": 606528,
+        "nan_rate": 0.0,
+        "nan_values": 0,
+        "total_cells": 1404,
+        "total_values": 606528
+      },
+      "prediction_scale_factor": 1.0,
+      "quantile_levels": [
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7,
+        0.8,
+        0.9
+      ],
+      "seasonality": 288,
+      "target_mode": "univariate"
+    }
+  },
+  "completed_at": "2026-09-29T11:53:59.405495+00:00",
+  "experiment": "task_finetuning",
+  "experiment_config": {
+    "covariate_channels": 0,
+    "covariate_mode": "none",
+    "instance_normalization": "none"
+  },
+  "identity": {
+    "dataset": "azure2019_U",
+    "frequency": "5T",
+    "model": "ts_icl",
+    "target_mode": "univariate",
+    "term": "short"
+  },
+  "launch": {
+    "action": "new",
+    "attempts": [
+      {
+        "action": "new",
+        "launch_id": "selena_fine_time_20260929T092621Z_11326",
+        "launched_at": "2026-09-29T11:53:58.975942+00:00",
+        "slurm_array_task_id": null,
+        "slurm_job_id": "3607389"
+      }
+    ],
+    "launch_id": "selena_fine_time_20260929T092621Z_11326",
+    "launched_at": "2026-09-29T11:53:58.975942+00:00",
+    "slurm_job_id": "3607389"
+  },
+  "model_config": {
+    "adaptation": {
+      "seed": 2021,
+      "source_checkpoint": "/fslarge/scratch/users/h61084/weights/tsicl/tsicl-v1.ckpt",
+      "state": "task_finetuned",
+      "training_config": {
+        "batch_size": 8,
+        "context_length": 4096,
+        "gradient_clip_norm": 1.0,
+        "learning_rate": 1e-06,
+        "min_context": 16,
+        "mode": "full",
+        "steps": 100,
+        "weight": "tsicl/tsicl-v1.ckpt"
+      },
+      "training_implementation": "project adapter over TS-ICL forecasting internals",
+      "training_manifest": "/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/ts_icl/azure2019_U/5T/short/run_0/manifest.json"
+    },
+    "context_length": 4096,
+    "model_size": "tsicl-v1",
+    "quantile_levels": [
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9
+    ]
+  },
+  "pipeline_config": {
+    "evaluation_grid": {
+      "definition": "finite_ground_truth_and_seasonal_naive_mase",
+      "producer": {
+        "completed_at": "2026-09-25T21:49:54.997744+00:00",
+        "identity": {
+          "dataset": "azure2019_U",
+          "frequency": "5T",
+          "model": "seasonal_naive",
+          "target_mode": "univariate",
+          "term": "short"
+        },
+        "run": "run_0"
+      }
+    },
+    "nan_policy": "omit_nan_predictions_report_counts_reject_infinity",
+    "prediction_length": 48,
+    "raw_inference": {
+      "completed_at": "2026-09-29T11:53:58.969087+00:00",
+      "identity": {
+        "dataset": "azure2019_U",
+        "frequency": "5T",
+        "model": "ts_icl",
+        "target_mode": "univariate",
+        "term": "short"
+      },
+      "run": "run_1"
+    },
+    "seasonality": 288,
+    "test_length": 288,
+    "windows": 6
+  },
+  "project": "fine_time",
+  "provenance": {
+    "dataset_config_path": null,
+    "evaluation_grid": "/fslarge/scratch/users/h61084/codes/seasonal/outputs/seasonal_naive/evaluations/univariate/azure2019_U/5T/short/run_0/evaluation_grid.npz",
+    "raw_inference_manifest": "/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/tasks/inference/ts_icl/univariate/azure2019_U/5T/short/run_1/manifest.json"
+  },
+  "required_artifacts": [
+    "predictions.npz",
+    "metrics.npz",
+    "metrics_summary.json"
+  ],
+  "runtime_config": {
+    "batch_size": 32,
+    "checkpoint_path": "/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/ts_icl/azure2019_U/5T/short/run_0/finetuned.ckpt",
+    "device": "cuda"
+  },
+  "schema_version": 1,
+  "started_at": "2026-09-29T11:53:58.975942+00:00",
+  "status": "completed",
+  "updated_at": "2026-09-29T11:53:59.405495+00:00"
+}

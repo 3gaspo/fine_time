@@ -1,0 +1,171 @@
+{
+  "artifact_metadata": {
+    "evaluation": {
+      "adaptation": {
+        "source_checkpoint": "/fslarge/scratch/users/h61084/weights/chronos2",
+        "state": "frozen"
+      },
+      "context_length": 8192,
+      "covariate_channels": 0,
+      "covariate_mode": "none",
+      "covariate_source": "none",
+      "covariate_time_span": "none",
+      "dataset_config": "MetroPT-3/5T/medium",
+      "evaluation_grid": {
+        "definition": "finite_ground_truth_and_seasonal_naive_mase",
+        "source": "/fslarge/scratch/users/h61084/codes/seasonal/outputs/seasonal_naive/evaluations/univariate/MetroPT-3/5T/medium/run_0/evaluation_grid.npz",
+        "total_values": 36,
+        "valid_values": 36
+      },
+      "experiment": "task_finetuning",
+      "freq": "5T",
+      "inference_seconds": 0.19090357050299644,
+      "instance_normalization": "none",
+      "metric_names": [
+        "MSE",
+        "MAE",
+        "RMSE",
+        "MAPE",
+        "sMAPE",
+        "MASE",
+        "ND",
+        "CRPS"
+      ],
+      "metrics_summary_file": "metrics_summary.json",
+      "model": "chronos2",
+      "model_size": "chronos2",
+      "num_model_inputs": 36,
+      "num_quantiles": 9,
+      "num_series": 1,
+      "num_variates": 6,
+      "num_windows": 6,
+      "prediction_length": 288,
+      "prediction_outputs": {
+        "cells_with_nan": 0,
+        "evaluation_nan_rate": 0.0,
+        "evaluation_nan_values": 0,
+        "evaluation_values": 80298,
+        "nan_rate": 0.0,
+        "nan_values": 0,
+        "total_cells": 36,
+        "total_values": 93312
+      },
+      "prediction_scale_factor": 1.0,
+      "quantile_levels": [
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7,
+        0.8,
+        0.9
+      ],
+      "seasonality": 288,
+      "target_mode": "univariate"
+    }
+  },
+  "completed_at": "2026-09-29T10:54:41.393544+00:00",
+  "experiment": "task_finetuning",
+  "experiment_config": {
+    "covariate_channels": 0,
+    "covariate_mode": "none",
+    "covariate_source": "none",
+    "covariate_time_span": "none",
+    "instance_normalization": "none"
+  },
+  "identity": {
+    "dataset": "MetroPT-3",
+    "frequency": "5T",
+    "model": "chronos2",
+    "target_mode": "univariate",
+    "term": "medium"
+  },
+  "launch": {
+    "action": "new",
+    "attempts": [
+      {
+        "action": "new",
+        "launch_id": "selena_fine_time_20260929T092621Z_11326",
+        "launched_at": "2026-09-29T10:54:41.361364+00:00",
+        "slurm_array_task_id": null,
+        "slurm_job_id": "3607387"
+      }
+    ],
+    "launch_id": "selena_fine_time_20260929T092621Z_11326",
+    "launched_at": "2026-09-29T10:54:41.361364+00:00",
+    "slurm_job_id": "3607387"
+  },
+  "model_config": {
+    "adaptation": {
+      "source_checkpoint": "/fslarge/scratch/users/h61084/weights/chronos2",
+      "state": "frozen"
+    },
+    "context_length": 8192,
+    "model_size": "chronos2",
+    "quantile_levels": [
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9
+    ]
+  },
+  "pipeline_config": {
+    "evaluation_grid": {
+      "definition": "finite_ground_truth_and_seasonal_naive_mase",
+      "producer": {
+        "completed_at": "2026-09-25T21:50:21.065566+00:00",
+        "identity": {
+          "dataset": "MetroPT-3",
+          "frequency": "5T",
+          "model": "seasonal_naive",
+          "target_mode": "univariate",
+          "term": "medium"
+        },
+        "run": "run_0"
+      }
+    },
+    "nan_policy": "omit_nan_predictions_report_counts_reject_infinity",
+    "prediction_length": 288,
+    "raw_inference": {
+      "completed_at": "2026-09-29T10:54:41.355310+00:00",
+      "identity": {
+        "dataset": "MetroPT-3",
+        "frequency": "5T",
+        "model": "chronos2",
+        "target_mode": "univariate",
+        "term": "medium"
+      },
+      "run": "run_0"
+    },
+    "seasonality": 288,
+    "test_length": 1728,
+    "windows": 6
+  },
+  "project": "fine_time",
+  "provenance": {
+    "dataset_config_path": null,
+    "evaluation_grid": "/fslarge/scratch/users/h61084/codes/seasonal/outputs/seasonal_naive/evaluations/univariate/MetroPT-3/5T/medium/run_0/evaluation_grid.npz",
+    "raw_inference_manifest": "/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/tasks/inference/chronos2/univariate/MetroPT-3/5T/medium/run_0/manifest.json"
+  },
+  "required_artifacts": [
+    "predictions.npz",
+    "metrics.npz",
+    "metrics_summary.json"
+  ],
+  "runtime_config": {
+    "batch_size": 32,
+    "checkpoint_path": "/fslarge/scratch/users/h61084/weights/chronos2",
+    "device": "cuda"
+  },
+  "schema_version": 1,
+  "started_at": "2026-09-29T10:54:41.361364+00:00",
+  "status": "completed",
+  "updated_at": "2026-09-29T10:54:41.393544+00:00"
+}

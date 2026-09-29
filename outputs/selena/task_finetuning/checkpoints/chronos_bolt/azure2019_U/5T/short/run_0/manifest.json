@@ -1,0 +1,86 @@
+{
+  "artifact_metadata": {
+    "training": {
+      "checkpoint": "finetuned-ckpt",
+      "implementation": "source-adapted native Chronos-Bolt quantile loss",
+      "native_training_horizon": 48,
+      "training_series": 234
+    }
+  },
+  "completed_at": "2026-09-29T00:12:23.541036+00:00",
+  "experiment": "task_finetuning",
+  "experiment_config": {
+    "target_mode": "univariate"
+  },
+  "identity": {
+    "dataset": "azure2019_U/5T",
+    "model": "chronos_bolt",
+    "stage": "fine_tuning",
+    "term": "short"
+  },
+  "launch": {
+    "action": "new",
+    "attempts": [
+      {
+        "action": "new",
+        "launch_id": "selena_fine_time_20260928T232415Z_26013",
+        "launched_at": "2026-09-29T00:12:11.258505+00:00",
+        "slurm_array_task_id": null,
+        "slurm_job_id": "3602450"
+      },
+      {
+        "action": "reuse",
+        "launch_id": "selena_fine_time_20260929T082942Z_17617",
+        "launched_at": "2026-09-29T08:30:10.562201+00:00",
+        "slurm_array_task_id": null,
+        "slurm_job_id": "3606312"
+      },
+      {
+        "action": "reuse",
+        "launch_id": "selena_fine_time_20260929T092621Z_11326",
+        "launched_at": "2026-09-29T10:53:27.327572+00:00",
+        "slurm_array_task_id": null,
+        "slurm_job_id": "3607388"
+      }
+    ],
+    "launch_id": "selena_fine_time_20260928T232415Z_26013",
+    "launched_at": "2026-09-29T00:12:11.258505+00:00",
+    "slurm_job_id": "3602450"
+  },
+  "model_config": {
+    "alias": "chronos_bolt",
+    "training": {
+      "batch_size": 32,
+      "context_length": 2048,
+      "gradient_clip_norm": 1.0,
+      "learning_rate": 1e-05,
+      "min_context": 16,
+      "mode": "full",
+      "steps": 100,
+      "weight": "chronos-bolt-base"
+    }
+  },
+  "pipeline_config": {
+    "prediction_length": 48,
+    "seed": 2021,
+    "test_length": 288,
+    "training_split": "TIME prefix before validation and test",
+    "validation_length": 96
+  },
+  "project": "fine_time",
+  "provenance": {
+    "dataset_config": "project default"
+  },
+  "required_artifacts": [
+    "training_metrics.json",
+    "finetuned-ckpt/config.json",
+    "finetuned-ckpt/model.safetensors"
+  ],
+  "runtime_config": {
+    "source_checkpoint": "/fslarge/scratch/users/h61084/weights/chronos-bolt-base"
+  },
+  "schema_version": 1,
+  "started_at": "2026-09-29T00:12:11.258505+00:00",
+  "status": "completed",
+  "updated_at": "2026-09-29T10:53:27.327572+00:00"
+}

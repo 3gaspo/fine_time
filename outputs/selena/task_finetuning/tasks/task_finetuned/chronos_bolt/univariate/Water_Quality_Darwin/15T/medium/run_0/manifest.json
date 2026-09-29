@@ -1,0 +1,193 @@
+{
+  "artifact_metadata": {
+    "evaluation": {
+      "adaptation": {
+        "seed": 2021,
+        "source_checkpoint": "/fslarge/scratch/users/h61084/weights/chronos-bolt-base",
+        "state": "task_finetuned",
+        "training_config": {
+          "batch_size": 32,
+          "context_length": 2048,
+          "gradient_clip_norm": 1.0,
+          "learning_rate": 1e-05,
+          "min_context": 16,
+          "mode": "full",
+          "steps": 100,
+          "weight": "chronos-bolt-base"
+        },
+        "training_implementation": "source-adapted native Chronos-Bolt quantile loss",
+        "training_manifest": "/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/Water_Quality_Darwin/15T/medium/run_0/manifest.json"
+      },
+      "context_length": 2048,
+      "covariate_channels": 0,
+      "covariate_mode": "none",
+      "dataset_config": "Water_Quality_Darwin/15T/medium",
+      "evaluation_grid": {
+        "definition": "finite_ground_truth_and_seasonal_naive_mase",
+        "source": "/fslarge/scratch/users/h61084/codes/seasonal/outputs/seasonal_naive/evaluations/univariate/Water_Quality_Darwin/15T/medium/run_0/evaluation_grid.npz",
+        "total_values": 630,
+        "valid_values": 630
+      },
+      "experiment": "task_finetuning",
+      "freq": "15T",
+      "inference_seconds": 5.908631092985161,
+      "instance_normalization": "none",
+      "metric_names": [
+        "MSE",
+        "MAE",
+        "RMSE",
+        "MAPE",
+        "sMAPE",
+        "MASE",
+        "ND",
+        "CRPS"
+      ],
+      "metrics_summary_file": "metrics_summary.json",
+      "model": "chronos_bolt",
+      "model_size": "base",
+      "num_model_inputs": 630,
+      "num_quantiles": 9,
+      "num_series": 7,
+      "num_variates": 6,
+      "num_windows": 15,
+      "prediction_length": 96,
+      "prediction_outputs": {
+        "cells_with_nan": 0,
+        "evaluation_nan_rate": 0.0,
+        "evaluation_nan_values": 0,
+        "evaluation_values": 544158,
+        "nan_rate": 0.0,
+        "nan_values": 0,
+        "total_cells": 630,
+        "total_values": 544320
+      },
+      "prediction_scale_factor": 1.0,
+      "quantile_levels": [
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7,
+        0.8,
+        0.9
+      ],
+      "seasonality": 96,
+      "target_mode": "univariate"
+    }
+  },
+  "completed_at": "2026-09-29T11:02:11.623299+00:00",
+  "experiment": "task_finetuning",
+  "experiment_config": {
+    "covariate_channels": 0,
+    "covariate_mode": "none",
+    "instance_normalization": "none"
+  },
+  "identity": {
+    "dataset": "Water_Quality_Darwin",
+    "frequency": "15T",
+    "model": "chronos_bolt",
+    "target_mode": "univariate",
+    "term": "medium"
+  },
+  "launch": {
+    "action": "new",
+    "attempts": [
+      {
+        "action": "new",
+        "launch_id": "selena_fine_time_20260929T092621Z_11326",
+        "launched_at": "2026-09-29T11:02:11.364063+00:00",
+        "slurm_array_task_id": null,
+        "slurm_job_id": "3607388"
+      }
+    ],
+    "launch_id": "selena_fine_time_20260929T092621Z_11326",
+    "launched_at": "2026-09-29T11:02:11.364063+00:00",
+    "slurm_job_id": "3607388"
+  },
+  "model_config": {
+    "adaptation": {
+      "seed": 2021,
+      "source_checkpoint": "/fslarge/scratch/users/h61084/weights/chronos-bolt-base",
+      "state": "task_finetuned",
+      "training_config": {
+        "batch_size": 32,
+        "context_length": 2048,
+        "gradient_clip_norm": 1.0,
+        "learning_rate": 1e-05,
+        "min_context": 16,
+        "mode": "full",
+        "steps": 100,
+        "weight": "chronos-bolt-base"
+      },
+      "training_implementation": "source-adapted native Chronos-Bolt quantile loss",
+      "training_manifest": "/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/Water_Quality_Darwin/15T/medium/run_0/manifest.json"
+    },
+    "context_length": 2048,
+    "model_size": "base",
+    "quantile_levels": [
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9
+    ]
+  },
+  "pipeline_config": {
+    "evaluation_grid": {
+      "definition": "finite_ground_truth_and_seasonal_naive_mase",
+      "producer": {
+        "completed_at": "2026-09-25T21:33:44.433361+00:00",
+        "identity": {
+          "dataset": "Water_Quality_Darwin",
+          "frequency": "15T",
+          "model": "seasonal_naive",
+          "target_mode": "univariate",
+          "term": "medium"
+        },
+        "run": "run_0"
+      }
+    },
+    "nan_policy": "omit_nan_predictions_report_counts_reject_infinity",
+    "prediction_length": 96,
+    "raw_inference": {
+      "completed_at": "2026-09-29T11:02:11.357580+00:00",
+      "identity": {
+        "dataset": "Water_Quality_Darwin",
+        "frequency": "15T",
+        "model": "chronos_bolt",
+        "target_mode": "univariate",
+        "term": "medium"
+      },
+      "run": "run_1"
+    },
+    "seasonality": 96,
+    "test_length": 1440,
+    "windows": 15
+  },
+  "project": "fine_time",
+  "provenance": {
+    "dataset_config_path": null,
+    "evaluation_grid": "/fslarge/scratch/users/h61084/codes/seasonal/outputs/seasonal_naive/evaluations/univariate/Water_Quality_Darwin/15T/medium/run_0/evaluation_grid.npz",
+    "raw_inference_manifest": "/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/tasks/inference/chronos_bolt/univariate/Water_Quality_Darwin/15T/medium/run_1/manifest.json"
+  },
+  "required_artifacts": [
+    "predictions.npz",
+    "metrics.npz",
+    "metrics_summary.json"
+  ],
+  "runtime_config": {
+    "batch_size": 32,
+    "checkpoint_path": "/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/Water_Quality_Darwin/15T/medium/run_0/finetuned-ckpt",
+    "device": "cuda"
+  },
+  "schema_version": 1,
+  "started_at": "2026-09-29T11:02:11.364063+00:00",
+  "status": "completed",
+  "updated_at": "2026-09-29T11:02:11.623299+00:00"
+}

@@ -1,0 +1,87 @@
+{
+  "completed_at": "2026-09-29T12:04:51.315041+00:00",
+  "experiment": "task_finetuning_raw_inference",
+  "experiment_config": {
+    "covariate_channels": 0,
+    "covariate_mode": "none",
+    "instance_normalization": "none"
+  },
+  "identity": {
+    "dataset": "current_velocity",
+    "frequency": "5T",
+    "model": "ts_icl",
+    "target_mode": "univariate",
+    "term": "long"
+  },
+  "launch": {
+    "action": "new",
+    "attempts": [
+      {
+        "action": "new",
+        "launch_id": "selena_fine_time_20260929T092621Z_11326",
+        "launched_at": "2026-09-29T12:04:49.116989+00:00",
+        "slurm_array_task_id": null,
+        "slurm_job_id": "3607389"
+      }
+    ],
+    "launch_id": "selena_fine_time_20260929T092621Z_11326",
+    "launched_at": "2026-09-29T12:04:49.116989+00:00",
+    "slurm_job_id": "3607389"
+  },
+  "model_config": {
+    "adaptation": {
+      "seed": 2021,
+      "source_checkpoint": "/fslarge/scratch/users/h61084/weights/tsicl/tsicl-v1.ckpt",
+      "state": "task_finetuned",
+      "training_config": {
+        "batch_size": 8,
+        "context_length": 4096,
+        "gradient_clip_norm": 1.0,
+        "learning_rate": 1e-06,
+        "min_context": 16,
+        "mode": "full",
+        "steps": 100,
+        "weight": "tsicl/tsicl-v1.ckpt"
+      },
+      "training_implementation": "project adapter over TS-ICL forecasting internals",
+      "training_manifest": "/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/ts_icl/current_velocity/5T/long/run_0/manifest.json"
+    },
+    "context_length": 4096,
+    "model_size": "tsicl-v1",
+    "quantile_levels": [
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9
+    ]
+  },
+  "pipeline_config": {
+    "covariate_mode": "none",
+    "prediction_length": 864,
+    "target_mode": "univariate",
+    "test_length": 4320,
+    "windows": 5
+  },
+  "project": "fine_time",
+  "provenance": {
+    "dataset_config_path": null
+  },
+  "required_artifacts": [
+    "raw_predictions.npz",
+    "inference.json"
+  ],
+  "runtime_config": {
+    "batch_size": 32,
+    "checkpoint_path": "/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/ts_icl/current_velocity/5T/long/run_0/finetuned.ckpt",
+    "device": "cuda"
+  },
+  "schema_version": 1,
+  "started_at": "2026-09-29T12:04:49.116989+00:00",
+  "status": "completed",
+  "updated_at": "2026-09-29T12:04:51.315041+00:00"
+}

@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "metric": "MASE; lower is better",
+  "aggregation": "nanmean of finite paired task-level MASE with equal task weights",
+  "comparison": "same model and same TIME task; frozen versus independently task-fine-tuned",
+  "artifacts": [
+    "task_results.csv",
+    "summary.csv",
+    "summary.md",
+    "summary.tex",
+    "frozen_vs_finetuned_scatter.png",
+    "mean_task_mase_comparison.png",
+    "frozen_vs_finetuned_scatter.pdf",
+    "mean_task_mase_comparison.pdf"
+  ]
+}

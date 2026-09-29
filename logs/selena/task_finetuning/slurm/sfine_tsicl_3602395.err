@@ -1,0 +1,33 @@
+/fssmall/home/h61084/codes/fine_time/.venv/lib/python3.12/site-packages/gluonts/json.py:102: UserWarning: Using `json`-module for json-handling. Consider installing one of `orjson`, `ujson` to speed up serialization and deserialization.
+  warnings.warn(
+/fssmall/home/h61084/codes/fine_time/.venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+/fssmall/home/h61084/codes/fine_time/.venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'T' is deprecated and will be removed in a future version, please use 'min' instead.
+  return pd.Period(val, freq)
+/fssmall/home/h61084/codes/fine_time/.venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+Error executing job with overrides: ['model=ts_icl']
+Traceback (most recent call last):
+  File "/fssmall/home/h61084/codes/fine_time/src/scripts/finetune_ts_icl.py", line 69, in main
+    losses = _fit(
+             ^^^^^
+  File "/fssmall/home/h61084/codes/fine_time/src/scripts/finetune_ts_icl.py", line 129, in _fit
+    predictions = pipeline._run_forward(
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "/fssmall/home/h61084/codes/fine_time/.venv/lib/python3.12/site-packages/tsicl/pipeline.py", line 1273, in _run_forward
+    processed_inputs = self._get_context_target_coords_f(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fssmall/home/h61084/codes/fine_time/.venv/lib/python3.12/site-packages/tsicl/pipeline.py", line 430, in _get_context_target_coords_f
+    out = prepare_context_tensors(
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fssmall/home/h61084/codes/fine_time/.venv/lib/python3.12/site-packages/tsicl/utils/task_utils.py", line 73, in prepare_context_tensors
+    grid_i = torch.cat([
+             ^^^^^^^^^^^
+RuntimeError: zero-dimensional tensor (at position 0) cannot be concatenated
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+srun: error: sean0015: task 0: Exited with exit code 1
+2026-09-29 01:53:48 | task model=ts_icl independent_per_task_fine_tuning=true profile=small completed status=failed exit_code=1
+2026-09-29 01:53:48 | stage train completed status=failed exit_code=1
+TIME interrupted-launch recovery launch_id=selena_fine_time_20260928T232415Z_26013 tasks=0 root=/scratch/users/h61084/codes/fine_time/outputs/task_finetuning
+2026-09-29 01:53:49 | workflow fine_time completed status=failed exit_code=1

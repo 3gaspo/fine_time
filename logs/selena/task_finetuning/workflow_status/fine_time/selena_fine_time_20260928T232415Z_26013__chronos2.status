@@ -1,0 +1,12 @@
+workflow=fine_time
+launch_id=selena_fine_time_20260928T232415Z_26013
+task=chronos2
+state=failed
+stage=evaluate
+active_task=model=chronos2 states=frozen,task_finetuned target_mode=univariate
+launched_at=2026-09-28T23:24:29Z
+updated_at=2026-09-28T23:42:59Z
+exit_code=1
+slurm_job_id=3602393
+slurm_array_job_id=none
+slurm_array_task_id=none

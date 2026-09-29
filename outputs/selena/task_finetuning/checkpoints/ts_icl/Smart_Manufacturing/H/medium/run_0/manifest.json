@@ -1,0 +1,79 @@
+{
+  "artifact_metadata": {
+    "training": {
+      "checkpoint": "finetuned.ckpt",
+      "context_length": 4096,
+      "implementation": "project adapter over TS-ICL forecasting internals",
+      "native_training_horizon": 168,
+      "training_series": 170
+    }
+  },
+  "completed_at": "2026-09-29T08:49:22.460657+00:00",
+  "experiment": "task_finetuning",
+  "experiment_config": {
+    "target_mode": "univariate"
+  },
+  "identity": {
+    "dataset": "Smart_Manufacturing/H",
+    "model": "ts_icl",
+    "stage": "fine_tuning",
+    "term": "medium"
+  },
+  "launch": {
+    "action": "new",
+    "attempts": [
+      {
+        "action": "new",
+        "launch_id": "selena_fine_time_20260929T082942Z_17617",
+        "launched_at": "2026-09-29T08:49:14.950572+00:00",
+        "slurm_array_task_id": null,
+        "slurm_job_id": "3606313"
+      },
+      {
+        "action": "reuse",
+        "launch_id": "selena_fine_time_20260929T092621Z_11326",
+        "launched_at": "2026-09-29T11:03:58.516052+00:00",
+        "slurm_array_task_id": null,
+        "slurm_job_id": "3607389"
+      }
+    ],
+    "launch_id": "selena_fine_time_20260929T082942Z_17617",
+    "launched_at": "2026-09-29T08:49:14.950572+00:00",
+    "slurm_job_id": "3606313"
+  },
+  "model_config": {
+    "alias": "ts_icl",
+    "training": {
+      "batch_size": 8,
+      "context_length": 4096,
+      "gradient_clip_norm": 1.0,
+      "learning_rate": 1e-06,
+      "min_context": 16,
+      "mode": "full",
+      "steps": 100,
+      "weight": "tsicl/tsicl-v1.ckpt"
+    }
+  },
+  "pipeline_config": {
+    "prediction_length": 168,
+    "seed": 2021,
+    "test_length": 336,
+    "training_split": "TIME prefix before validation and test",
+    "validation_length": 336
+  },
+  "project": "fine_time",
+  "provenance": {
+    "dataset_config": "project default"
+  },
+  "required_artifacts": [
+    "training_metrics.json",
+    "finetuned.ckpt"
+  ],
+  "runtime_config": {
+    "source_checkpoint": "/fslarge/scratch/users/h61084/weights/tsicl/tsicl-v1.ckpt"
+  },
+  "schema_version": 1,
+  "started_at": "2026-09-29T08:49:14.950572+00:00",
+  "status": "completed",
+  "updated_at": "2026-09-29T11:03:58.516052+00:00"
+}

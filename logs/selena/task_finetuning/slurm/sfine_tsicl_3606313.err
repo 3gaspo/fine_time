@@ -1,0 +1,15 @@
+/fssmall/home/h61084/codes/fine_time/.venv/lib/python3.12/site-packages/gluonts/json.py:102: UserWarning: Using `json`-module for json-handling. Consider installing one of `orjson`, `ujson` to speed up serialization and deserialization.
+  warnings.warn(
+/fssmall/home/h61084/codes/fine_time/.venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'T' is deprecated and will be removed in a future version, please use 'min' instead.
+  return pd.Period(val, freq)
+/fssmall/home/h61084/codes/fine_time/.venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+/fssmall/home/h61084/codes/fine_time/.venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: Period with BDay freq is deprecated and will be removed in a future version. Use a DatetimeIndex with BDay freq instead.
+  return pd.Period(val, freq)
+slurmstepd: error: *** STEP 3606313.1 ON sean0013 CANCELLED AT 2026-09-29T10:58:30 ***
+srun: error: sean0013: task 0: Exited with exit code 143
+2026-09-29 10:58:31 | task model=ts_icl independent_per_task_fine_tuning=true profile=small completed status=failed exit_code=143
+2026-09-29 10:58:31 | stage train completed status=failed exit_code=143
+TIME interrupted-launch recovery launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606313 tasks=1 root=/scratch/users/h61084/codes/fine_time/outputs/task_finetuning
+  interrupted /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/ts_icl/current_velocity/15T/long/run_0
+2026-09-29 10:58:32 | workflow fine_time completed status=failed exit_code=143

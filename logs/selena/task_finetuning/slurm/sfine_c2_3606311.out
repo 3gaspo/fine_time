@@ -1,0 +1,192 @@
+[2026-09-29 08:29:46 UTC] resources allocation {"CUDA_VISIBLE_DEVICES": "0", "SLURM_CPUS_PER_TASK": "8", "SLURM_JOB_GPUS": "0,1,2,3", "SLURM_JOB_ID": "3606311", "SLURM_MEM_PER_CPU": "unset", "SLURM_MEM_PER_NODE": "80000", "SLURM_STEP_GPUS": "0", "SLURM_STEP_ID": "0", "TIME_DEVICE": "unset", "cpu_count": 8, "host": "sean0013"}
+[2026-09-29 08:29:46 UTC] resources RAM {"MemAvailable_MiB": 372877.1171875, "MemTotal_MiB": 386622.875, "cgroup_reason": "memory.max is unlimited", "cgroup_status": "unlimited"}
+[2026-09-29 08:29:46 UTC] resources nvidia_inventory {"columns": "index,uuid,name,driver,total_MiB,free_MiB,used_MiB", "devices": ["0, GPU-dbd5c613-e4b4-d9ff-3ea2-7c34bb769b45, NVIDIA H100 NVL, 560.35.05, 95830, 95350, 1"]}
+[2026-09-29 08:29:54 UTC] resources torch {"cuda_available": true, "note": "visibility probe; CPU-only stages need not use an allocated GPU", "version": "2.9.1+cu128", "visible_gpu_count": 1}
+[2026-09-29 08:29:54 UTC] resources cuda_device {"capability": "9.0", "free_MiB": 94825.125, "logical_index": 0, "name": "NVIDIA H100 NVL", "total_MiB": 95350.1875}
+2026-09-29 10:29:55 | workflow fine_time started launch_id=selena_fine_time_20260929T082942Z_17617 task=chronos2 slurm_job_id=3606311 slurm_array_job_id=none slurm_array_task_id=none
+2026-09-29 10:29:55 | stage train started
+2026-09-29 10:29:55 | task model=chronos2 independent_per_task_fine_tuning=true profile=small started
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Australia_Solar/H/long/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.099318+00:00
+[1/90] skip completed Australia_Solar/H/long
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Australia_Solar/H/medium/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.104225+00:00
+[2/90] skip completed Australia_Solar/H/medium
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Australia_Solar/H/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.108530+00:00
+[3/90] skip completed Australia_Solar/H/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Auto_Production_SF/M/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.113202+00:00
+[4/90] skip completed Auto_Production_SF/M/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/CPHL/15T/long/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.118705+00:00
+[5/90] skip completed CPHL/15T/long
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/CPHL/15T/medium/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.122581+00:00
+[6/90] skip completed CPHL/15T/medium
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/CPHL/15T/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.126971+00:00
+[7/90] skip completed CPHL/15T/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/CPHL/30T/long/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.131269+00:00
+[8/90] skip completed CPHL/30T/long
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/CPHL/30T/medium/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.135161+00:00
+[9/90] skip completed CPHL/30T/medium
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/CPHL/30T/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.138902+00:00
+[10/90] skip completed CPHL/30T/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/CPHL/H/long/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.142951+00:00
+[11/90] skip completed CPHL/H/long
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/CPHL/H/medium/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.146663+00:00
+[12/90] skip completed CPHL/H/medium
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/CPHL/H/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.150492+00:00
+[13/90] skip completed CPHL/H/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Coastal_T_S/15T/long/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.154517+00:00
+[14/90] skip completed Coastal_T_S/15T/long
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Coastal_T_S/15T/medium/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.158185+00:00
+[15/90] skip completed Coastal_T_S/15T/medium
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Coastal_T_S/15T/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.161910+00:00
+[16/90] skip completed Coastal_T_S/15T/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Coastal_T_S/20T/long/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.165595+00:00
+[17/90] skip completed Coastal_T_S/20T/long
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Coastal_T_S/20T/medium/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.169251+00:00
+[18/90] skip completed Coastal_T_S/20T/medium
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Coastal_T_S/20T/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.172995+00:00
+[19/90] skip completed Coastal_T_S/20T/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Coastal_T_S/H/long/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.176900+00:00
+[20/90] skip completed Coastal_T_S/H/long
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Coastal_T_S/H/medium/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.180899+00:00
+[21/90] skip completed Coastal_T_S/H/medium
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Coastal_T_S/H/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.184726+00:00
+[22/90] skip completed Coastal_T_S/H/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Commodity_Import/M/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.188837+00:00
+[23/90] skip completed Commodity_Import/M/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Commodity_Production/M/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.192953+00:00
+[24/90] skip completed Commodity_Production/M/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Crypto/D/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.197100+00:00
+[25/90] skip completed Crypto/D/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/ECDC_COVID/D/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.201548+00:00
+[26/90] skip completed ECDC_COVID/D/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/ECDC_COVID/W/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.205410+00:00
+[27/90] skip completed ECDC_COVID/W/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/EWELD_Load/15T/long/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.209562+00:00
+[28/90] skip completed EWELD_Load/15T/long
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/EWELD_Load/15T/medium/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.213310+00:00
+[29/90] skip completed EWELD_Load/15T/medium
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/EWELD_Load/15T/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.217064+00:00
+[30/90] skip completed EWELD_Load/15T/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Finland_Traffic/15T/long/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.221094+00:00
+[31/90] skip completed Finland_Traffic/15T/long
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Finland_Traffic/15T/medium/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.224836+00:00
+[32/90] skip completed Finland_Traffic/15T/medium
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Finland_Traffic/15T/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.228613+00:00
+[33/90] skip completed Finland_Traffic/15T/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Global_Influenza/W/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.232505+00:00
+[34/90] skip completed Global_Influenza/W/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Global_Price/Q/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.236545+00:00
+[35/90] skip completed Global_Price/Q/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Housing_Inventory/M/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.240593+00:00
+[36/90] skip completed Housing_Inventory/M/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/JOLTS/M/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.244635+00:00
+[37/90] skip completed JOLTS/M/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Job_Claims/W/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.248585+00:00
+[38/90] skip completed Job_Claims/W/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/MetroPT-3/5T/long/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.252696+00:00
+[39/90] skip completed MetroPT-3/5T/long
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/MetroPT-3/5T/medium/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.256833+00:00
+[40/90] skip completed MetroPT-3/5T/medium
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/MetroPT-3/5T/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.260598+00:00
+[41/90] skip completed MetroPT-3/5T/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/NE_China_Wind/H/long/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.264636+00:00
+[42/90] skip completed NE_China_Wind/H/long
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/NE_China_Wind/H/medium/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.268466+00:00
+[43/90] skip completed NE_China_Wind/H/medium
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/NE_China_Wind/H/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.272341+00:00
+[44/90] skip completed NE_China_Wind/H/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Oil_Price/B/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.276431+00:00
+[45/90] skip completed Oil_Price/B/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Online_Retail_2_UCI/D/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.280762+00:00
+[46/90] skip completed Online_Retail_2_UCI/D/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/OpenElectricity_NEM/5T/long/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.284698+00:00
+[47/90] skip completed OpenElectricity_NEM/5T/long
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/OpenElectricity_NEM/5T/medium/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.288549+00:00
+[48/90] skip completed OpenElectricity_NEM/5T/medium
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/OpenElectricity_NEM/5T/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.292378+00:00
+[49/90] skip completed OpenElectricity_NEM/5T/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Port_Activity/D/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.296425+00:00
+[50/90] skip completed Port_Activity/D/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Port_Activity/W/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.300380+00:00
+[51/90] skip completed Port_Activity/W/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/SG_Carpark/15T/long/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.304379+00:00
+[52/90] skip completed SG_Carpark/15T/long
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/SG_Carpark/15T/medium/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.308290+00:00
+[53/90] skip completed SG_Carpark/15T/medium
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/SG_Carpark/15T/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.312040+00:00
+[54/90] skip completed SG_Carpark/15T/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/SG_PM25/H/long/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.316069+00:00
+[55/90] skip completed SG_PM25/H/long
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/SG_PM25/H/medium/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.319886+00:00
+[56/90] skip completed SG_PM25/H/medium
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/SG_PM25/H/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.323685+00:00
+[57/90] skip completed SG_PM25/H/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/SG_Weather/D/long/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.327637+00:00
+[58/90] skip completed SG_Weather/D/long
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/SG_Weather/D/medium/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.331386+00:00
+[59/90] skip completed SG_Weather/D/medium
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/SG_Weather/D/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.335080+00:00
+[60/90] skip completed SG_Weather/D/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Smart_Manufacturing/H/long/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.338911+00:00
+[61/90] skip completed Smart_Manufacturing/H/long
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Smart_Manufacturing/H/medium/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.342444+00:00
+[62/90] skip completed Smart_Manufacturing/H/medium
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Smart_Manufacturing/H/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.346949+00:00
+[63/90] skip completed Smart_Manufacturing/H/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Supply_Chain_Customer/D/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.350957+00:00
+[64/90] skip completed Supply_Chain_Customer/D/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Supply_Chain_Location/D/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.354948+00:00
+[65/90] skip completed Supply_Chain_Location/D/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/US_Labor/M/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.359028+00:00
+[66/90] skip completed US_Labor/M/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/US_Term_Structure/B/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.363485+00:00
+[67/90] skip completed US_Term_Structure/B/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Uncertainty_1M/M/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.367398+00:00
+[68/90] skip completed Uncertainty_1M/M/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Vehicle_Sales/M/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.371546+00:00
+[69/90] skip completed Vehicle_Sales/M/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Vehicle_Supply/M/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.375455+00:00
+[70/90] skip completed Vehicle_Supply/M/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/WUI_Global/Q/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.379527+00:00
+[71/90] skip completed WUI_Global/Q/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Water_Quality_Darwin/15T/long/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.383492+00:00
+[72/90] skip completed Water_Quality_Darwin/15T/long
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Water_Quality_Darwin/15T/medium/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.387192+00:00
+[73/90] skip completed Water_Quality_Darwin/15T/medium
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Water_Quality_Darwin/15T/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.390918+00:00
+[74/90] skip completed Water_Quality_Darwin/15T/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/azure2019_U/5T/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.394929+00:00
+[75/90] skip completed azure2019_U/5T/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/current_velocity/10T/long/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.398861+00:00
+[76/90] skip completed current_velocity/10T/long
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/current_velocity/10T/medium/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.402639+00:00
+[77/90] skip completed current_velocity/10T/medium
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/current_velocity/10T/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.406327+00:00
+[78/90] skip completed current_velocity/10T/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/current_velocity/15T/long/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.410100+00:00
+[79/90] skip completed current_velocity/15T/long
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/current_velocity/15T/medium/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.413849+00:00
+[80/90] skip completed current_velocity/15T/medium
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/current_velocity/15T/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.417615+00:00
+[81/90] skip completed current_velocity/15T/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/current_velocity/5T/long/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.421442+00:00
+[82/90] skip completed current_velocity/5T/long
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/current_velocity/5T/medium/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.425122+00:00
+[83/90] skip completed current_velocity/5T/medium
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/current_velocity/5T/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.428981+00:00
+[84/90] skip completed current_velocity/5T/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/current_velocity/H/long/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.432990+00:00
+[85/90] skip completed current_velocity/H/long
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/current_velocity/H/medium/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.436772+00:00
+[86/90] skip completed current_velocity/H/medium
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/current_velocity/H/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.440512+00:00
+[87/90] skip completed current_velocity/H/short
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/epf_electricity_price/H/long/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.444544+00:00
+[88/90] skip completed epf_electricity_price/H/long
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/epf_electricity_price/H/medium/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.448385+00:00
+[89/90] skip completed epf_electricity_price/H/medium
+TIME run allocation action=skip run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/epf_electricity_price/H/short/run_0 source_launch=selena_fine_time_20260928T232415Z_26013 launch_id=selena_fine_time_20260929T082942Z_17617 slurm_job_id=3606311 launched_at=2026-09-29T08:30:11.452283+00:00
+[90/90] skip completed epf_electricity_price/H/short
+2026-09-29 10:30:12 | task model=chronos2 independent_per_task_fine_tuning=true profile=small completed status=success
+2026-09-29 10:30:12 | stage train completed status=success
+2026-09-29 10:30:12 | stage evaluate started
+2026-09-29 10:30:12 | task model=chronos2 states=frozen,task_finetuned target_mode=univariate started

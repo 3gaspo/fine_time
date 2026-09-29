@@ -1,0 +1,171 @@
+{
+  "artifact_metadata": {
+    "evaluation": {
+      "adaptation": {
+        "source_checkpoint": "/fslarge/scratch/users/h61084/weights/chronos2",
+        "state": "frozen"
+      },
+      "context_length": 8192,
+      "covariate_channels": 0,
+      "covariate_mode": "none",
+      "covariate_source": "none",
+      "covariate_time_span": "none",
+      "dataset_config": "epf_electricity_price/H/medium",
+      "evaluation_grid": {
+        "definition": "finite_ground_truth_and_seasonal_naive_mase",
+        "source": "/fslarge/scratch/users/h61084/codes/seasonal/outputs/seasonal_naive/evaluations/univariate/epf_electricity_price/H/medium/run_0/evaluation_grid.npz",
+        "total_values": 175,
+        "valid_values": 175
+      },
+      "experiment": "task_finetuning",
+      "freq": "H",
+      "inference_seconds": 0.7602308336645365,
+      "instance_normalization": "none",
+      "metric_names": [
+        "MSE",
+        "MAE",
+        "RMSE",
+        "MAPE",
+        "sMAPE",
+        "MASE",
+        "ND",
+        "CRPS"
+      ],
+      "metrics_summary_file": "metrics_summary.json",
+      "model": "chronos2",
+      "model_size": "chronos2",
+      "num_model_inputs": 175,
+      "num_quantiles": 9,
+      "num_series": 5,
+      "num_variates": 1,
+      "num_windows": 35,
+      "prediction_length": 72,
+      "prediction_outputs": {
+        "cells_with_nan": 0,
+        "evaluation_nan_rate": 0.0,
+        "evaluation_nan_values": 0,
+        "evaluation_values": 113400,
+        "nan_rate": 0.0,
+        "nan_values": 0,
+        "total_cells": 175,
+        "total_values": 113400
+      },
+      "prediction_scale_factor": 1.0,
+      "quantile_levels": [
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7,
+        0.8,
+        0.9
+      ],
+      "seasonality": 24,
+      "target_mode": "univariate"
+    }
+  },
+  "completed_at": "2026-09-29T11:03:32.639370+00:00",
+  "experiment": "task_finetuning",
+  "experiment_config": {
+    "covariate_channels": 0,
+    "covariate_mode": "none",
+    "covariate_source": "none",
+    "covariate_time_span": "none",
+    "instance_normalization": "none"
+  },
+  "identity": {
+    "dataset": "epf_electricity_price",
+    "frequency": "H",
+    "model": "chronos2",
+    "target_mode": "univariate",
+    "term": "medium"
+  },
+  "launch": {
+    "action": "new",
+    "attempts": [
+      {
+        "action": "new",
+        "launch_id": "selena_fine_time_20260929T092621Z_11326",
+        "launched_at": "2026-09-29T11:03:32.533583+00:00",
+        "slurm_array_task_id": null,
+        "slurm_job_id": "3607387"
+      }
+    ],
+    "launch_id": "selena_fine_time_20260929T092621Z_11326",
+    "launched_at": "2026-09-29T11:03:32.533583+00:00",
+    "slurm_job_id": "3607387"
+  },
+  "model_config": {
+    "adaptation": {
+      "source_checkpoint": "/fslarge/scratch/users/h61084/weights/chronos2",
+      "state": "frozen"
+    },
+    "context_length": 8192,
+    "model_size": "chronos2",
+    "quantile_levels": [
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9
+    ]
+  },
+  "pipeline_config": {
+    "evaluation_grid": {
+      "definition": "finite_ground_truth_and_seasonal_naive_mase",
+      "producer": {
+        "completed_at": "2026-09-25T21:40:49.807472+00:00",
+        "identity": {
+          "dataset": "epf_electricity_price",
+          "frequency": "H",
+          "model": "seasonal_naive",
+          "target_mode": "univariate",
+          "term": "medium"
+        },
+        "run": "run_0"
+      }
+    },
+    "nan_policy": "omit_nan_predictions_report_counts_reject_infinity",
+    "prediction_length": 72,
+    "raw_inference": {
+      "completed_at": "2026-09-29T11:03:32.527357+00:00",
+      "identity": {
+        "dataset": "epf_electricity_price",
+        "frequency": "H",
+        "model": "chronos2",
+        "target_mode": "univariate",
+        "term": "medium"
+      },
+      "run": "run_0"
+    },
+    "seasonality": 24,
+    "test_length": 2520,
+    "windows": 35
+  },
+  "project": "fine_time",
+  "provenance": {
+    "dataset_config_path": null,
+    "evaluation_grid": "/fslarge/scratch/users/h61084/codes/seasonal/outputs/seasonal_naive/evaluations/univariate/epf_electricity_price/H/medium/run_0/evaluation_grid.npz",
+    "raw_inference_manifest": "/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/tasks/inference/chronos2/univariate/epf_electricity_price/H/medium/run_0/manifest.json"
+  },
+  "required_artifacts": [
+    "predictions.npz",
+    "metrics.npz",
+    "metrics_summary.json"
+  ],
+  "runtime_config": {
+    "batch_size": 32,
+    "checkpoint_path": "/fslarge/scratch/users/h61084/weights/chronos2",
+    "device": "cuda"
+  },
+  "schema_version": 1,
+  "started_at": "2026-09-29T11:03:32.533583+00:00",
+  "status": "completed",
+  "updated_at": "2026-09-29T11:03:32.639370+00:00"
+}

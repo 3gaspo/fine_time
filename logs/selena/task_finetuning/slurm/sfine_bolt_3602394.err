@@ -1,0 +1,20 @@
+/fssmall/home/h61084/codes/fine_time/.venv/lib/python3.12/site-packages/gluonts/json.py:102: UserWarning: Using `json`-module for json-handling. Consider installing one of `orjson`, `ujson` to speed up serialization and deserialization.
+  warnings.warn(
+Loading weights:   0%|          | 0/269 [00:00<?, ?it/s]Loading weights:   0%|          | 1/269 [00:00<00:43,  6.14it/s]Loading weights:   4%|▍         | 11/269 [00:00<00:05, 49.69it/s]Loading weights:  13%|█▎        | 36/269 [00:00<00:01, 127.68it/s]Loading weights:  20%|██        | 54/269 [00:00<00:01, 145.76it/s]Loading weights:  30%|██▉       | 80/269 [00:00<00:01, 180.84it/s]Loading weights:  43%|████▎     | 116/269 [00:00<00:00, 218.65it/s]Loading weights:  53%|█████▎    | 143/269 [00:00<00:00, 229.44it/s]Loading weights:  65%|██████▍   | 174/269 [00:00<00:00, 245.23it/s]Loading weights:  74%|███████▍  | 199/269 [00:01<00:00, 214.83it/s]Loading weights:  83%|████████▎ | 222/269 [00:01<00:00, 214.42it/s]Loading weights:  91%|█████████▏| 246/269 [00:01<00:00, 218.36it/s]Loading weights: 100%|██████████| 269/269 [00:01<00:00, 197.11it/s]
+/fssmall/home/h61084/codes/fine_time/.venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+Error executing job with overrides: ['model=chronos_bolt']
+Traceback (most recent call last):
+  File "/fssmall/home/h61084/codes/fine_time/src/scripts/finetune_chronos_bolt.py", line 75, in main
+    pipeline.save_pretrained(destination)
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ChronosBoltPipeline' object has no attribute 'save_pretrained'. Did you mean: 'from_pretrained'?
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+srun: error: sean0013: task 0: Exited with exit code 1
+2026-09-29 01:25:04 | task model=chronos_bolt independent_per_task_fine_tuning=true profile=small completed status=failed exit_code=1
+2026-09-29 01:25:04 | stage train completed status=failed exit_code=1
+TIME interrupted-launch recovery launch_id=selena_fine_time_20260928T232415Z_26013 tasks=2 root=/scratch/users/h61084/codes/fine_time/outputs/task_finetuning
+  interrupted /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/Australia_Solar/H/long/run_0
+  interrupted /fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/ts_icl/Australia_Solar/H/long/run_0
+2026-09-29 01:25:05 | workflow fine_time completed status=failed exit_code=1

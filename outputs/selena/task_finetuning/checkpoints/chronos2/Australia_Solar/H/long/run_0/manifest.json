@@ -1,0 +1,85 @@
+{
+  "artifact_metadata": {
+    "training": {
+      "checkpoint": "finetuned-ckpt",
+      "implementation": "official Chronos2Pipeline.fit",
+      "training_series": 3
+    }
+  },
+  "completed_at": "2026-09-28T23:25:07.141805+00:00",
+  "experiment": "task_finetuning",
+  "experiment_config": {
+    "target_mode": "univariate"
+  },
+  "identity": {
+    "dataset": "Australia_Solar/H",
+    "model": "chronos2",
+    "stage": "fine_tuning",
+    "term": "long"
+  },
+  "launch": {
+    "action": "new",
+    "attempts": [
+      {
+        "action": "new",
+        "launch_id": "selena_fine_time_20260928T232415Z_26013",
+        "launched_at": "2026-09-28T23:24:49.888141+00:00",
+        "slurm_array_task_id": null,
+        "slurm_job_id": "3602393"
+      },
+      {
+        "action": "reuse",
+        "launch_id": "selena_fine_time_20260929T082942Z_17617",
+        "launched_at": "2026-09-29T08:30:11.099318+00:00",
+        "slurm_array_task_id": null,
+        "slurm_job_id": "3606311"
+      },
+      {
+        "action": "reuse",
+        "launch_id": "selena_fine_time_20260929T092621Z_11326",
+        "launched_at": "2026-09-29T10:52:30.679869+00:00",
+        "slurm_array_task_id": null,
+        "slurm_job_id": "3607387"
+      }
+    ],
+    "launch_id": "selena_fine_time_20260928T232415Z_26013",
+    "launched_at": "2026-09-28T23:24:49.888141+00:00",
+    "slurm_job_id": "3602393"
+  },
+  "model_config": {
+    "alias": "chronos2",
+    "training": {
+      "batch_size": 32,
+      "context_length": 8192,
+      "gradient_clip_norm": 1.0,
+      "learning_rate": 1e-06,
+      "min_context": 16,
+      "mode": "full",
+      "steps": 100,
+      "weight": "chronos2"
+    }
+  },
+  "pipeline_config": {
+    "prediction_length": 168,
+    "seed": 2021,
+    "test_length": 2520,
+    "training_split": "TIME prefix before validation and test",
+    "validation_length": 2520
+  },
+  "project": "fine_time",
+  "provenance": {
+    "dataset_config": "project default"
+  },
+  "required_artifacts": [
+    "training_metrics.json",
+    "finetuned-ckpt/config.json",
+    "finetuned-ckpt/model.safetensors"
+  ],
+  "runtime_config": {
+    "source_checkpoint": "/fslarge/scratch/users/h61084/weights/chronos2"
+  },
+  "schema_version": 1,
+  "started_at": "2026-09-28T23:24:49.888141+00:00",
+  "status": "completed",
+  "updated_at": "2026-09-29T10:52:30.679869+00:00"
+}

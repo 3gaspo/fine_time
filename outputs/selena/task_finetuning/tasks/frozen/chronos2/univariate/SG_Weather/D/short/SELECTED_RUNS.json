@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "selections": [
+    {
+      "mode": "auto",
+      "run": "run_0",
+      "scientific_config": {
+        "experiment_config": {
+          "covariate_channels": 0,
+          "covariate_mode": "none",
+          "covariate_source": "none",
+          "covariate_time_span": "none",
+          "instance_normalization": "none"
+        },
+        "model_config": {
+          "adaptation": {
+            "source_checkpoint": "/fslarge/scratch/users/h61084/weights/chronos2",
+            "state": "frozen"
+          },
+          "context_length": 8192,
+          "model_size": "chronos2",
+          "quantile_levels": [
+            0.1,
+            0.2,
+            0.3,
+            0.4,
+            0.5,
+            0.6,
+            0.7,
+            0.8,
+            0.9
+          ]
+        },
+        "pipeline_config": {
+          "evaluation_grid": {
+            "definition": "finite_ground_truth_and_seasonal_naive_mase",
+            "producer": {
+              "completed_at": "2026-09-25T21:40:04.342476+00:00",
+              "identity": {
+                "dataset": "SG_Weather",
+                "frequency": "D",
+                "model": "seasonal_naive",
+                "target_mode": "univariate",
+                "term": "short"
+              },
+              "run": "run_0"
+            }
+          },
+          "nan_policy": "omit_nan_predictions_report_counts_reject_infinity",
+          "prediction_length": 3,
+          "raw_inference": {
+            "completed_at": "2026-09-29T10:59:04.846601+00:00",
+            "identity": {
+              "dataset": "SG_Weather",
+              "frequency": "D",
+              "model": "chronos2",
+              "target_mode": "univariate",
+              "term": "short"
+            },
+            "run": "run_0"
+          },
+          "seasonality": 1,
+          "test_length": 366,
+          "windows": 122
+        }
+      }
+    }
+  ]
+}

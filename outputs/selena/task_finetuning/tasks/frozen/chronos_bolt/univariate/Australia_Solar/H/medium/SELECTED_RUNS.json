@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "selections": [
+    {
+      "mode": "auto",
+      "run": "run_0",
+      "scientific_config": {
+        "experiment_config": {
+          "covariate_channels": 0,
+          "covariate_mode": "none",
+          "instance_normalization": "none"
+        },
+        "model_config": {
+          "adaptation": {
+            "source_checkpoint": "/fslarge/scratch/users/h61084/weights/chronos-bolt-base",
+            "state": "frozen"
+          },
+          "context_length": 2048,
+          "model_size": "base",
+          "quantile_levels": [
+            0.1,
+            0.2,
+            0.3,
+            0.4,
+            0.5,
+            0.6,
+            0.7,
+            0.8,
+            0.9
+          ]
+        },
+        "pipeline_config": {
+          "evaluation_grid": {
+            "definition": "finite_ground_truth_and_seasonal_naive_mase",
+            "producer": {
+              "completed_at": "2026-09-25T21:40:38.462862+00:00",
+              "identity": {
+                "dataset": "Australia_Solar",
+                "frequency": "H",
+                "model": "seasonal_naive",
+                "target_mode": "univariate",
+                "term": "medium"
+              },
+              "run": "run_0"
+            }
+          },
+          "nan_policy": "omit_nan_predictions_report_counts_reject_infinity",
+          "prediction_length": 72,
+          "raw_inference": {
+            "completed_at": "2026-09-29T10:53:43.788213+00:00",
+            "identity": {
+              "dataset": "Australia_Solar",
+              "frequency": "H",
+              "model": "chronos_bolt",
+              "target_mode": "univariate",
+              "term": "medium"
+            },
+            "run": "run_0"
+          },
+          "seasonality": 24,
+          "test_length": 2520,
+          "windows": 35
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,282 @@
+[2026-09-28 23:56:21 UTC] resources allocation {"CUDA_VISIBLE_DEVICES": "0", "SLURM_CPUS_PER_TASK": "8", "SLURM_JOB_GPUS": "0,1,2,3", "SLURM_JOB_ID": "3602450", "SLURM_MEM_PER_CPU": "unset", "SLURM_MEM_PER_NODE": "80000", "SLURM_STEP_GPUS": "0", "SLURM_STEP_ID": "0", "TIME_DEVICE": "unset", "cpu_count": 8, "host": "sean0009"}
+[2026-09-28 23:56:21 UTC] resources RAM {"MemAvailable_MiB": 373076.328125, "MemTotal_MiB": 386622.890625, "cgroup_reason": "memory.max is unlimited", "cgroup_status": "unlimited"}
+[2026-09-28 23:56:21 UTC] resources nvidia_inventory {"columns": "index,uuid,name,driver,total_MiB,free_MiB,used_MiB", "devices": ["0, GPU-a2aeec5f-ef91-feef-20d9-6f73d541bc6b, NVIDIA H100 NVL, 560.35.05, 95830, 95350, 1"]}
+[2026-09-28 23:56:29 UTC] resources torch {"cuda_available": true, "note": "visibility probe; CPU-only stages need not use an allocated GPU", "version": "2.9.1+cu128", "visible_gpu_count": 1}
+[2026-09-28 23:56:29 UTC] resources cuda_device {"capability": "9.0", "free_MiB": 94825.125, "logical_index": 0, "name": "NVIDIA H100 NVL", "total_MiB": 95350.1875}
+2026-09-29 01:56:30 | workflow fine_time started launch_id=selena_fine_time_20260928T232415Z_26013 task=chronos_bolt slurm_job_id=3602450 slurm_array_job_id=none slurm_array_task_id=none
+2026-09-29 01:56:30 | stage train started
+2026-09-29 01:56:30 | task model=chronos_bolt independent_per_task_fine_tuning=true profile=small started
+TIME run allocation action=resume run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/Australia_Solar/H/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-28T23:56:45.651026+00:00 resumed_from_launch=selena_fine_time_20260928T232415Z_26013 resumed_from_job=3602394
+[1/90] fine-tune chronos_bolt on Australia_Solar/H/long
+[2026-09-28 23:56:45 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/Australia_Solar/H/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-28T23:57:00.431440+00:00
+[2/90] fine-tune chronos_bolt on Australia_Solar/H/medium
+[2026-09-28 23:57:00 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/Australia_Solar/H/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-28T23:57:12.878820+00:00
+[3/90] fine-tune chronos_bolt on Australia_Solar/H/short
+[2026-09-28 23:57:12 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/Auto_Production_SF/M/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-28T23:57:25.413261+00:00
+[4/90] fine-tune chronos_bolt on Auto_Production_SF/M/short
+[2026-09-28 23:57:25 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/CPHL/15T/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-28T23:57:37.708825+00:00
+[5/90] fine-tune chronos_bolt on CPHL/15T/long
+[2026-09-28 23:57:37 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/CPHL/15T/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-28T23:57:50.288768+00:00
+[6/90] fine-tune chronos_bolt on CPHL/15T/medium
+[2026-09-28 23:57:50 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/CPHL/15T/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-28T23:58:02.774855+00:00
+[7/90] fine-tune chronos_bolt on CPHL/15T/short
+[2026-09-28 23:58:02 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/CPHL/30T/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-28T23:58:15.217324+00:00
+[8/90] fine-tune chronos_bolt on CPHL/30T/long
+[2026-09-28 23:58:15 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/CPHL/30T/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-28T23:58:27.573238+00:00
+[9/90] fine-tune chronos_bolt on CPHL/30T/medium
+[2026-09-28 23:58:27 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/CPHL/30T/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-28T23:58:39.868416+00:00
+[10/90] fine-tune chronos_bolt on CPHL/30T/short
+[2026-09-28 23:58:39 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/CPHL/H/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-28T23:58:52.167145+00:00
+[11/90] fine-tune chronos_bolt on CPHL/H/long
+[2026-09-28 23:58:52 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/CPHL/H/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-28T23:59:04.563400+00:00
+[12/90] fine-tune chronos_bolt on CPHL/H/medium
+[2026-09-28 23:59:04 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/CPHL/H/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-28T23:59:16.852807+00:00
+[13/90] fine-tune chronos_bolt on CPHL/H/short
+[2026-09-28 23:59:16 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/Coastal_T_S/15T/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-28T23:59:29.240275+00:00
+[14/90] fine-tune chronos_bolt on Coastal_T_S/15T/long
+[2026-09-28 23:59:29 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/Coastal_T_S/15T/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-28T23:59:41.719040+00:00
+[15/90] fine-tune chronos_bolt on Coastal_T_S/15T/medium
+[2026-09-28 23:59:41 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/Coastal_T_S/15T/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-28T23:59:54.168287+00:00
+[16/90] fine-tune chronos_bolt on Coastal_T_S/15T/short
+[2026-09-28 23:59:54 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/Coastal_T_S/20T/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:00:06.689334+00:00
+[17/90] fine-tune chronos_bolt on Coastal_T_S/20T/long
+[2026-09-29 00:00:06 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/Coastal_T_S/20T/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:00:19.129556+00:00
+[18/90] fine-tune chronos_bolt on Coastal_T_S/20T/medium
+[2026-09-29 00:00:19 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/Coastal_T_S/20T/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:00:31.573979+00:00
+[19/90] fine-tune chronos_bolt on Coastal_T_S/20T/short
+[2026-09-29 00:00:31 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/Coastal_T_S/H/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:00:43.907376+00:00
+[20/90] fine-tune chronos_bolt on Coastal_T_S/H/long
+[2026-09-29 00:00:43 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/Coastal_T_S/H/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:00:56.233590+00:00
+[21/90] fine-tune chronos_bolt on Coastal_T_S/H/medium
+[2026-09-29 00:00:56 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/Coastal_T_S/H/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:01:08.549657+00:00
+[22/90] fine-tune chronos_bolt on Coastal_T_S/H/short
+[2026-09-29 00:01:08 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/Commodity_Import/M/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:01:21.005149+00:00
+[23/90] fine-tune chronos_bolt on Commodity_Import/M/short
+[2026-09-29 00:01:21 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/Commodity_Production/M/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:01:33.405795+00:00
+[24/90] fine-tune chronos_bolt on Commodity_Production/M/short
+[2026-09-29 00:01:33 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/Crypto/D/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:01:45.655041+00:00
+[25/90] fine-tune chronos_bolt on Crypto/D/short
+[2026-09-29 00:01:45 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/ECDC_COVID/D/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:01:58.117108+00:00
+[26/90] fine-tune chronos_bolt on ECDC_COVID/D/short
+[2026-09-29 00:01:58 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/ECDC_COVID/W/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:02:10.505304+00:00
+[27/90] fine-tune chronos_bolt on ECDC_COVID/W/short
+[2026-09-29 00:02:10 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/EWELD_Load/15T/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:02:22.757577+00:00
+[28/90] fine-tune chronos_bolt on EWELD_Load/15T/long
+[2026-09-29 00:02:22 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/EWELD_Load/15T/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:02:35.151720+00:00
+[29/90] fine-tune chronos_bolt on EWELD_Load/15T/medium
+[2026-09-29 00:02:35 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/EWELD_Load/15T/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:02:47.537986+00:00
+[30/90] fine-tune chronos_bolt on EWELD_Load/15T/short
+[2026-09-29 00:02:47 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/Finland_Traffic/15T/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:03:00.850918+00:00
+[31/90] fine-tune chronos_bolt on Finland_Traffic/15T/long
+[2026-09-29 00:03:00 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/Finland_Traffic/15T/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:03:13.147143+00:00
+[32/90] fine-tune chronos_bolt on Finland_Traffic/15T/medium
+[2026-09-29 00:03:13 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/Finland_Traffic/15T/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:03:25.462208+00:00
+[33/90] fine-tune chronos_bolt on Finland_Traffic/15T/short
+[2026-09-29 00:03:25 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/Global_Influenza/W/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:03:38.157291+00:00
+[34/90] fine-tune chronos_bolt on Global_Influenza/W/short
+[2026-09-29 00:03:38 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/Global_Price/Q/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:03:50.576492+00:00
+[35/90] fine-tune chronos_bolt on Global_Price/Q/short
+[2026-09-29 00:03:50 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/Housing_Inventory/M/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:04:02.872342+00:00
+[36/90] fine-tune chronos_bolt on Housing_Inventory/M/short
+[2026-09-29 00:04:02 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/JOLTS/M/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:04:15.610863+00:00
+[37/90] fine-tune chronos_bolt on JOLTS/M/short
+[2026-09-29 00:04:15 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/Job_Claims/W/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:04:27.884862+00:00
+[38/90] fine-tune chronos_bolt on Job_Claims/W/short
+[2026-09-29 00:04:27 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/MetroPT-3/5T/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:04:40.292079+00:00
+[39/90] fine-tune chronos_bolt on MetroPT-3/5T/long
+[2026-09-29 00:04:40 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/MetroPT-3/5T/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:04:52.813966+00:00
+[40/90] fine-tune chronos_bolt on MetroPT-3/5T/medium
+[2026-09-29 00:04:52 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/MetroPT-3/5T/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:05:05.313128+00:00
+[41/90] fine-tune chronos_bolt on MetroPT-3/5T/short
+[2026-09-29 00:05:05 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/NE_China_Wind/H/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:05:17.838963+00:00
+[42/90] fine-tune chronos_bolt on NE_China_Wind/H/long
+[2026-09-29 00:05:17 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/NE_China_Wind/H/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:05:30.137805+00:00
+[43/90] fine-tune chronos_bolt on NE_China_Wind/H/medium
+[2026-09-29 00:05:30 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/NE_China_Wind/H/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:05:42.619734+00:00
+[44/90] fine-tune chronos_bolt on NE_China_Wind/H/short
+[2026-09-29 00:05:42 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/Oil_Price/B/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:05:55.752534+00:00
+[45/90] fine-tune chronos_bolt on Oil_Price/B/short
+[2026-09-29 00:05:55 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/Online_Retail_2_UCI/D/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:06:08.275938+00:00
+[46/90] fine-tune chronos_bolt on Online_Retail_2_UCI/D/short
+[2026-09-29 00:06:08 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/OpenElectricity_NEM/5T/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:06:20.845500+00:00
+[47/90] fine-tune chronos_bolt on OpenElectricity_NEM/5T/long
+[2026-09-29 00:06:20 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/OpenElectricity_NEM/5T/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:06:33.433108+00:00
+[48/90] fine-tune chronos_bolt on OpenElectricity_NEM/5T/medium
+[2026-09-29 00:06:33 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/OpenElectricity_NEM/5T/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:06:45.983129+00:00
+[49/90] fine-tune chronos_bolt on OpenElectricity_NEM/5T/short
+[2026-09-29 00:06:45 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/Port_Activity/D/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:06:58.559718+00:00
+[50/90] fine-tune chronos_bolt on Port_Activity/D/short
+[2026-09-29 00:06:58 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/Port_Activity/W/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:07:11.037478+00:00
+[51/90] fine-tune chronos_bolt on Port_Activity/W/short
+[2026-09-29 00:07:11 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/SG_Carpark/15T/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:07:23.511042+00:00
+[52/90] fine-tune chronos_bolt on SG_Carpark/15T/long
+[2026-09-29 00:07:23 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/SG_Carpark/15T/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:07:36.317827+00:00
+[53/90] fine-tune chronos_bolt on SG_Carpark/15T/medium
+[2026-09-29 00:07:36 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/SG_Carpark/15T/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:07:48.747088+00:00
+[54/90] fine-tune chronos_bolt on SG_Carpark/15T/short
+[2026-09-29 00:07:48 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/SG_PM25/H/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:08:01.352454+00:00
+[55/90] fine-tune chronos_bolt on SG_PM25/H/long
+[2026-09-29 00:08:01 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/SG_PM25/H/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:08:13.600938+00:00
+[56/90] fine-tune chronos_bolt on SG_PM25/H/medium
+[2026-09-29 00:08:13 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/SG_PM25/H/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:08:26.104573+00:00
+[57/90] fine-tune chronos_bolt on SG_PM25/H/short
+[2026-09-29 00:08:26 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/SG_Weather/D/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:08:38.464189+00:00
+[58/90] fine-tune chronos_bolt on SG_Weather/D/long
+[2026-09-29 00:08:38 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/SG_Weather/D/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:08:51.080607+00:00
+[59/90] fine-tune chronos_bolt on SG_Weather/D/medium
+[2026-09-29 00:08:51 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/SG_Weather/D/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:09:03.638598+00:00
+[60/90] fine-tune chronos_bolt on SG_Weather/D/short
+[2026-09-29 00:09:03 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/Smart_Manufacturing/H/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:09:16.024502+00:00
+[61/90] fine-tune chronos_bolt on Smart_Manufacturing/H/long
+[2026-09-29 00:09:16 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/Smart_Manufacturing/H/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:09:28.301515+00:00
+[62/90] fine-tune chronos_bolt on Smart_Manufacturing/H/medium
+[2026-09-29 00:09:28 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/Smart_Manufacturing/H/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:09:40.741924+00:00
+[63/90] fine-tune chronos_bolt on Smart_Manufacturing/H/short
+[2026-09-29 00:09:40 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/Supply_Chain_Customer/D/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:09:53.011397+00:00
+[64/90] fine-tune chronos_bolt on Supply_Chain_Customer/D/short
+[2026-09-29 00:09:53 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/Supply_Chain_Location/D/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:10:05.327638+00:00
+[65/90] fine-tune chronos_bolt on Supply_Chain_Location/D/short
+[2026-09-29 00:10:05 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/US_Labor/M/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:10:18.188209+00:00
+[66/90] fine-tune chronos_bolt on US_Labor/M/short
+[2026-09-29 00:10:18 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/US_Term_Structure/B/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:10:30.590018+00:00
+[67/90] fine-tune chronos_bolt on US_Term_Structure/B/short
+[2026-09-29 00:10:30 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/Uncertainty_1M/M/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:10:43.165663+00:00
+[68/90] fine-tune chronos_bolt on Uncertainty_1M/M/short
+[2026-09-29 00:10:43 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/Vehicle_Sales/M/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:10:55.444245+00:00
+[69/90] fine-tune chronos_bolt on Vehicle_Sales/M/short
+[2026-09-29 00:10:55 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/Vehicle_Supply/M/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:11:07.886223+00:00
+[70/90] fine-tune chronos_bolt on Vehicle_Supply/M/short
+[2026-09-29 00:11:07 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/WUI_Global/Q/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:11:20.321889+00:00
+[71/90] fine-tune chronos_bolt on WUI_Global/Q/short
+[2026-09-29 00:11:20 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/Water_Quality_Darwin/15T/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:11:33.376534+00:00
+[72/90] fine-tune chronos_bolt on Water_Quality_Darwin/15T/long
+[2026-09-29 00:11:33 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/Water_Quality_Darwin/15T/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:11:45.886119+00:00
+[73/90] fine-tune chronos_bolt on Water_Quality_Darwin/15T/medium
+[2026-09-29 00:11:45 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/Water_Quality_Darwin/15T/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:11:58.231856+00:00
+[74/90] fine-tune chronos_bolt on Water_Quality_Darwin/15T/short
+[2026-09-29 00:11:58 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/azure2019_U/5T/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:12:11.258505+00:00
+[75/90] fine-tune chronos_bolt on azure2019_U/5T/short
+[2026-09-29 00:12:11 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/current_velocity/10T/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:12:23.546354+00:00
+[76/90] fine-tune chronos_bolt on current_velocity/10T/long
+[2026-09-29 00:12:23 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/current_velocity/10T/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:12:35.945714+00:00
+[77/90] fine-tune chronos_bolt on current_velocity/10T/medium
+[2026-09-29 00:12:35 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/current_velocity/10T/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:12:48.371340+00:00
+[78/90] fine-tune chronos_bolt on current_velocity/10T/short
+[2026-09-29 00:12:48 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/current_velocity/15T/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:13:00.947698+00:00
+[79/90] fine-tune chronos_bolt on current_velocity/15T/long
+[2026-09-29 00:13:00 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/current_velocity/15T/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:13:13.436681+00:00
+[80/90] fine-tune chronos_bolt on current_velocity/15T/medium
+[2026-09-29 00:13:13 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/current_velocity/15T/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:13:26.032452+00:00
+[81/90] fine-tune chronos_bolt on current_velocity/15T/short
+[2026-09-29 00:13:26 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/current_velocity/5T/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:13:38.535459+00:00
+[82/90] fine-tune chronos_bolt on current_velocity/5T/long
+[2026-09-29 00:13:38 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/current_velocity/5T/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:13:51.059653+00:00
+[83/90] fine-tune chronos_bolt on current_velocity/5T/medium
+[2026-09-29 00:13:51 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/current_velocity/5T/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:14:03.553950+00:00
+[84/90] fine-tune chronos_bolt on current_velocity/5T/short
+[2026-09-29 00:14:03 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/current_velocity/H/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:14:16.075062+00:00
+[85/90] fine-tune chronos_bolt on current_velocity/H/long
+[2026-09-29 00:14:16 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/current_velocity/H/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:14:28.571622+00:00
+[86/90] fine-tune chronos_bolt on current_velocity/H/medium
+[2026-09-29 00:14:28 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/current_velocity/H/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:14:41.060588+00:00
+[87/90] fine-tune chronos_bolt on current_velocity/H/short
+[2026-09-29 00:14:41 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/epf_electricity_price/H/long/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:14:53.691841+00:00
+[88/90] fine-tune chronos_bolt on epf_electricity_price/H/long
+[2026-09-29 00:14:53 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/epf_electricity_price/H/medium/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:15:06.477042+00:00
+[89/90] fine-tune chronos_bolt on epf_electricity_price/H/medium
+[2026-09-29 00:15:06 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+TIME run allocation action=new run=/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos_bolt/epf_electricity_price/H/short/run_0 launch_id=selena_fine_time_20260928T232415Z_26013 slurm_job_id=3602450 launched_at=2026-09-29T00:15:18.764084+00:00
+[90/90] fine-tune chronos_bolt on epf_electricity_price/H/short
+[2026-09-29 00:15:18 UTC] resources selected_device {"device": "cuda", "model": "chronos_bolt", "stage": "finetune"}
+2026-09-29 02:15:33 | task model=chronos_bolt independent_per_task_fine_tuning=true profile=small completed status=success
+2026-09-29 02:15:33 | stage train completed status=success
+2026-09-29 02:15:33 | stage evaluate started
+2026-09-29 02:15:33 | task model=chronos_bolt states=frozen,task_finetuned target_mode=univariate started

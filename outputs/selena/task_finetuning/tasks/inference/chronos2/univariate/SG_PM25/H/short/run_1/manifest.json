@@ -1,0 +1,89 @@
+{
+  "completed_at": "2026-09-29T10:58:48.658753+00:00",
+  "experiment": "task_finetuning_raw_inference",
+  "experiment_config": {
+    "covariate_channels": 0,
+    "covariate_mode": "none",
+    "covariate_source": "none",
+    "covariate_time_span": "none",
+    "instance_normalization": "none"
+  },
+  "identity": {
+    "dataset": "SG_PM25",
+    "frequency": "H",
+    "model": "chronos2",
+    "target_mode": "univariate",
+    "term": "short"
+  },
+  "launch": {
+    "action": "new",
+    "attempts": [
+      {
+        "action": "new",
+        "launch_id": "selena_fine_time_20260929T092621Z_11326",
+        "launched_at": "2026-09-29T10:58:45.506281+00:00",
+        "slurm_array_task_id": null,
+        "slurm_job_id": "3607387"
+      }
+    ],
+    "launch_id": "selena_fine_time_20260929T092621Z_11326",
+    "launched_at": "2026-09-29T10:58:45.506281+00:00",
+    "slurm_job_id": "3607387"
+  },
+  "model_config": {
+    "adaptation": {
+      "seed": 2021,
+      "source_checkpoint": "/fslarge/scratch/users/h61084/weights/chronos2",
+      "state": "task_finetuned",
+      "training_config": {
+        "batch_size": 32,
+        "context_length": 8192,
+        "gradient_clip_norm": 1.0,
+        "learning_rate": 1e-06,
+        "min_context": 16,
+        "mode": "full",
+        "steps": 100,
+        "weight": "chronos2"
+      },
+      "training_implementation": "official Chronos2Pipeline.fit",
+      "training_manifest": "/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/SG_PM25/H/short/run_0/manifest.json"
+    },
+    "context_length": 8192,
+    "model_size": "chronos2",
+    "quantile_levels": [
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9
+    ]
+  },
+  "pipeline_config": {
+    "covariate_mode": "none",
+    "prediction_length": 24,
+    "target_mode": "univariate",
+    "test_length": 2208,
+    "windows": 92
+  },
+  "project": "fine_time",
+  "provenance": {
+    "dataset_config_path": null
+  },
+  "required_artifacts": [
+    "raw_predictions.npz",
+    "inference.json"
+  ],
+  "runtime_config": {
+    "batch_size": 32,
+    "checkpoint_path": "/fslarge/scratch/users/h61084/codes/fine_time/outputs/task_finetuning/checkpoints/chronos2/SG_PM25/H/short/run_0/finetuned-ckpt",
+    "device": "cuda"
+  },
+  "schema_version": 1,
+  "started_at": "2026-09-29T10:58:45.506281+00:00",
+  "status": "completed",
+  "updated_at": "2026-09-29T10:58:48.658753+00:00"
+}
