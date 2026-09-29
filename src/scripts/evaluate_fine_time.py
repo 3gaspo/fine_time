@@ -73,7 +73,7 @@ def main(cfg: DictConfig) -> None:
                     {
                         "state": "task_finetuned",
                         "training_manifest": str(training_run / "manifest.json"),
-                        "source_checkpoint": training_manifest["model_config"]["source_checkpoint"],
+                        "source_checkpoint": training_manifest["runtime_config"]["source_checkpoint"],
                         "seed": training_manifest["pipeline_config"]["seed"],
                         "training_config": training_manifest["model_config"]["training"],
                         "training_implementation": training["implementation"],
