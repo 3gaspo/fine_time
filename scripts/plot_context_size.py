@@ -83,7 +83,7 @@ def main() -> None:
         args.seasonal_root,
         {"seasonal_naive"},
         target_modes={"univariate"},
-        config_policy="latest",
+        config_policy="error",
         repeat_policy="latest",
     )
     rows = context_horizon_rows(cells, seasonal)

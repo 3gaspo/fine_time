@@ -22,9 +22,11 @@ from timebench.paths import foundation_weight_path
 from timebench.pipeline.runtime_resources import log_selected_device
 from timebench.training import (
     allocate_training_run,
+    apply_lora,
     checkpoint_artifacts,
     checkpoint_path,
     load_training_series,
+    merge_lora,
     model_training_config,
     output_root,
     sample_window_batch,
@@ -95,9 +97,19 @@ def main(cfg: DictConfig) -> None:
 
 
 def _fit(pipeline, series, horizon, values, model_cfg, generator) -> list[float]:
+    mode = str(values["training"]["mode"])
+    if mode not in {"full", "lora"}:
+        raise ValueError(f"Unsupported Chronos-Bolt fine-tuning mode: {mode}")
     model = pipeline.model
+    if mode == "lora":
+        model = apply_lora(model, values, "chronos_bolt")
+        pipeline.model = model
     model.train()
-    optimizer = torch.optim.AdamW(model.parameters(), lr=float(model_cfg["learning_rate"]))
+    optimizer = torch.optim.AdamW(
+        (parameter for parameter in model.parameters() if parameter.requires_grad),
+        lr=float(model_cfg["learning_rate"]),
+    )
+    device = next(model.parameters()).device
     losses: list[float] = []
     for _ in range(int(model_cfg["steps"])):
         context, target = sample_window_batch(
@@ -110,8 +122,8 @@ def _fit(pipeline, series, horizon, values, model_cfg, generator) -> list[float]
         )
         optimizer.zero_grad(set_to_none=True)
         output = model(
-            context=context.to(model.device),
-            target=target.to(model.device),
+            context=context.to(device),
+            target=target.to(device),
         )
         if output.loss is None:
             raise RuntimeError("Chronos-Bolt did not return its native training loss")
@@ -122,6 +134,9 @@ def _fit(pipeline, series, horizon, values, model_cfg, generator) -> list[float]
         optimizer.step()
         losses.append(float(output.loss.detach().cpu()))
     model.eval()
+    if mode == "lora":
+        pipeline.model = merge_lora(model)
+        pipeline.model.eval()
     return losses
 
 

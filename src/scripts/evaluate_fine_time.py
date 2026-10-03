@@ -25,6 +25,7 @@ from timebench.training import (
     select_training_run,
     select_tasks,
 )
+from timebench.pipeline import manifest_reference
 
 
 @hydra.main(version_base=None, config_path="../timebench/conf", config_name="fine_time")
@@ -48,7 +49,7 @@ def main(cfg: DictConfig) -> None:
     )
     config_path = Path(values["config_path"]) if values.get("config_path") else None
     previous_experiment = os.environ.get("TIME_EXPERIMENT")
-    os.environ["TIME_EXPERIMENT"] = "task_finetuning"
+    os.environ["TIME_EXPERIMENT"] = str(values["experiment"]["name"])
     try:
         for index, task in enumerate(tasks, 1):
             training_run, training_manifest = select_training_run(
@@ -65,17 +66,14 @@ def main(cfg: DictConfig) -> None:
                 (
                     "frozen",
                     base_checkpoint,
-                    {"state": "frozen", "source_checkpoint": str(base_checkpoint)},
+                    {"state": "frozen"},
                 ),
                 (
                     "task_finetuned",
                     adapted_checkpoint,
                     {
                         "state": "task_finetuned",
-                        "training_manifest": str(training_run / "manifest.json"),
-                        "source_checkpoint": training_manifest["runtime_config"]["source_checkpoint"],
-                        "seed": training_manifest["pipeline_config"]["seed"],
-                        "training_config": training_manifest["model_config"]["training"],
+                        "training": manifest_reference(training_run),
                         "training_implementation": training["implementation"],
                     },
                 ),

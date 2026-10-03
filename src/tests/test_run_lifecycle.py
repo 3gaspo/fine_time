@@ -181,15 +181,25 @@ def main() -> None:
             second_config = _allocate(root, value=2)
             assert second_config.action == "new" and second_config.run_dir.name == "run_1"
             _complete(second_config)
-            assert select_completed_runs(root.parent)[0][0] == second_config.run_dir
             try:
-                select_completed_runs(root.parent, config_policy="error")
+                select_completed_runs(root.parent)
             except ManifestError:
                 pass
             else:
                 raise AssertionError("ambiguous scientific configurations must fail")
-            assert len(select_completed_runs(root.parent, config_policy="distinct")) == 2
-            assert len(select_completed_runs(root.parent, config_policy="latest")) == 1
+            assert len(
+                select_completed_runs(
+                    root.parent,
+                    config_policy="distinct",
+                    config_axis_fields=["model_config.value"],
+                )
+            ) == 2
+            try:
+                select_completed_runs(root.parent, config_policy="latest")
+            except ManifestError:
+                pass
+            else:
+                raise AssertionError("latest must not build a per-task config mosaic")
             assert len(select_completed_runs(root.parent, config_policy="average")) == 2
 
             repeat = _allocate(root, value=2, policy="new")

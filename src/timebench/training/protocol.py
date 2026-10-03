@@ -194,14 +194,24 @@ def model_training_config(config: Mapping[str, Any], model: str) -> Mapping[str,
 
 
 def training_config_snapshot(
-    config: Mapping[str, Any], model_config: Mapping[str, Any]
+    config: Mapping[str, Any], model: str, model_config: Mapping[str, Any]
 ) -> dict[str, Any]:
-    return {
+    snapshot = {
         **dict(model_config),
         "mode": config["training"]["mode"],
         "min_context": int(config["training"]["min_context"]),
         "gradient_clip_norm": float(config["training"]["gradient_clip_norm"]),
     }
+    if snapshot["mode"] == "lora":
+        lora = config["training"]["lora"]
+        snapshot["lora"] = {
+            "r": int(lora["r"]),
+            "lora_alpha": int(lora["lora_alpha"]),
+            "lora_dropout": float(lora["lora_dropout"]),
+            "bias": str(lora["bias"]),
+            "target_modules": list(lora["target_modules"][model]),
+        }
+    return snapshot
 
 
 def training_run_config(
@@ -220,7 +230,7 @@ def training_run_config(
         },
         "model_config": {
             "alias": model,
-            "training": training_config_snapshot(config, model_config),
+            "training": training_config_snapshot(config, model, model_config),
         },
         "pipeline_config": {
             "seed": int(config["seed"]),
@@ -244,7 +254,7 @@ def allocate_training_run(
     values = training_run_config(config, model, task, source_checkpoint)
     return allocate_run(
         training_identity_root(root, model, task),
-        experiment="task_finetuning",
+        experiment=str(config["experiment"]["name"]),
         provenance={
             "dataset_config": str(config.get("config_path") or "project default"),
         },
@@ -261,13 +271,13 @@ def select_training_run(
 ) -> tuple[Path, dict[str, Any]]:
     values = training_run_config(config, model, task, source_checkpoint)
     filters = {
-        "experiment": "task_finetuning",
+        "experiment": str(config["experiment"]["name"]),
         **{key: value for key, value in values.items()},
     }
     selected = select_completed_runs(
         training_identity_root(root, model, task),
         config_filters=filters,
-        config_policy="latest",
+        config_policy="error",
         repeat_policy="latest",
     )
     if len(selected) != 1:

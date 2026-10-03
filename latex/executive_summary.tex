@@ -1,13 +1,13 @@
-\documentclass[11pt,a4paper]{article}
+\documentclass[10pt,a4paper]{article}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern,microtype,booktabs,tabularx,array}
-\usepackage[margin=22mm]{geometry}
+\usepackage[margin=18mm]{geometry}
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{7pt}
+\setlength{\parskip}{5pt}
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 \title{\textbf{Fine TIME}\\Scientific Executive Summary}
 \author{}
-\date{28 September 2026}
+\date{2 October 2026}
 \begin{document}
 \maketitle
 
@@ -40,10 +40,35 @@ Run identity & Meaningful scientific path plus \texttt{run\_n}; configuration an
 \end{tabularx}
 \end{table}
 
-\section*{Evidence boundary}
-The pipeline and Selena launcher are implemented, but no Fine TIME experiment
-has been executed yet. Therefore this document reports no accuracy, timing,
-or adaptation-benefit claim. The first completed run must establish whether
-fine-tuning improves each backbone and at what computational cost.
+\section*{Observed evidence}
+The first synchronized run completed 90 frozen/fine-tuned task pairs for each
+backbone. Lower MASE is better.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Model & Frozen & Fine-tuned & Change & Win rate \\
+\midrule
+Chronos-2 & 1.06923 & 1.05234 & $-1.58\%$ & $75.56\%$ \\
+Chronos-Bolt & 1.16790 & 1.12307 & $-3.84\%$ & $80.00\%$ \\
+TS-ICL (batch 8) & 1.09871 & 1.09506 & $-0.33\%$ & $81.11\%$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Fine-tuning improved the equal-task-weighted mean in all three observed arms,
+most strongly for Chronos-Bolt. The task-level effect was heterogeneous, so
+these averages do not imply a benefit on every task.
+
+\section*{Current boundary}
+The Chronos-2 and Chronos-Bolt comparisons remain compatible with the current
+configuration. The observed TS-ICL arm used the former batch size of 8; the
+current default is 32. Its 90 fine-tuned checkpoints and adapted evaluations
+must therefore be rerun before a current TS-ICL conclusion is available.
+Frozen TS-ICL evaluations remain reusable. The existing report also omits the
+exact selected input-manifest references; that provenance repair requires only
+report regeneration. Results use one seed and 100 optimization steps, so they
+do not establish statistical significance or broader-profile generalization.
 
 \end{document}

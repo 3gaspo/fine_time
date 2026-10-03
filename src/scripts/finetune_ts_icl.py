@@ -23,9 +23,11 @@ from timebench.paths import foundation_weight_path
 from timebench.pipeline.runtime_resources import log_selected_device
 from timebench.training import (
     allocate_training_run,
+    apply_lora,
     checkpoint_artifacts,
     checkpoint_path,
     load_training_series,
+    merge_lora,
     model_training_config,
     output_root,
     sample_window_batch,
@@ -102,16 +104,25 @@ def main(cfg: DictConfig) -> None:
 
 
 def _fit(pipeline, series, context_length, horizon, values, model_cfg, generator):
+    mode = str(values["training"]["mode"])
+    if mode not in {"full", "lora"}:
+        raise ValueError(f"Unsupported TS-ICL fine-tuning mode: {mode}")
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     log_selected_device(str(device), stage="finetune", model="ts_icl")
     model = pipeline.forecaster.to(device)
-    model.train()
-    pipeline._device = device
-    pipeline.this_context_length = context_length
-    optimizer = torch.optim.AdamW(model.parameters(), lr=float(model_cfg["learning_rate"]))
     start = float(model.tf_icl.start_quantile)
     end = float(model.tf_icl.end_quantile)
     count = int(model.tf_icl.nb_quantiles)
+    if mode == "lora":
+        model = apply_lora(model, values, "ts_icl", _lora_target_modules(model))
+        pipeline.forecaster = model
+    model.train()
+    pipeline._device = device
+    pipeline.this_context_length = context_length
+    optimizer = torch.optim.AdamW(
+        (parameter for parameter in model.parameters() if parameter.requires_grad),
+        lr=float(model_cfg["learning_rate"]),
+    )
     quantiles = torch.linspace(start, end, count, device=device).view(1, 1, -1)
     losses: list[float] = []
     for _ in range(int(model_cfg["steps"])):
@@ -145,7 +156,27 @@ def _fit(pipeline, series, context_length, horizon, values, model_cfg, generator
         optimizer.step()
         losses.append(float(loss.detach().cpu()))
     model.eval()
+    if mode == "lora":
+        pipeline.forecaster = merge_lora(model)
+        pipeline.forecaster.eval()
     return losses
+
+
+def _lora_target_modules(model) -> list[str]:
+    attention = [
+        name
+        for name, module in model.named_modules()
+        if name.startswith("tf_icl.tf_icl.")
+        and isinstance(module, torch.nn.MultiheadAttention)
+    ]
+    quantile_outputs = [
+        name
+        for name, module in model.named_modules()
+        if name.startswith("tf_icl.decoder.") and isinstance(module, torch.nn.Linear)
+    ]
+    if not attention or not quantile_outputs:
+        raise ValueError("Could not resolve TS-ICL attention and quantile-output LoRA targets")
+    return [*attention, quantile_outputs[-1]]
 
 
 def _run_forward(pipeline, grid, context, horizon):

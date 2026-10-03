@@ -66,7 +66,7 @@ summary_command=(
     --model-status chronos2=completed,0
     --launch-id "$TIME_LAUNCH_ID"
     --target-mode "$TIME_TARGET_MODE"
-    --config-policy "${TIME_CONFIG_POLICY:-latest}"
+    --config-policy "${TIME_CONFIG_POLICY:-error}"
     --repeat-policy "${TIME_REPEAT_POLICY:-latest}"
     --csv "$aggregate_dir/foundation_model_summary.csv"
     --markdown "$aggregate_dir/foundation_model_summary.md"

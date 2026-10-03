@@ -24,6 +24,7 @@ from timebench.training import (
     checkpoint_artifacts,
     checkpoint_path,
     load_training_series,
+    lora_config_dict,
     model_training_config,
     output_root,
     select_tasks,
@@ -74,6 +75,11 @@ def main(cfg: DictConfig) -> None:
                 inputs=series,
                 prediction_length=task.prediction_length,
                 finetune_mode=str(values["training"]["mode"]),
+                lora_config=(
+                    lora_config_dict(values, "chronos2")
+                    if values["training"]["mode"] == "lora"
+                    else None
+                ),
                 context_length=int(model_cfg["context_length"]),
                 learning_rate=float(model_cfg["learning_rate"]),
                 num_steps=int(model_cfg["steps"]),

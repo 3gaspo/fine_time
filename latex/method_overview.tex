@@ -1,5 +1,5 @@
-\documentclass[11pt]{article}
-\usepackage[margin=1in]{geometry}
+\documentclass[10pt]{article}
+\usepackage[margin=18mm]{geometry}
 \usepackage{booktabs}
 \usepackage{hyperref}
 
@@ -15,8 +15,9 @@
 Fine TIME evaluates whether task-specific adaptation of Chronos-2,
 Chronos-Bolt, and TS-ICL improves over the same frozen backbone on identical
 official TIME test windows. Each task is fitted only on its official training
-prefix. The initial protocol uses one seed, 100 full-model optimizer steps, no
-covariates, and the 90-task small profile.
+prefix. The protocol uses one seed, 100 full-model optimizer steps, no
+covariates, and the 90-task small profile. The current TS-ICL batch size is 32;
+the first completed TS-ICL run used the former batch size of 8.
 
 \section{Inherited frozen baselines}
 
@@ -48,13 +49,24 @@ Each model-task pair stores an independently adapted checkpoint, then evaluates
 the frozen and adapted states on the shared Seasonal-defined finite grid. The
 report requires exact pairs within a backbone, gives every task equal weight,
 and reports mean MASE, win rates, and paired PNG/PDF figures. Artifacts live
-below \texttt{outputs/<surface>/task\_finetuning/}; reports and logs remain
+below \nolinkurl{outputs/<surface>/task_finetuning/}; reports and logs remain
 inside that experiment hierarchy.
+
+The parameter-efficient comparison keeps the same tasks, seed, 100-step
+budget, windows, and evaluation grid, but trains LoRA adapters with rank 8,
+alpha 16, zero dropout, and explicit target modules for each backbone. Trained
+adapters are merged before evaluation and use the independent
+\nolinkurl{task_finetuning_lora} artifact hierarchy. This comparison does not
+replace the required current-protocol full-tuning run.
 
 \section{Evidence boundary}
 
 Current result claims are limited to project-owned manifests and aggregates
-produced under the shared Seasonal evaluation grid. No Fine TIME run has yet
-completed, so the project makes no adaptation claim.
+produced under the shared Seasonal evaluation grid. The first completed run
+supports current Chronos-2 and Chronos-Bolt comparisons, with respective mean
+task MASE reductions of 1.58\% and 3.84\%. Its TS-ICL comparison is historical
+under the current batch-32 protocol and requires a new fine-tuning and adapted-
+evaluation run. The existing report also requires report-only regeneration to
+record every selected input manifest.
 
 \end{document}

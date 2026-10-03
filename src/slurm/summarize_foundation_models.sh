@@ -31,7 +31,7 @@ summary_command=(
     --model-status seasonal_naive=completed,0
     --launch-id "$TIME_LAUNCH_ID"
     --status-dir "$TIME_LOGS/foundation_models/workflow_status/foundation_models"
-    --config-policy "${TIME_CONFIG_POLICY:-latest}"
+    --config-policy "${TIME_CONFIG_POLICY:-error}"
     --repeat-policy "${TIME_REPEAT_POLICY:-latest}"
     --csv "$summary_root/foundation_model_summary.csv"
     --markdown "$summary_root/foundation_model_summary.md"
@@ -77,7 +77,7 @@ plot_command=(
     --output "$analysis_root/mase_vs_features.svg"
     --models "${FOUNDATION_LEARNED_MODELS[@]}"
     --launch-id "$TIME_LAUNCH_ID"
-    --config-policy "${TIME_CONFIG_POLICY:-latest}"
+    --config-policy "${TIME_CONFIG_POLICY:-error}"
     --repeat-policy "${TIME_REPEAT_POLICY:-latest}"
     --top 5
 )

@@ -13,6 +13,15 @@ source-adapted quantile-loss paths because their installed packages do not
 provide equivalent fine-tuning commands. `scripts/fine_time.sh` launches the
 model jobs and the paired report.
 
+## LoRA comparison
+
+`scripts/fine_time_lora.sh` runs the same three backbones, 90 tasks, seed,
+100-step budget and paired evaluation with parameter-efficient adapters. The
+fixed comparison uses rank 8, alpha 16, zero dropout, no bias and explicit
+target-module lists per backbone. Its artifacts live below
+`task_finetuning_lora`, separate from full tuning. The execution environment
+must be relocked with the declared PEFT dependency before first submission.
+
 ## Inherited runnable families
 
 ### Foundation-model benchmark

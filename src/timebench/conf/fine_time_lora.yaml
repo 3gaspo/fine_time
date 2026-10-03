@@ -1,0 +1,11 @@
+defaults:
+  - fine_time
+  - _self_
+
+output_root: ${oc.env:TIME_OUTPUTS,outputs/dgx}/task_finetuning_lora
+
+experiment:
+  name: task_finetuning_lora
+
+training:
+  mode: lora

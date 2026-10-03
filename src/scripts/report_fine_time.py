@@ -7,6 +7,7 @@ import hydra
 from omegaconf import DictConfig, OmegaConf
 
 from timebench.results.fine_tuning import build_fine_tuning_report
+from timebench.pipeline.report_transaction import ReportTransaction
 from timebench.training import FINE_TIME_MODELS, output_root, select_tasks
 
 
@@ -21,15 +22,18 @@ def main(cfg: DictConfig) -> None:
         expected_count=int(values["experiment"]["expected_tasks"]),
     )
     expected = {task.key for task in tasks} if values["evaluation"]["require_complete"] else None
+    final_destination = root / "reports" / "frozen_vs_task_finetuned"
+    transaction = ReportTransaction(final_destination)
     artifacts = build_fine_tuning_report(
         root / "tasks",
-        root / "reports" / "frozen_vs_task_finetuned",
+        transaction.staging,
         FINE_TIME_MODELS,
         expected,
     )
+    transaction.commit()
     print("Fine TIME report artifacts:")
     for path in artifacts:
-        print(path)
+        print(final_destination / path.relative_to(transaction.staging))
 
 
 if __name__ == "__main__":

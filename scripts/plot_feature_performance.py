@@ -12,6 +12,7 @@ sys.path.insert(0, str(PROJECT_ROOT / "src"))
 from timebench.feature.performance import analyze_feature_performance
 from timebench.paths import dataset_metadata_root, foundation_experiment_root
 from timebench.pipeline import parse_config_filters
+from timebench.pipeline.report_transaction import ReportTransaction
 
 
 def main() -> None:
@@ -67,8 +68,9 @@ def main() -> None:
     parser.add_argument(
         "--config-policy",
         choices=("error", "distinct", "latest", "average"),
-        default="latest",
+        default="error",
     )
+    parser.add_argument("--config-axis", action="append", default=[])
     parser.add_argument(
         "--repeat-policy",
         choices=("selected", "latest", "distinct", "average"),
@@ -82,6 +84,9 @@ def main() -> None:
     )
     parser.add_argument("--top", type=int, default=5)
     args = parser.parse_args()
+    final_output = args.output.expanduser().resolve()
+    report_transaction = ReportTransaction(final_output.parent)
+    args.output = report_transaction.path(final_output)
 
     joined, correlations, selected = analyze_feature_performance(
         features_root=args.features_root,
@@ -95,6 +100,7 @@ def main() -> None:
         target_modes=None if args.target_mode is None else set(args.target_mode),
         config_filters=parse_config_filters(args.run_config),
         config_policy=args.config_policy,
+        config_axis_fields=args.config_axis,
         repeat_policy=args.repeat_policy,
         features=args.features,
         top=args.top,
@@ -103,10 +109,11 @@ def main() -> None:
     correlation_path = args.output.with_name(f"{args.output.stem}_correlations.csv")
     joined.to_csv(data_path, index=False)
     correlations.to_csv(correlation_path, index=False)
+    report_transaction.commit()
     print(f"Selected features: {', '.join(selected)}")
-    print(f"Plot: {args.output}")
-    print(f"Joined data: {data_path}")
-    print(f"Correlations: {correlation_path}")
+    print(f"Plot: {final_output}")
+    print(f"Joined data: {final_output.with_name(final_output.stem + '_data.csv')}")
+    print(f"Correlations: {final_output.with_name(final_output.stem + '_correlations.csv')}")
 
 
 if __name__ == "__main__":

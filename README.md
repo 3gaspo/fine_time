@@ -8,10 +8,12 @@ experiment covers `chronos2`, `chronos_bolt`, and `ts_icl`.
 
 | Implementation | Experiments | Next milestone |
 | --- | --- | --- |
-| Runnable pilot implemented | None run | Execute the first frozen-versus-fine-tuned comparison for all three backbones |
+| Full and LoRA experiment paths implemented | First full-tuning 90-task comparison completed | Rerun full TS-ICL with batch size 32, then run the separate LoRA comparison |
 
 The training, paired evaluation, caching, and reporting paths are implemented.
-No Fine TIME result is available yet.
+The completed run establishes current Chronos-2 and Chronos-Bolt evidence.
+Its TS-ICL arm used the former batch size of 8 and is not current under the
+configured batch size of 32.
 
 ## First experiment
 
@@ -41,8 +43,8 @@ window with finite input and output support.
 
 ## Adaptation methods
 
-The pilot uses one seed (`2021`), 100 optimizer steps per task, full-model
-adaptation, and no covariates. Its configuration is defined in
+The experiment uses one seed (`2021`), 100 optimizer steps per task,
+full-model adaptation, and no covariates. Its configuration is defined in
 `src/timebench/conf/fine_time.yaml`.
 
 - Chronos-2 uses the official `Chronos2Pipeline.fit` API.
@@ -54,6 +56,29 @@ adaptation, and no covariates. Its configuration is defined in
 Chronos-2 trains directly at each task horizon. Chronos-Bolt and TS-ICL train
 within their native target-length limits and retain their original rollout
 behavior for longer TIME horizons.
+
+The separate LoRA comparison keeps the same task set, seed, 100-step budget,
+windows and paired evaluation, but trains rank-8 adapters with alpha 16, zero
+dropout and explicit backbone-specific target modules. PEFT adapters are
+merged into the task checkpoint before the existing evaluation loaders read
+it. This parameter-efficient comparison does not replace the current
+full-tuning rerun.
+
+## Current evidence
+
+The first synchronized report contains 90 finite frozen/fine-tuned MASE pairs
+per backbone. Equal-task-weighted mean MASE changed from 1.06923 to 1.05234 for
+Chronos-2 (-1.58%; 75.56% task win rate) and from 1.16790 to 1.12307 for
+Chronos-Bolt (-3.84%; 80.00% win rate). These two comparisons remain compatible
+with the current configuration.
+
+The same run changed TS-ICL mean task MASE from 1.09871 to 1.09506 (-0.33%;
+81.11% win rate), but its fine-tuned checkpoints used batch size 8. The current
+batch size is 32, so those 90 TS-ICL fine-tuning and adapted-evaluation tasks
+must be rerun before that comparison is current. Frozen TS-ICL evaluations
+remain reusable. The existing report also omits exact selected input-manifest
+references; repairing that provenance requires report regeneration, not model
+training or evaluation.
 
 ## Data and reproducibility
 
@@ -77,6 +102,13 @@ bash scripts/fine_time.sh selena
 
 The corresponding DGX front is `bash scripts/fine_time.sh dgx`.
 
+After the prepared execution environment includes the locked PEFT dependency,
+launch the separate LoRA comparison with:
+
+```bash
+bash scripts/fine_time_lora.sh selena
+```
+
 ## Outputs
 
 Fine-tuned checkpoints and their authoritative manifests are written under
@@ -89,6 +121,10 @@ root during execution, or `outputs/selena` after synchronization.
 The independent shared Seasonal checkout stores its completed cells below
 `outputs/seasonal_naive/evaluations/`; Fine TIME resolves them through
 `TIME_SEASONAL_EVALUATIONS_ROOT`.
+
+LoRA uses the parallel hierarchy below `<O>/task_finetuning_lora/`, including
+its own checkpoints, frozen/adapted tasks and report. It never overwrites the
+full-tuning evidence.
 
 Every Slurm stream, Hydra directory, stage log, and workflow status is grouped
 below `logs/<surface>/task_finetuning/`. Launch IDs and timestamps remain in
@@ -110,7 +146,8 @@ figures in both PNG and PDF formats. Lower MASE is better.
 - `experiments/`: inherited frozen-inference entry points.
 - `src/scripts/finetune_*.py`: one fine-tuning entry point per backbone.
 - `src/scripts/evaluate_fine_time.py`: paired frozen/adapted evaluation.
-- `src/timebench/training/`: task selection, windows, paths, and provenance.
+- `src/timebench/training/`: task selection, windows, paths, provenance, and
+  the shared LoRA attachment/merge contract.
 - `src/timebench/results/`: paired aggregation and plots.
 - `src/tests/`: focused scientific and lifecycle checks.
 

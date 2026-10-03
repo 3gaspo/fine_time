@@ -7,6 +7,12 @@ and training provenance. The three `src/scripts/finetune_*.py` entry points own
 model-specific adaptation. `src/scripts/evaluate_fine_time.py` then calls the
 unchanged inherited inference adapters for both frozen and adapted states.
 
+`fine_time.yaml` is the full-tuning base contract;
+`fine_time_lora.yaml` changes only the output root, experiment name and
+training mode. `training/lora.py` attaches the declared PEFT adapters and
+merges them after training so the same checkpoint readers evaluate full and
+LoRA adaptations. The two modes retain independent manifests and reports.
+
 ```text
 TIME training prefix --> model-specific fine-tuner --> per-task checkpoint
           |                                           |

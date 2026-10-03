@@ -6,6 +6,7 @@ config_path: null
 output_root: null
 
 experiment:
+  name: task_finetuning
   profile: small
   target_mode: univariate
   expected_tasks: 90
@@ -19,6 +20,27 @@ training:
   min_context: 16
   mode: full
   gradient_clip_norm: 1.0
+  lora:
+    r: 8
+    lora_alpha: 16
+    lora_dropout: 0.0
+    bias: none
+    target_modules:
+      chronos2:
+        - self_attention.q
+        - self_attention.v
+        - self_attention.k
+        - self_attention.o
+        - output_patch_embedding.output_layer
+      chronos_bolt:
+        - q
+        - v
+        - k
+        - o
+        - output_patch_embedding.output_layer
+      ts_icl:
+        - icl_multihead_attention
+        - quantile_output
   models:
     chronos2:
       weight: chronos2
@@ -35,7 +57,7 @@ training:
     ts_icl:
       weight: tsicl/tsicl-v1.ckpt
       context_length: 4096
-      batch_size: 8
+      batch_size: 32
       learning_rate: 1.0e-6
       steps: 100
 
@@ -47,5 +69,5 @@ hydra:
   job:
     chdir: false
   run:
-    dir: ${oc.env:TIME_LOGS,logs/dgx}/task_finetuning/hydra/${oc.env:TIME_HYDRA_STAGE,run}/${model}
+    dir: ${oc.env:TIME_LOGS,logs/dgx}/${experiment.name}/hydra/${oc.env:TIME_HYDRA_STAGE,run}/${model}
   output_subdir: null
